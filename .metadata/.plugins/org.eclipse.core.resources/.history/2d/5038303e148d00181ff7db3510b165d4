@@ -1,0 +1,26 @@
+package br.com.caelum.estoque.cliente;
+
+import java.rmi.Naming;
+import java.util.Scanner;
+
+import br.com.caelum.estoque.rmi.EstoqueRmi;
+import br.com.caelum.estoque.rmi.EstoqueService;
+import br.com.caelum.estoque.rmi.ItemEstoque;
+
+public class ClienteRmiWhile {
+	public static void main(String[] args) throws Exception {
+		EstoqueRmi estoque = (EstoqueRmi) Naming.lookup("rmi://localhost:1099/estoque");
+		ItemEstoque item = estoque.getItemEstoque("ARQ");
+		
+		EstoqueService servicoEstoque = (EstoqueService);
+		Scanner scanner = new Scanner(System.in);
+		
+		while (scanner.hasNextLine()){
+			
+			String codigo = scanner.nextLine();
+			ItemEstoque arq = servicoEstoque.getItemEstoque(codigo);
+			System.out.println("Quantidade " + arq );
+			
+		}
+	}
+}
