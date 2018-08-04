@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
+import br.com.caelum.correios.soap.ConsumidorServicoCorreios;
 //import br.com.caelum.estoque.rmi.EstoqueRmi;
 //import br.com.caelum.estoque.rmi.ItemEstoque;
 import br.com.caelum.estoque.soap.EstoqueWS;
@@ -108,6 +109,8 @@ public class Carrinho implements Serializable {
 		this.cepDestino = novoCepDestino;
 
 		// servico web do correios aqui
+		ConsumidorServicoCorreios servicoCorreios = new ConsumidorServicoCorreios();
+		this.valorFrete = servicoCorreios.calculaFrete(novoCepDestino);
 	}
 
 	public String getCepDestino() {
@@ -234,16 +237,16 @@ public class Carrinho implements Serializable {
 		return numeroCartao != null && titularCartao != null;
 	}
 
-	/*public void verificarDisponibilidadeDosItensComRmi() throws Exception {
-		EstoqueRmi estoque = (EstoqueRmi) Naming.lookup("rmi://localhost:1099/estoque");
-		for (ItemCompra itemCompra : this.itensDeCompra) {
-			if (itemCompra.isImpresso()) {
-				System.out.println("Verificação	da	quantidade	do	livro:	" + itemCompra.getTitulo());
-				ItemEstoque itemEstoque = estoque.getItemEstoque(itemCompra.getCodigo());
-				itemCompra.setQuantidadeNoEstoque(itemEstoque.getQuantidade());
-			}
-		}
-	}*/
+	/*
+	 * public void verificarDisponibilidadeDosItensComRmi() throws Exception {
+	 * EstoqueRmi estoque = (EstoqueRmi)
+	 * Naming.lookup("rmi://localhost:1099/estoque"); for (ItemCompra itemCompra
+	 * : this.itensDeCompra) { if (itemCompra.isImpresso()) {
+	 * System.out.println("Verificação	da	quantidade	do	livro:	" +
+	 * itemCompra.getTitulo()); ItemEstoque itemEstoque =
+	 * estoque.getItemEstoque(itemCompra.getCodigo());
+	 * itemCompra.setQuantidadeNoEstoque(itemEstoque.getQuantidade()); } } }
+	 */
 
 	public void verificarDisponibilidadeDosItensComSoap() {
 		EstoqueWS estoqueWS = new EstoqueWSService().getEstoqueWSPort();
