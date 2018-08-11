@@ -50,6 +50,7 @@ public class PagamentoResource {
 		pagamento.setId(idPagamento++);
 		pagamento.setValor(transacao.getValor());
 		pagamento.comStatusCriado(); // NOVA LINHA AQUI
+		repositorio.put(pagamento.getId(),pagamento);
 		return Response.created(new URI("/pagamentos/" + pagamento.getId())).entity(pagamento)
 				.type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
