@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Mongo DB
+Created-By: 24.71-b01 (Oracle Corporation)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, inc.
+Bundle-Version: 3.6.1.201502271137
+Bundle-Activator: org.mule.tooling.ui.contribution.MongoActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.mongo.3.5.0;sing
+ leton:=true
+Archiver-Version: Plexus Archiver
+
+Name: editors.xml
+SHA-256-Digest: +vzCm1b+cbYfq8flmbogcGMgyaY92lpfdLnH3ZnLMAY=
+
+Name: mule-module-mongo-3.6.1-sources.jar
+SHA-256-Digest: mBbqKvvbPIJ7FgVQqhMBa0imC1CLxgmZJ9bHn1l0+xk=
+
+Name: org/mule/tooling/ui/contribution/MongoActivator.class
+SHA-256-Digest: PjGVcimC9m5OTfTx4ERsz8aPTfdJuZntLLetThHUFK0=
+
+Name: mule-module-mongo-3.6.1.jar
+SHA-256-Digest: YpiyWXp4Tag6+XcrlJdBy1i6WOsasS1u8zSo6cdYQZw=
+
+Name: icons/small/mongo-transformer-24x16.png
+SHA-256-Digest: bTLv+yT8Gjx26yxZ2KZrN0vz4yWyAZOqqWxQ1IeLQZQ=
+
+Name: plugin.xml
+SHA-256-Digest: 0dURxGKKe9SDVbfMtEOM8L8KqFljIdle4zx18LxqZeo=
+
+Name: mule-module-mongo-3.6.1.zip
+SHA-256-Digest: IizGjSm9RtliOnzCuQegKRlU0A3KQwBkDfwYP5m1Nmg=
+
+Name: icons/large/mongo-connector-48x32.png
+SHA-256-Digest: ioPeJgw8M9xMAdTs7Pt2n7i0g7f5bsJdCPMSHjI4gnM=
+
+Name: icons/large/mongo-transformer-48x32.png
+SHA-256-Digest: 8yLgbL60V9T649Pp30spaPTPjd4WGiCH7ID3GZ5I3wM=
+
+Name: icons/small/mongo-connector-24x16.png
+SHA-256-Digest: /ayuo+QrXsC+vTKKLcXtvImm8NknB7KFoPjEYbrpRMY=
+

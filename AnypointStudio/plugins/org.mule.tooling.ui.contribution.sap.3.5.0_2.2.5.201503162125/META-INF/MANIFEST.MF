@@ -1,0 +1,155 @@
+Manifest-Version: 1.0
+Export-Package: org.mule.tooling.ui.contribution.sap.widgets.meta
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,mule-commons-sap.jar
+Built-By: j2ee-bamboo
+Eclipse-BundleShape: dir
+Bundle-Name: MuleSoft Enterprise Java Connector for SAP
+Created-By: Apache Maven 3.0.4
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources,org.mule.tooling.core;bundle-version="[5.0.0,6.0.0)",org
+ .mule.tooling.ui.modules.core;bundle-version="[5.0.0,6.0.0)",org.mule
+ .tooling.maven;bundle-version="[5.0.0,6.0.0)",org.mule.tooling.metada
+ ta;bundle-version="[5.0.0,6.0.0)",org.mule.tooling.messageflow;bundle
+ -version="[5.0.0,6.0.0)",org.mule.tooling.ui;bundle-version="[5.0.0,6
+ .0.0)",org.mule.tooling.ui.widgets;bundle-version="[5.0.0,6.0.0)",org
+ .apache.commons.io,org.apache.commons.lang,org.eclipse.jdt.core
+Bundle-Vendor: MuleSoft Inc.
+Bundle-Version: 2.2.5.201503162125
+Build-Jdk: 1.7.0_51
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.mule.tooling.ui.contribution.sap.Activator
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.sap.3.5.0;single
+ ton:=true
+Archiver-Version: Plexus Archiver
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/SearchSapObjectActi
+ on.class
+SHA-256-Digest: 7P/0ZW6xgxlw76WoeXzr09QtywLWwBsUpsjUJahCf0U=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$4.class
+SHA-256-Digest: jHS6ksG5STvVv23Ki6vzMnHqducwHCb+Rik/8rONvIU=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/BaseSapAction.class
+SHA-256-Digest: N9oLkSi5uWFX7so1wIXthu4hK+SQcuuppIyI2BWw1zY=
+
+Name: mule-commons-sap.jar
+SHA-256-Digest: vKSMegDHVCAq5Qn7lUyhzGJN5pfdRR2q9xwSSeSF9Sk=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$1.class
+SHA-256-Digest: 0mq5OMnr9tZt/KWi6FKluoPn2ZhFn8pQ6F07qA5Y03k=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog.class
+SHA-256-Digest: c4TVttMiF5IDTknbr75i2KYHAQuazegUlghHIYosFGI=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/TIdStoreValueP
+ ersistence.class
+SHA-256-Digest: AeBr2t3IqwhFAe2jvvpfrBxe0Aq07azV/AzWwxTqX64=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/BaseSapDialog.
+ class
+SHA-256-Digest: vk+Sf+OznmOfY3vY5Q6IgH+PQAnvNj1Ji/XGbSvl0+Q=
+
+Name: mule-transport-sap-2.2.5.jar
+SHA-256-Digest: hmAfRRHzH2yS/unqBtYTHugViiNoevQrvsjToaSCAw8=
+
+Name: build.properties
+SHA-256-Digest: Lvya8GJcm1ovJzwHIXH87UfzedeKL7O1zVKA981mj0A=
+
+Name: org/mule/tooling/ui/contribution/sap/Activator.class
+SHA-256-Digest: duzDo6IAeA8TTO4yGZ3YEkqrIP4MXGi3s+PDo6HN9uE=
+
+Name: icons/small/sap-endpoint-24x16.png
+SHA-256-Digest: riLJ2jMsCkAeag/hTJmalkMA69rtMs9POfA/MuY/JaM=
+
+Name: icons/large/Transformer-48x32.png
+SHA-256-Digest: 3FgQuUfdd6UQ3F1hcjyn+QvIEnAYX8u8Izp3MKsrDvY=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$2.class
+SHA-256-Digest: 3exAMk0//5Mh3Oph5NpDsPnSzBMkyTTLnPaBjkn2TZI=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .sap.3.5.0/pom.xml
+SHA-256-Digest: a6jhOhYjEnPaC5nmoXV++CKJj3PKuVfHxR4nD/iiP+c=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/ExportSapMetadataAc
+ tion.class
+SHA-256-Digest: GkVDMSZ9Bbi2qw5QZz32yqBS80mEMEOe2m04bNYbwSE=
+
+Name: icons/small/Transformer-24x16.png
+SHA-256-Digest: MH8MllgNCCWgPmOK5G624dro7rFlbsArQFM6lS4XAeE=
+
+Name: org/mule/tooling/ui/contribution/sap/metadata/SAPMetadataStrateg
+ y.class
+SHA-256-Digest: PJDi+KwJbF0u9MfFwGpeA7AGNaOTj/YhUI/WZmOtDXU=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/ViewSapObjectD
+ ialog$2.class
+SHA-256-Digest: Tfp85QsWQ3RPmpx05sV8a89pGtJRBYNye+RpjmAs9xs=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$ExportXmlContextMenuAction.class
+SHA-256-Digest: 5jcUO0DismIGnQMV+kMDR4kUsauICIhYOxiqAw5hcBc=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SAPTransaction
+ ValuePersistence.class
+SHA-256-Digest: uDjwqC47X/9Moejmc6cbD5+t0sNJ6k8ieL6/Le1dSrE=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$ExportXsdContextMenuAction.class
+SHA-256-Digest: LgT/2BDX1UryPx38BnhanD5AXlDt8nWT3vKOiJ2pgAA=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/ResultTableLabelPro
+ vider.class
+SHA-256-Digest: 0r43/N6x6+ulKW0Oqx4BnPWUoNrIiZ2kRIkf7U9MuIM=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/ExportXsdAction.cla
+ ss
+SHA-256-Digest: EPadCl1VWlSSWI740wjclbjuG6itWkkAlqhX+x+bSNQ=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .sap.3.5.0/pom.properties
+SHA-256-Digest: QV067JOAAUJ3Hhbykv97rZYjPG4cuUlOh2wGLqCcUXU=
+
+Name: icons/large/sap-endpoint-48x32.png
+SHA-256-Digest: bVp0jdgnM3oH+k9RpSxf3YPWSbwAxdWoZ9vNpsfi7KA=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/ExportXmlTemplateAc
+ tion.class
+SHA-256-Digest: rAA4iTYCgtILElVz1hy1ZEVZmbwkqHwiDz2YCiLvzHE=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/ViewSapObjectD
+ ialog$1.class
+SHA-256-Digest: 3GZkx3KzPE98iq1aupsH0a00qkuUviMckvt+uDSJwu4=
+
+Name: org/mule/tooling/ui/contribution/sap/resolver/SAPEndpointNodeMet
+ aDataResolver.class
+SHA-256-Digest: KMEURXqoRhnGMmDT27uQvAaADf7i9DrUoSf7ZN9d2Hk=
+
+Name: org/mule/tooling/ui/contribution/sap/metadata/ExecuteSapObjectSe
+ archCallback.class
+SHA-256-Digest: uo0soeEMVQWdLWgZFy4+Q/LdDUKAYksglmcWkpTcwd8=
+
+Name: plugin.xml
+SHA-256-Digest: W+V+xm5n/5j/lM4iioZsdyiwgLu1cOmzvfF/DetH2gk=
+
+Name: sap.EE.xml
+SHA-256-Digest: gVl32lgibaBKpg9Q5YYZU9kphWcvM8jy7iYakUGTFQM=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/ViewSapObjectD
+ ialog.class
+SHA-256-Digest: bEyhjCgTWNfMeATmcbtybL061c9k7wHLkibrEqBifFU=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SearchSapObjec
+ tDialog$3.class
+SHA-256-Digest: igJ5nOvyKT9ijQ7QqlL7qo0PKlprEAsqln94d1NmlWI=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/ViewSapObjectAction
+ .class
+SHA-256-Digest: dARzY/AcGAQf2kjHhNqQvf5U761c5d7IENHzW3c6Yy0=
+

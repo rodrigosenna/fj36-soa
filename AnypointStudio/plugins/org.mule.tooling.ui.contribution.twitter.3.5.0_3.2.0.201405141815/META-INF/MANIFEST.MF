@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Twitter
+Created-By: 20.65-b04-462 (Apple Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 3.2.0.201405141815
+Bundle-Activator: org.mule.tooling.ui.contribution.TwitterActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.twitter.3.5.0;si
+ ngleton:=true
+Archiver-Version: Plexus Archiver
+
+Name: mule-module-twitter-3.2.0.jar
+SHA1-Digest: CZugw9mmRkSert6yf1KEwJpEf0c=
+
+Name: icons/large/twitter-connector-48x32.png
+SHA1-Digest: 7o43B9wYbRFCRksP23WZiI8x54Q=
+
+Name: editors.xml
+SHA1-Digest: MbNOwNk6LRseV0B0wdCeueV34Wc=
+
+Name: org/mule/tooling/ui/contribution/TwitterActivator.class
+SHA1-Digest: wzbchKkl0fj76NaLpcYSNDLEVEY=
+
+Name: mule-module-twitter-3.2.0-sources.jar
+SHA1-Digest: eWrvXTnSTG0xstZ0Iul/6o7gE2Q=
+
+Name: plugin.xml
+SHA1-Digest: /hdusF80Q5HDFH/6dpTmVNm533Y=
+
+Name: mule-module-twitter-3.2.0.zip
+SHA1-Digest: z9PeK7siJZsw7RL32Kc9Qprf030=
+
+Name: icons/small/twitter-endpoint-24x16.png
+SHA1-Digest: lEm4tTtg9JryC28Uu3BnXVNqSUg=
+
+Name: icons/large/twitter-endpoint-48x32.png
+SHA1-Digest: DiXQHonXHEUMfd5rL5gM3McIEAE=
+
+Name: icons/small/twitter-connector-24x16.png
+SHA1-Digest: /knYtDu7+ty9bF8dyZTQqEW9mZQ=
+

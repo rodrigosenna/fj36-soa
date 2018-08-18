@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="utf-8">
+
+<title>Login</title>
+
+<link href="./css/example.css" rel="stylesheet">
+
+<script src="./js/jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/login.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+</head>
+
+<body onload="setInitialState()">
+
+	<div class="container" id="loginContainer">
+
+
+		<div id="login" class="login">
+			<p id="success-message"
+				class="alert alert-dismissible alert-message alert-success fade">Test</p>
+			<p id="fail-message"
+				class="alert alert-dismissible alert-message alert-danger fade">Test</p>
+			<div class="panel panel-info" id='myPanel'>
+				<div class="panel-heading" id="myPanelHeading">
+					<h3 class="panel-title" id="myPanelTitle">
+						<div class="muleicon muleicon-logo"></div>
+						Anypoint Platform Sign In
+					</h3>
+				</div>
+				<div class="panel-body">
+					<form class="form-vertical">
+						<fieldset>
+							<div class="form-group" id="userDiv">
+								<label class="control-label" for="user">Username</label> <input
+									type="text" id="user"
+									onblur="validateField(this,this.parentNode.id)" class="form-control" />
+								<a style="font-size:12px"
+									href="https://anypoint.mulesoft.com/accounts/#/retrieve-username"
+									target="_blank"  class="text-muted margin-sm "> Forgot
+									username?</a>
+							</div>
+							<div class="form-group" id="passwordDiv">
+								<label class="control-label" for="password">Password</label> <input
+									type="password" id="password"
+									onblur="validateField(this,this.parentNode.id)" class="form-control">
+								<a href="https://anypoint.mulesoft.com/accounts/#/reset-password"
+									target="_blank" style="font-size:12px" class="text-muted margin-sm"> Reset
+									Password</a> 
+							</div>
+							<div class="form-group">
+								<div class="flex-row flex-justify-center">
+									<button type="button" onclick="closeWindow()"
+										class="btn btn-default cancelButton padding-sm margin-sm">Cancel</button>
+									<button type="button"
+										class="btn btn-primary signInButton margin-sm" id="myButton"
+										onclick="login()" data-loading-text="Logging in...">Sign
+										In</button>
+								</div>
+								<div class="flex-row flex-justify-center text-muted">
+								<a href="https://anypoint.mulesoft.com/accounts/#/signup"
+									target="_blank" style="font-size:12px" class="text-muted margin-sm">Register Now</a> 
+								</div>
+							</div>
+
+
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+
+
+		</div>
+		<!-- end login -->
+
+	</div>
+
+
+
+</body>
+</html>

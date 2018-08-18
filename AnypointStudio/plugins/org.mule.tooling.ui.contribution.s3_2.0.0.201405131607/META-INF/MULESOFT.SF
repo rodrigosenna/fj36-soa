@@ -1,0 +1,26 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: TlWJvHJ0wLVDf0lVW2pGB6L5sNM=
+Created-By: 1.6.0_65 (Apple Inc.)
+SHA1-Digest-Manifest: bwYjqlwxBkLhHri0dhqqORJABn0=
+
+Name: mule-module-s3-2.7.0.zip
+SHA1-Digest: wT6abI5MWC0M0+7QW6xj2Iowex8=
+
+Name: icons/small/s3-connector-24x16.png
+SHA1-Digest: Gr39NEJj7gipjSOgT6WTOwMDHko=
+
+Name: icons/large/s3-connector-48x32.png
+SHA1-Digest: Isq6MqxiaXX0sy3WxDfouy/4YoI=
+
+Name: editors.xml
+SHA1-Digest: rcPTSkE0gVNUE07TDFL6obm7ZZ4=
+
+Name: mule-module-s3-2.7.0.jar
+SHA1-Digest: LyyYnfMmfZ401Cy66sWsI6M9j8I=
+
+Name: plugin.xml
+SHA1-Digest: vGnIdbK08Gmv+Pv7RwGYl40w3ZI=
+
+Name: org/mule/tooling/ui/contribution/S3Activator.class
+SHA1-Digest: i24cN6aJKxTn0v78nd4jwFlBTEE=
+

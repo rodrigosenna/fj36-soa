@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="org.mule.tooling.studoc.commands.category">
+      </category>
+      <command
+            name="Export Documentation Command"
+            categoryId="org.mule.tooling.studoc.commands.category"
+            id="org.mule.tooling.studoc.commands.exportDocumentation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.mule.tooling.studoc.commands.exportDocumentation"
+            class="org.mule.tooling.studoc.handlers.ExportStudioDocumentationHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:file?after=additions">
+           		<command
+	              	commandId="org.mule.tooling.studoc.commands.exportDocumentation"
+	              	mnemonic="S"
+	              	label="Export Studio Documentation..."
+	              	icon="icons/export-icon16.png">
+            	</command>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.mule.tooling.ui.toolbar">
+            <command
+                  commandId="org.mule.tooling.studoc.commands.exportDocumentation"
+                  icon="icons/export-icon16.png"
+                  tooltip="Export Studio Documentation"
+                  id="org.mule.tooling.studoc.toolbars.exportDocumentationToolbar">
+            </command>
+      </menuContribution>
+   </extension>
+   
+</plugin>

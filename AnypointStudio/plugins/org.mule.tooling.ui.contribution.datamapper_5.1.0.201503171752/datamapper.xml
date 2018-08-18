@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" prefix="data-mapper" 
+					url="http://www.mulesoft.org/schema/mule/ee/data-mapper">
+ 	<global localId="config" 
+			category="org.mule.tooling.globalCategory.conponentConfigurations"
+			description="Global DataMapper configuration information."
+			caption="DataMapper"
+			image="icons/large/datamapper-48x32.png" icon="icons/small/datamapper-24x16.png"   >
+	      <attribute-category description="DataMapper configuration properties." caption="Mapping Flow">
+	        <group caption="Generic" id="data-mapperGenericProperties">
+	          <name required="false" description="Give a name to this configuration so it can be later referenced by config-ref." caption="Name" name="name" ></name>	          
+	          	<enum name="transformationGraphPath" caption="Mapping File" description="Mapping file name." editable="true"
+					class="org.mule.tooling.ui.contribution.datamapper.editor.MappingFileCalculator"
+					customValidator="org.mule.tooling.ui.contribution.datamapper.editor.MappingFileValidator"
+					allowsCustom="true">
+				</enum>
+	        </group>
+	      </attribute-category>
+    </global>
+    
+    <transformer extends="http://www.mulesoft.org/schema/mule/ee/data-mapper/abstractData-mapperConnectorGeneric" image="icons/large/datamapper-48x32.png" localId="data-mapper-connector"
+     icon="icons/small/datamapper-24x16.png" description="DataMapper transformer allows Mule to transform a mule message." caption="DataMapper" aliasId="org.mule.tooling.ui.modules.core.pattern.data-mapper">
+      <attribute-category caption="General" description="General properties">
+        <group caption="Reference" id="data-mapperConnectorGeneric">
+          <modeSwitch description="Operation" caption="Operation" name="Operation">         
+            <mode modeLabel="Transform" modeId="http://www.mulesoft.org/schema/mule/ee/data-mapper/transform"></mode>
+          </modeSwitch>
+          
+        </group>
+      </attribute-category>
+      <keywords>
+		<keyword value="transform" weight="1"/>
+		<keyword value="data" weight="1"/>		
+		<keyword value="datamapper" weight="1"/>
+		<keyword value="dm" weight="1"/>
+		<keyword value="mapper" weight="1"/>
+		<keyword value="excel" weight="1"/>
+		<keyword value="csv" weight="1"/>
+		<keyword value="xml" weight="1"/>
+		<keyword value="pojo" weight="1"/>
+		<keyword value="json" weight="1"/>
+		<keyword value="map" weight="1"/>
+		<keyword value="maps" weight="1"/>
+		<keyword value="mapping" weight="1"/>
+		<keyword value="xls" weight="1"/>
+		<keyword value="xlsx" weight="1"/>
+		<keyword value="object" weight="1"/>
+		<keyword value="xslt" weight="1"/>
+		<keyword value="xsd" weight="1"/>
+		<keyword value="bean" weight="1"/>
+		<keyword value="lookup" weight="1"/>
+		<keyword value="dictionary" weight="1"/>
+		<keyword value="db" weight="2"/>
+		<keyword value="oracle" weight="2"/>
+      </keywords>
+    </transformer>
+    
+    <transformer abstract="true" image="icons/large/datamapper-48x32.png" localId="abstractData-mapperConnectorGeneric" icon="icons/small/datamapper-24x16.png" description="Interact with DataMapper." caption="Abstractdata-mapperconnectorgeneric">
+      <attribute-category description="General properties." caption="General">
+        <group caption="Reference" id="abstractData-mapperConnectorGeneric">
+          <globalRef requiredType="http://www.mulesoft.org/schema/mule/ee/data-mapper/config" description="Specify which configuration to use for this invocation." caption="Mapping Flow Ref." name="config-ref"></globalRef>
+        </group>
+      </attribute-category>
+    </transformer>
+    
+    <nested image="icons/large/datamapper-48x32.png" localId="input-arguments" icon="icons/small/datamapper-24x16.png" description="Aditional arguments." caption="Aditional Arguments">
+      <childElement allowMultiple="true" description="Input arguments." caption="Input Arguments" name="http://www.mulesoft.org/schema/mule/ee/data-mapper/input-argument"></childElement>
+    </nested>
+    <nested image="icons/large/datamapper-48x32.png" localId="input-argument" icon="icons/small/datamapper-24x16.png" description="Aditional arguments." caption="Aditional Arguments">
+      <string description="Key." caption="Key" name="key"></string>
+      <text isToElement="true" description="Value." caption="Value" name="value"></text>
+    </nested>
+    
+ 
+    <transformer extends="http://www.mulesoft.org/schema/mule/ee/data-mapper/abstractData-mapperConnectorGeneric" abstract="true" image="icons/large/datamapper-48x32.png" localId="transform" icon="icons/small/datamapper-24x16.png" caption="Transform">
+    
+      <attribute-category caption="General" description="General properties">                 
+        <group caption="General" id="general">        	
+       	 	<string defaultValue="#[payload]" required="false" description="The DataMapper input." caption="Input" name="input-ref"></string>       	 	
+       	 	<string required="false" versions="[3.5.0,9.0.0]" defaultValue="#[payload]" description="The enricher expression used to enrich the current message with the result of the DataMapper processing." caption="Target" name="target"></string>
+       	 	<string required="false" description="The Class name of the expected output" caption="Return Class" name="returnClass"></string>
+       	 	<boolean defaultValue="false" required="false" supportsExpressions="false" description="Use streaming for the mapping." caption="Streaming" name="stream"></boolean>
+       	 	<integer defaultValue="2048" required="false" supportsExpressions="false" description="The size of the cache of the stream." caption="Pipe Size" name="pipeSize"></integer>       	 	    
+            <childElement allowMultiple="false" inplace="true" description="Aditional Arguments." caption="Aditional Arguments" name="http://www.mulesoft.org/schema/mule/ee/data-mapper/input-arguments"></childElement>
+        </group>
+         
+      </attribute-category>
+    </transformer>
+
+</namespace>

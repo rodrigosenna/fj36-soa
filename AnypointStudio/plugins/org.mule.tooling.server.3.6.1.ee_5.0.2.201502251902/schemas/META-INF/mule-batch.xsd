@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.mulesoft.org/schema/mule/batch"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+            targetNamespace="http://www.mulesoft.org/schema/mule/batch"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.springframework.org/schema/beans"
+                schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+                schemaLocation="http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd"/>
+
+
+    <xsd:element name="job" type="jobType" substitutionGroup="mule:abstract-extension">
+        <xsd:annotation>
+            <xsd:documentation>
+                Does something for every item inside the
+                collection.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="jobType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractExtensionType">
+                <xsd:sequence>
+                    <xsd:element name="threading-profile" type="mule:threadingProfileType"
+                                 minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                The default threading profile. Thread pool
+                                defined here will be shared through all steps to process records
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element ref="input" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="process-records" maxOccurs="1"
+                                 minOccurs="1"/>
+                    <xsd:element ref="on-complete" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string"/>
+                <xsd:attribute name="max-failed-records" default="0"
+                               type="mule:substitutableInt"/>
+                <xsd:attribute name="scheduling-strategy" default="ORDERED_SEQUENTIAL">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            In the event of two or more instances of the same job being in executable state, this
+                            scheduling strategy
+                            specifies how the job's thread pool should be shared across those instances.
+                            This is specific to each batch job. If your application has several jobs, each can have a
+                            different strategies
+                            and each job instance will behave according to the strategy configured in its job.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="mule:substitutableName">
+                            <xsd:enumeration value="ORDERED_SEQUENTIAL">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        In this strategy, only one job instance is executed at the time. The executing
+                                        instance is selected by looking at the lowest
+                                        creation time. Other job instances won't be executed until the current one
+                                        doesn't exit the executable state
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="ROUND_ROBIN">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        In this strategy, a round robin algorithm is used to fairly share the thread
+                                        pool resources across all executable job instances.
+                                        This means that all available jobs will be executed at the same time
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="process-records" type="processRecordsType">
+        <xsd:annotation>
+            <xsd:documentation>
+                Does something for every item inside the
+                collection.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="processRecordsType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractMessageProcessorType">
+                <xsd:sequence>
+                    <xsd:element ref="step" maxOccurs="unbounded"
+                                 minOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="step" type="stepType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A processing unit between a batch job
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="stepType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:annotatedType">
+                <xsd:sequence>
+                    <xsd:group ref="mule:messageProcessorOrOutboundEndpoint"
+                               maxOccurs="unbounded"/>
+                    <xsd:element ref="commit" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required"/>
+                <xsd:attribute name="accept-policy" default="NO_FAILURES">
+                    <xsd:simpleType>
+                        <xsd:restriction base="mule:substitutableName">
+                            <xsd:enumeration value="ALL"/>
+                            <xsd:enumeration value="ONLY_FAILURES"/>
+                            <xsd:enumeration value="NO_FAILURES"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+                <!-- DEPRECATED -->
+                <xsd:attribute name="filter-expression" type="xsd:string"/>
+                <xsd:attribute name="accept-expression" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="on-complete" type="onCompleteType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This block contains a message processor chain that
+                receives a message which payload is a BatchJobResult object
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="onCompleteType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractMessageProcessorType">
+                <xsd:sequence>
+                    <xsd:group ref="mule:messageProcessorOrOutboundEndpoint"
+                               maxOccurs="unbounded"/>
+                </xsd:sequence>
+                <xsd:attribute name="expression" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="input" type="inputType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This block contains a chain of message processors
+                that perform some message level pre-proccesing before the batch
+                module splits the payload into records and starts asynchronous
+                processing. It can optionally also contain a message source that
+                will trigger an execution of the batch job upon reception of a
+                message
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+    <xsd:complexType name="inputType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractMessageProcessorType">
+                <xsd:sequence>
+                    <xsd:group ref="mule:messageSourceOrInboundEndpoint"
+                               minOccurs="0" maxOccurs="1"/>
+                    <xsd:group ref="mule:messageProcessorOrOutboundEndpoint"
+                               minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
+    <xsd:element name="commit" type="stepCommitType"
+                 substitutionGroup="mule:abstract-message-processor">
+        <xsd:annotation>
+            <xsd:documentation>
+                Processes the batch of records and commits them to the next step
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="stepCommitType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractMessageProcessorType">
+                <xsd:sequence>
+                    <xsd:group ref="mule:messageProcessorOrOutboundEndpoint"
+                               maxOccurs="unbounded"/>
+                </xsd:sequence>
+                <xsd:attribute name="size" type="mule:substitutableInt" use="optional"/>
+                <xsd:attribute name="streaming" type="mule:substitutableBoolean" use="optional" default="false"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="execute" type="executeType"
+                 substitutionGroup="mule:abstract-message-processor">
+        <xsd:annotation>
+            <xsd:documentation>
+                This message processor is used to manually trigger a batch job
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="executeType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractMessageProcessorType">
+                <xsd:attribute name="name" use="required" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="set-record-variable" type="setRecordVarType"
+                 substitutionGroup="mule:abstract-message-processor">
+        <xsd:annotation>
+            <xsd:documentation>
+                Sets a variable to the current record.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="setRecordVarType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:commonMessagePartTransformerType">
+                <xsd:attribute name="variableName" type="mule:attributeType"
+                               use="required"/>
+                <xsd:attribute name="value" type="mule:attributeType"
+                               use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="remove-record-variable" type="removeRecordVarType"
+                 substitutionGroup="mule:abstract-message-processor">
+        <xsd:annotation>
+            <xsd:documentation>
+                Removes a variable to the current record.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="removeRecordVarType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:commonMessagePartTransformerType">
+                <xsd:attribute name="variableName" type="mule:attributeType"
+                               use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

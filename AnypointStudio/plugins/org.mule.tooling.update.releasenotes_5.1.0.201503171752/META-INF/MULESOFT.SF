@@ -1,0 +1,23 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: rB1KM0nKgswGv/yX1jwMWEtYu3Ou3
+ OIxpXOs8lI47Wk=
+SHA-256-Digest-Manifest: KoKtLXq6tRl9pppZRvV9d1Ih0GghXZZhrJAQL+i6fuw=
+Created-By: 1.7.0_51 (Oracle Corporation)
+
+Name: releasenotes/ds_background.png
+SHA-256-Digest: ejxrPiPOSrB4yBWBRhjTA0P0j7vj0TxF2P8nzibVhS0=
+
+Name: releasenotes/release-notes.xml
+SHA-256-Digest: Os+3MlL51AgyDc5nWRyWZP8KFbpsM7/wfTECLpTvJEg=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.update.releasen
+ otes/pom.properties
+SHA-256-Digest: vzdw6UUss8XNQ688ov6ebWvDyU/vyQ9sAC8D6H9EZTs=
+
+Name: releasenotes/login.png
+SHA-256-Digest: +FY2Yul19Xhos5Z7mMGeGr1wjvrYFEqu4NPKnTzR9Dw=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.update.releasen
+ otes/pom.xml
+SHA-256-Digest: 962yDPtA5IV0kc/0ButfYTGwo6axx7ZjyZdal0lE2iI=
+

@@ -1,0 +1,30 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: wr5ly7HwtslPL4tGOVvGteGSfBsDg
+ yFSRrcvZLWij/8=
+SHA-256-Digest-Manifest: rxZpm7CZ4DCkmIQJHX/286oRIGdgoUB96e4lIjoJbEk=
+Created-By: 1.7.0_71 (Oracle Corporation)
+
+Name: editors.xml
+SHA-256-Digest: fTeRwnsdxqdvxlxmIDIIHWTUqrB9ONsQLwmGgMinFYE=
+
+Name: mule-module-magento-2.2.0.zip
+SHA-256-Digest: /UZfDhK1y0EZ5g9kcU70YCIpV5oKIqwS0Wc9XClAbgA=
+
+Name: plugin.xml
+SHA-256-Digest: upQ5Sha7Dh0cbM6Imz360/c7mt6xX7vmUDeo1Qayg0s=
+
+Name: mule-module-magento-2.2.0.jar
+SHA-256-Digest: fYHX/SZ4LT3rw1qB2i358Eg+Gv3EscKyndKwcFIFEMo=
+
+Name: icons/small/magento-connector-24x16.png
+SHA-256-Digest: Vkd/5uM9vJC+HkXug2AM9YqPesTmt3Y7gD6lFxmz2ME=
+
+Name: org/mule/tooling/ui/contribution/MagentoActivator.class
+SHA-256-Digest: +sbYoDffaZvn34RAakk3ro1GLIcEzDZTEKqZosZOdrM=
+
+Name: mule-module-magento-2.2.0-sources.jar
+SHA-256-Digest: Cei5oxLeLto2sFQjUtpMtbbaYduhyYZ0CtzkjCDe9gY=
+
+Name: icons/large/magento-connector-48x32.png
+SHA-256-Digest: G2h7362y4p9uU+fxQ22ndPBPEQj5ptcQW+7BITwkq/g=
+

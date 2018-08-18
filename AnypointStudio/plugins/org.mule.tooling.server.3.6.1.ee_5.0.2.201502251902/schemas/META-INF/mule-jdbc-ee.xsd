@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    (c) 2003-2010 MuleSoft, Inc. This software is protected under international copyright
+    law. All use of this software is subject to MuleSoft's Master Subscription Agreement
+    (or other master license agreement) separately entered into in writing between you and
+    MuleSoft. If such an agreement is not in place, you may not use the software.
+
+-->
+
+<xsd:schema xmlns="http://www.mulesoft.org/schema/mule/ee/jdbc"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+    xmlns:schemadoc="http://www.mulesoft.org/schema/mule/schemadoc"
+    xmlns:jdbc="http://www.mulesoft.org/schema/mule/jdbc"
+    targetNamespace="http://www.mulesoft.org/schema/mule/ee/jdbc"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+        schemaLocation="http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/jdbc"
+        schemaLocation="http://www.mulesoft.org/schema/mule/jdbc/3.6/mule-jdbc.xsd"/>
+    <xsd:import namespace = "http://www.mulesoft.org/schema/mule/schemadoc"
+        schemaLocation = "http://www.mulesoft.org/schema/mule/schemadoc/3.1/mule-schemadoc.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            The JDBC connector is used to configure the shared behavior for JDBC endpoints that reference the connector. DataSources, Queries, and Polling Intervals are some of the key properties configured on the JDBC connector.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <schemadoc:short-name>jdbc-ee</schemadoc:short-name>
+            <schemadoc:page-title>JDBC-EE Transport</schemadoc:page-title>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <!-- Simply re-define these elements so that they can be used in the EE namespace -->
+    <xsd:element name="connector" type="jdbcEEConnectorType" substitutionGroup="mule:abstract-connector"/>
+    <xsd:element name="inbound-endpoint" type="jdbc:inboundEndpointType" substitutionGroup="mule:abstract-inbound-endpoint"/>
+    <xsd:element name="outbound-endpoint" type="jdbc:outboundEndpointType" substitutionGroup="mule:abstract-outbound-endpoint"/>
+    <xsd:element name="sqlStatementStrategyFactory" type="jdbc:sqlStatementStrategyFactoryType" substitutionGroup="jdbc:abstract-sqlStatementStrategyFactory"/>
+    <xsd:element name="endpoint" type="jdbc:globalEndpointType" substitutionGroup="mule:abstract-global-endpoint"/>
+    <xsd:element name="query" type="jdbc:queryType" substitutionGroup="jdbc:abstract-query"/>
+    <xsd:element name="transaction" type="jdbc:transactionType" substitutionGroup="mule:abstract-transaction"/>
+    <xsd:element name="object-store" type="jdbc:jdbcObjectStoreType" substitutionGroup="mule:abstract-object-store"/>
+    <xsd:element name="oracle-data-source" type="jdbc:oracleDataSourceType" substitutionGroup="mule:abstract-extension"/>
+    <xsd:element name="mysql-data-source" type="jdbc:mysqlDataSourceType" substitutionGroup="mule:abstract-extension"/>
+    <xsd:element name="postgresql-data-source" type="jdbc:postgresqlDataSourceType" substitutionGroup="mule:abstract-extension"/>
+    <xsd:element name="derby-data-source" type="jdbc:derbyDataSourceType" substitutionGroup="mule:abstract-extension"/>
+    <xsd:element name="db2-data-source" type="jdbc:db2DataSourceType" substitutionGroup="mule:abstract-extension"/>
+    <xsd:element name="mssql-data-source" type="jdbc:mssqlDataSourceType" substitutionGroup="mule:abstract-extension"/>
+
+    <xsd:complexType name="jdbcEEConnectorType">
+        <xsd:annotation>
+            <xsd:documentation>
+                The JDBC connector is used to configure the shared behavior for JDBC endpoints that reference the connector. DataSources, Queries, and Polling Intervals are some of the key properties configured on the JDBC connector.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="jdbc:jdbcConnectorType">
+                <xsd:sequence>
+                    <xsd:element name="sqlCommandExecutorFactory" type="sqlCommandExecutorFactoryType" minOccurs="0"
+                                 maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>The factory that creates the command executor for the read SQL statement.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                    <xsd:element name="ackSqlCommandExecutorFactory" type="sqlCommandExecutorFactoryType" minOccurs="0"
+                                 maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>The factory that creates the command executor for the acknowledge SQL statement.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                    <xsd:element name="sqlCommandRetryPolicyFactory" type="sqlCommandRetryPolicyFactoryType"
+                                 minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>The factory that creates the retry policies which decide if a SQL
+                                statements must be re executed in case of errors.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="handleOutputResultSets" type="mule:substitutableBoolean" default="false">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Whether the output java.sql.ResultSet instances should be handled with the ResultSetHandler object. This attribute is useful when executing store procedures which return java.sql.ResultSet instances as output parameters. Default is false.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="maps-to-xml-transformer"
+        type="mapsToXmlWithNullValuesSupportTransformerType"
+        substitutionGroup="mule:abstract-transformer">
+        <xsd:annotation>
+            <xsd:documentation>
+                Converts a {{List}} of {{Map}} objects to XML. The Map List is the same as what you get
+                from using the default ResultSetHandler. The XML schema format is provided in the documentation.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="mapsToXmlWithNullValuesSupportTransformerType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractTransformerType">
+                <xsd:attribute name="includeNullValues"
+                               type="mule:substitutableBoolean"
+                               default="false">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Whether to include fields with null values or not.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="xml-to-maps-transformer"
+        type="mule:abstractTransformerType"
+        substitutionGroup="mule:abstract-transformer">
+        <xsd:annotation>
+            <xsd:documentation>
+                Converts XML to a {{List}} of {{Map}} objects. The Map List is the same as what you get
+                from using the default ResultSetHandler. The XML schema format is provided in the documentation.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="last-record-map-lookup" type="lastRecordMapLookupType"
+        substitutionGroup="mule:abstract-transformer">
+        <xsd:annotation>
+            <xsd:documentation>
+                Looks up the last {{Map}} from a {{List}} of {{Map}} objects, and then looks up a particular
+                entry in that {{Map}}. The key used for lookup is set on the idField property.  Since Maps are equivalent
+                to database records, the purpose of this transformer in a JDBC context is to find the last record ID
+                in a batch.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="lastRecordMapLookupType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractTransformerType">
+                <xsd:attribute name="idField" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Name of the key (database column) that
+                            identifies the ID column. </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="maps-to-csv-transformer" type="abstractCSVTransformerType"
+        substitutionGroup="mule:abstract-transformer">
+            <xsd:annotation>
+                <xsd:documentation>
+                Converts a {{List}} of {{Map}} objects to a CSV file. The Map List is the same as what you get
+                from using the default ResultSetHandler.  </xsd:documentation>
+            </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="csv-to-maps-transformer" type="abstractCSVTransformerType"
+        substitutionGroup="mule:abstract-transformer">
+            <xsd:annotation>
+                <xsd:documentation>
+                Converts a CSV file to a {{List}} of {{Map}} objects. The Map List is the same as what you get
+                from using the default ResultSetHandler.  </xsd:documentation>
+            </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="abstractCSVTransformerType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractTransformerType">
+                <xsd:attribute name="delimiter" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Delimiter used in CSV file. Default is
+                            comma. </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="mappingFile" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Name of the "mapping file" used to describe
+                            the CSV file. See http://flatpack.sourceforge.net for
+                            details. </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="ignoreFirstRecord"
+                    type="mule:substitutableBoolean">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Whether to ignore the first record. If the 
+                            first record is a header, you should ignore it.
+                            </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="qualifier" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            The character used to escape text that
+                            contains the delimiter. </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="resultset-to-maps-transformer"
+        type="mule:abstractTransformerType"
+        substitutionGroup="mule:abstract-transformer">
+        <xsd:annotation>
+            <xsd:documentation>
+                Transforms a {{java.sql.ResultSet}} to a {{List}} of {{Map}} objects just like the
+                default ResultSetHandler. Useful with Oracle stored procedures that return cursors (ResultSets).
+                </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="sqlCommandExecutorFactoryType">
+        <xsd:sequence>
+            <xsd:element ref="mule:abstract-reconnection-strategy" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Retry policy that defines how Mule should retry if a receive/request/dispatch operation fails.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="sqlFactoryBeanAttributes"/>
+    </xsd:complexType>
+
+    <xsd:attributeGroup name="sqlFactoryBeanAttributes">
+        <xsd:attribute name="class" type="mule:substitutableClass" use="optional"/>
+        <xsd:attribute name="ref" use="optional" type="xsd:string"/>
+    </xsd:attributeGroup>
+
+    <xsd:complexType name="sqlCommandRetryPolicyFactoryType">
+        <xsd:attributeGroup ref="sqlFactoryBeanAttributes"/>
+    </xsd:complexType>
+</xsd:schema>
+

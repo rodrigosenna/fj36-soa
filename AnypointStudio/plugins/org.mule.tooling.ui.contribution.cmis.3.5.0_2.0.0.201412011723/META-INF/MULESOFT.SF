@@ -1,0 +1,30 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: tpx0OMuwAFVO0s2NLlrcoytKQXN25
+ dze53HTGRkAkpU=
+SHA-256-Digest-Manifest: HLRinVTTAY5shXPuL+ouyB7D0mkurhsB6Yr+JVsK2hg=
+Created-By: 1.7.0_71 (Oracle Corporation)
+
+Name: mule-module-cmis-2.0.0.jar
+SHA-256-Digest: xrrV2YDsh/MYMdQO8JoqktG7//38ePBs5uYW/y5O1s4=
+
+Name: editors.xml
+SHA-256-Digest: PmYSD8ZpkTtVknMod75koVZpdTb0IB5gU12cmCdDNIs=
+
+Name: org/mule/tooling/ui/contribution/CmisActivator.class
+SHA-256-Digest: vsd2gUL6LeuBUnXZCgIFTnzPnnUL1g67Qfd8ylgjnDo=
+
+Name: icons/small/cmis-connector-24x16.png
+SHA-256-Digest: KPxwJt9Co68Ch4L+wxjCMLXPr081BFn/WtoyiWKczOk=
+
+Name: plugin.xml
+SHA-256-Digest: ICemTrlCvTsXEQC/rqgQgJq74bv2olkf6HP4E3ASwkw=
+
+Name: mule-module-cmis-2.0.0.zip
+SHA-256-Digest: B8aXGjGO0bz3SixUfroxfsNVWar+2KXn/ICp13OgtlY=
+
+Name: mule-module-cmis-2.0.0-sources.jar
+SHA-256-Digest: IebzUaRxEoK9rQLvkAgezWtTXmEvXv+c2R0j+Al5N70=
+
+Name: icons/large/cmis-connector-48x32.png
+SHA-256-Digest: 9M4Gzel4Aask/vTqhTC50fxhZoyJuh7gAheDRNNqrCo=
+

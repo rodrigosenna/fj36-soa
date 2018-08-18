@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: CMIS
+Created-By: 24.71-b01 (Oracle Corporation)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 2.0.0.201412011723
+Bundle-Activator: org.mule.tooling.ui.contribution.CmisActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.cmis.3.5.0;singl
+ eton:=true
+Archiver-Version: Plexus Archiver
+
+Name: mule-module-cmis-2.0.0.jar
+SHA-256-Digest: zC7x8QmFo47DlYo5EpGGVxrkDeptchpGeAr81H9jVCU=
+
+Name: editors.xml
+SHA-256-Digest: vuMbbbMLYIkbDofBmT5o6+NAQsuqOPosqHKU2ozRvY8=
+
+Name: org/mule/tooling/ui/contribution/CmisActivator.class
+SHA-256-Digest: NQ5XN7mOLTLLoHb/ui0RQzqH+ZL4JV97TVeykbC63BA=
+
+Name: icons/small/cmis-connector-24x16.png
+SHA-256-Digest: PuZZTLjeW/fnVdh4GMdmvKDmPFVqSok7hVowhwZXHjw=
+
+Name: plugin.xml
+SHA-256-Digest: 2LPBsS+0JtEGZgM5vaQJxAv710VM0cTg8+qByB2wH7A=
+
+Name: mule-module-cmis-2.0.0.zip
+SHA-256-Digest: LCdxwAWN5Nozc+LEHfl/CsQsGwt6ERh6uGpbbMhuo7I=
+
+Name: mule-module-cmis-2.0.0-sources.jar
+SHA-256-Digest: if0h65VUa/8r3Du/baUXdrPePIoHVya2EKulNjYu2uU=
+
+Name: icons/large/cmis-connector-48x32.png
+SHA-256-Digest: fgodE6lmUOwB73Iu1QtqrCrmIQMaqCDA1g6FF2vgDe0=
+

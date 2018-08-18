@@ -1,0 +1,21 @@
+server:
+  port: 8990
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: admin
+management:
+  security:
+    enabled: true
+
+
+publicador:
+  rabbitmq:
+    topic:
+      aluno: topico-aluno
+    queue:
+      aluno: fila-aluno
+

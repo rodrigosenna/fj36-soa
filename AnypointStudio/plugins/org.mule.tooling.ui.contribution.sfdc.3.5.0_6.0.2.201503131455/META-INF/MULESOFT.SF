@@ -1,0 +1,33 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: EWdf4ty3UzeGyWt8Fvu3d9MSwZYhQ
+ XHQ6ZVDF8ciMbE=
+SHA-256-Digest-Manifest: yzdSmZS6D9H6Cjo0Dfs8dYo9p8DhcDCp9+ZO0Cu8E5k=
+Created-By: 1.7.0_55 (Oracle Corporation)
+
+Name: editors.xml
+SHA-256-Digest: Jxu2Cd8k7SYW+/4X0FhYwlOLz+tCcyshSVXpdjubiws=
+
+Name: mule-module-sfdc-6.0.2.jar
+SHA-256-Digest: 9zFZSgr6q1RizjZCmk6zohn3jClfypaRlzNaBFJIr78=
+
+Name: icons/large/sfdc-connector-48x32.png
+SHA-256-Digest: CPoCQZ3tgbQ2qGWjU0UZbltQqXgdFmvly6uhC4LSwF4=
+
+Name: icons/large/sfdc-endpoint-48x32.png
+SHA-256-Digest: isjBVBTIiLVmMJg4vARzduUZTZLZbd9X+30wX/yq2K4=
+
+Name: plugin.xml
+SHA-256-Digest: PEKbtyxZ7+XrBkzTvOw6QeofBsLOd4mIj/+hkeZykyw=
+
+Name: icons/small/sfdc-connector-24x16.png
+SHA-256-Digest: xnIfDK0sZFOqdiIufD6K8d1zssy3fbk9o3LqCiPIAUY=
+
+Name: icons/small/sfdc-endpoint-24x16.png
+SHA-256-Digest: QEsr9JrbEPNzQp3mYh127X/cDOFQhIZ+cSyLMLc1CVc=
+
+Name: org/mule/tooling/ui/contribution/SfdcActivator.class
+SHA-256-Digest: JzW+IOKneh6Aap6B2q3GUgTCGHIjZuIzoyS9OQiRXPw=
+
+Name: mule-module-sfdc-6.0.2.zip
+SHA-256-Digest: tlurpxs+yRGqleb1q0WWqfG6d5PQfadqMbYB022Geoo=
+

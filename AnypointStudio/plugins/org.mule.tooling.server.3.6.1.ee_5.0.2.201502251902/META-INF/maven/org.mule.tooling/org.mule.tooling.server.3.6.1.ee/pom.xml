@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.mule.tooling</groupId>
+		<artifactId>org.mule.tooling.timestamp.parent</artifactId>
+		<version>5.0.2-SNAPSHOT</version>
+		<relativePath>../org.mule.tooling.timestamp.parent/pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<mule.base.version.number>3.6</mule.base.version.number>
+		<resourcesdir>templates</resourcesdir>
+		<muleesb.studio.version>${mule.version.number}</muleesb.studio.version>
+		<mule.version.number>3.6.1</mule.version.number>
+	</properties>
+
+	<artifactId>org.mule.tooling.server.3.6.1.ee</artifactId>
+	<packaging>eclipse-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>prepare-files-to-be-replaced</id>
+						<phase>validate</phase>
+						<configuration>
+							<target>
+								<copy
+									file="${resourcesdir}/plugin.xml.template"
+									tofile="${basedir}/plugin.xml"
+									overwrite="true" />
+								<copy
+									file="${resourcesdir}/about.ini.template"
+									tofile="${basedir}/about.ini"
+									overwrite="true" />
+								<copy
+									file="${resourcesdir}/pomTooling.xml.template"
+									tofile="${basedir}/pomTooling.xml"
+									overwrite="true" />
+								<replace file="${basedir}/plugin.xml">
+									<replacefilter
+										token="@muleServerLabel@"
+										value="${mule.server.label}" />
+									<replacefilter
+										token="@muleVersion@"
+										value="${muleesb.studio.version}" />
+									<replacefilter
+										token="@muleVersionNumber@"
+										value="${mule.version.number}" />
+									<replacefilter
+										token="@muleVersionSuffix@"
+										value="${mule.version.suffix}" />
+								</replace>
+								<replace file="${basedir}/about.ini">
+									<replacefilter
+										token="@muleServerLabel@"
+										value="${mule.server.label}" />
+									<replacefilter
+										token="@muleVersion@"
+										value="${muleesb.studio.version}" />
+								</replace>
+								<replace file="${basedir}/pomTooling.xml">
+									<replacefilter
+										token="@muleVersion@"
+										value="${muleesb.studio.version}" />
+								</replace>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>copy-tooling-jar</id>
+						<phase>initialize</phase>
+						<configuration>
+							<target>
+								<copy
+									file="${project.build.directory}/tooling-support-${muleesb.studio.version}.jar"
+									todir="${basedir}/mule/tooling" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>unzip-mule-plugins</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<taskdef
+									resource="net/sf/antcontrib/antcontrib.properties"
+									classpathref="maven.plugin.classpath" />
+								<ant antfile="${basedir}/build.xml" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+							<exclusion>
+								<groupId>ant</groupId>
+								<artifactId>ant</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-nodeps</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-mule-distro</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<stripVersion>true</stripVersion>
+							<outputDirectory>mule</outputDirectory>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.mulesoft.muleesb.distributions</groupId>
+									<artifactId>mule-ee-distribution-studio</artifactId>
+									<version>${muleesb.studio.version}</version>
+									<type>tar.gz</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+					<!--  execution>
+						<id>copy-studio-mgmnt-plugin</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<stripVersion>true</stripVersion>
+							<outputDirectory>mule/plugins</outputDirectory>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.mulesoft.agent</groupId>
+									<artifactId>mule-agent-plugin</artifactId>
+									<version>${mule.base.version.number}-1.0.0-SNAPSHOT</version>
+									<type>zip</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution-->
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-invoker-plugin</artifactId>
+				<version>1.7</version>
+				<configuration>
+				</configuration>
+				<executions>
+					<execution>
+						<id>execute-pomTooling</id>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<phase>validate</phase>
+						<configuration>
+							<pom>pomTooling.xml</pom>
+							<goals>
+								<goal>verify</goal>
+							</goals>
+							<streamLogs>true</streamLogs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.mule.tooling</groupId>
+				<artifactId>schema-extractor-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>extract-schemas</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>${tycho.groupid}</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/ApplicationDeployer.java</exclude>
+						<exclude>com/**/*.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.2</version>
+				<executions>
+					<execution>
+						<id>replace-versions-on-manifest-dependencies</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+						<configuration>
+							<file>${basedir}/META-INF/MANIFEST.MF</file>
+							<regex>true</regex>
+							<replacements>
+								<replacement>
+									<token>Bundle-Name: (.*)</token>
+									<value>Bundle-Name: ${mule.server.label}</value>
+								</replacement>
+								<replacement>
+									<token>Bundle-SymbolicName:	org.mule.tooling.server..*.ee;singleton:=true</token>
+									<value>Bundle-SymbolicName:	org.mule.tooling.server.${mule.version.number}.ee;singleton:=true</value>
+								</replacement>
+								<replacement>
+									<token> mule/lib/mule/mule-core-.*.jar,</token>
+									<value> mule/lib/mule/mule-core-${muleesb.studio.version}.jar,</value>
+								</replacement>
+								<replacement>
+									<token> mule/lib/mule/mule-module-launcher-.*.jar</token>
+									<value> mule/lib/mule/mule-module-launcher-${muleesb.studio.version}.jar</value>
+								</replacement>
+							</replacements>
+						</configuration>
+					</execution>
+					<execution>
+						<id>replace-versions-on-dotclasspath</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+						<configuration>
+							<file>${basedir}/.classpath</file>
+							<regex>true</regex>
+							<replacements>
+								<replacement>
+									<token>"mule/lib/mule/mule-core-.*.jar"</token>
+									<value>"mule/lib/mule/mule-core-${muleesb.studio.version}.jar"</value>
+								</replacement>
+								<replacement>
+									<token>"mule/lib/mule/mule-module-launcher-.*.jar"</token>
+									<value>"mule/lib/mule/mule-module-launcher-${muleesb.studio.version}.jar"</value>
+								</replacement>
+							</replacements>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>auto-clean</id>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>mule/</directory>
+							<followSymlinks>false</followSymlinks>
+							<useDefaultExcludes>true</useDefaultExcludes>
+						</fileset>
+						<fileset>
+							<directory>schemas/</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

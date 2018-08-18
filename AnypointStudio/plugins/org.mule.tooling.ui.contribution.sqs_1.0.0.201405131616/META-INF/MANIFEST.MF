@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Amazon SQS
+Created-By: 20.65-b04-462 (Apple Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 1.0.0.201405131616
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.mule.tooling.ui.contribution.SqsActivator
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.sqs;singleton:=t
+ rue
+Archiver-Version: Plexus Archiver
+
+Name: icons/small/sqs-connector-24x16.png
+SHA1-Digest: i1hmsygA5FSBtWhrwYRK5O/2As4=
+
+Name: editors.xml
+SHA1-Digest: EkWPGhEzCL2fCszXju8BiUsbWVo=
+
+Name: icons/large/sqs-endpoint-48x32.png
+SHA1-Digest: 9S40o7v32KEDhj4c9cSaN79HToU=
+
+Name: icons/large/sqs-connector-48x32.png
+SHA1-Digest: 9S40o7v32KEDhj4c9cSaN79HToU=
+
+Name: icons/small/sqs-endpoint-24x16.png
+SHA1-Digest: i1hmsygA5FSBtWhrwYRK5O/2As4=
+
+Name: plugin.xml
+SHA1-Digest: ZefglaPIxcCcMXF0IJKPOt0b0Rk=
+
+Name: mule-module-sqs-2.4.4.jar
+SHA1-Digest: Zq7aB/wLTnrI+pwdbNn6xRWPnBc=
+
+Name: mule-module-sqs-2.4.4.zip
+SHA1-Digest: Mm6sNRTSHlsQyojdRvKILcGEAWI=
+
+Name: org/mule/tooling/ui/contribution/SqsActivator.class
+SHA1-Digest: 87Z4HvebhvGE79zmz6PGlvCxG/A=
+

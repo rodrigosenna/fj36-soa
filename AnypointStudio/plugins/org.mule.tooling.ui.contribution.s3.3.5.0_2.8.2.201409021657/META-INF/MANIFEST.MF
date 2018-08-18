@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Amazon S3
+Created-By: 20.65-b04-462 (Apple Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 2.8.2.201409021657
+Bundle-Activator: org.mule.tooling.ui.contribution.S3Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.s3.3.5.0;singlet
+ on:=true
+Archiver-Version: Plexus Archiver
+
+Name: icons/large/s3-connector-48x32.png
+SHA1-Digest: STcZsCjqn/4Kqce/xCWx3IHqggI=
+
+Name: icons/small/s3-connector-24x16.png
+SHA1-Digest: RN3yI1WHds86PzoQORL/+WFSqSo=
+
+Name: editors.xml
+SHA1-Digest: zLB1OYrUejsYniAsN+UgcbgztcI=
+
+Name: mule-module-s3-2.8.2-sources.jar
+SHA1-Digest: cxAbypDTVJNperrSVnUgYum7ifo=
+
+Name: plugin.xml
+SHA1-Digest: NffV4uZGgA6JwsKt+qLC6ZTV8hM=
+
+Name: mule-module-s3-2.8.2.jar
+SHA1-Digest: zIi86X4dtyQyPOBw4x4EKpxTZyI=
+
+Name: org/mule/tooling/ui/contribution/S3Activator.class
+SHA1-Digest: jzpJ8F3n//8h07wIG/dy4QUNvHM=
+
+Name: mule-module-s3-2.8.2.zip
+SHA1-Digest: /NW4Hus9MaXS/LoU7S1/DfnfVXk=
+

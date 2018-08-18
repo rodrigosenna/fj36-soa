@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    (c) 2003-2010 MuleSoft, Inc. This software is protected under international copyright
+    law. All use of this software is subject to MuleSoft's Master Subscription Agreement
+    (or other master license agreement) separately entered into in writing between you and
+    MuleSoft. If such an agreement is not in place, you may not use the software.
+
+-->
+
+<xsd:schema xmlns="http://www.mulesoft.org/schema/mule/throttling"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+            targetNamespace="http://www.mulesoft.org/schema/mule/throttling"
+            attributeFormDefault="unqualified"
+            elementFormDefault="qualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+                schemaLocation="http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd"/>
+    <xsd:import namespace="http://www.springframework.org/schema/beans"
+                schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
+    <xsd:import namespace="http://www.springframework.org/schema/context"
+                schemaLocation="http://www.springframework.org/schema/context/spring-context-3.1.xsd"/>
+
+
+    <!-- Policy Lookup -->
+    <xsd:element name="throttling-policy-lookup" substitutionGroup="mule:abstract-extension">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="mule:abstractExtensionType">
+                    <xsd:attribute name="ref" type="xsd:string" use="required">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                The name of the throttling policy lookup bean
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

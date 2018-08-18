@@ -1,0 +1,32 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: cpl65pEH7dOA/OeWukxKLkHt/ow=
+Created-By: 1.6.0_65 (Apple Inc.)
+SHA1-Digest-Manifest: HVgT3pDngZ7IFRHImp01qAzyjr4=
+
+Name: mule-module-mongo-3.5.0.zip
+SHA1-Digest: AgT2ozFaiHdMDXPrwt+PXesmiq0=
+
+Name: editors.xml
+SHA1-Digest: GU9nS29XGaWhCeQmc38HpvuyXUc=
+
+Name: org/mule/tooling/ui/contribution/MongoActivator.class
+SHA1-Digest: 0vcqLwqMZIQBLAnCY0hjWsVfQ+M=
+
+Name: icons/small/mongo-transformer-24x16.png
+SHA1-Digest: 3/fIYdJDS6WmiZXP0NP7TZGSy58=
+
+Name: plugin.xml
+SHA1-Digest: /CbWzeLdfix8G/UI9PC4v4oX6nY=
+
+Name: icons/large/mongo-connector-48x32.png
+SHA1-Digest: iWd65AdGGJk9S5jSqNwwLWd34K4=
+
+Name: icons/large/mongo-transformer-48x32.png
+SHA1-Digest: Ys6ScN3D3oDLWgLcX8EI0hU9Zh8=
+
+Name: icons/small/mongo-connector-24x16.png
+SHA1-Digest: B9l62K1Th8snnIoWk/VMWcHne+Q=
+
+Name: mule-module-mongo-3.5.0.jar
+SHA1-Digest: I66eDyqbE6UJa2mU6IA9X6oabOk=
+

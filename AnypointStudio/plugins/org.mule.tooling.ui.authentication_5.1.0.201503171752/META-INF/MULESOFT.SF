@@ -1,0 +1,455 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: NR5qFpDBqn9uecgfYDck61InQzgLM
+ VgPD67Da9QPb54=
+SHA-256-Digest-Manifest: a9m98q/jAs1+nvwXMNdhukijrPNxImN7RIxU3ax5NmI=
+Created-By: 1.7.0_51 (Oracle Corporation)
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.authenticati
+ on/pom.properties
+SHA-256-Digest: hbuyS93krG69XBT1xcFzfov0PSjmSN+a9z7ul1NWLn4=
+
+Name: resources/icons/006_head.svg
+SHA-256-Digest: OU92rXDvWCyaOqSJc1SUliwvfYII9xbrrZfF2Fppyxw=
+
+Name: bootstrap/fonts/glyphicons-halflings-regular.woff2
+SHA-256-Digest: +LJ/UzxXM6fh3dhMfVjkvpA8L5emnpakst+e4+ArnnI=
+
+Name: org/mule/tooling/ui/authentication/widgets/CredentialsViewer$Aut
+ hUserContentProvider.class
+SHA-256-Digest: J/ISuHfIA9sO6IlvjvZ7hFGGwAZzqFCFjxaQSNP8pSg=
+
+Name: resources/fonts/OpenSans-Regular-webfont.eot
+SHA-256-Digest: 0ZOVghNiduoogebqEiv4U6/QVKhs9fL6L8czYrALI+A=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLogin$WindowClose.
+ class
+SHA-256-Digest: 7/YTVarmUXex4oKVQAyjWLP+N7+zRpE922gyNpkCGNU=
+
+Name: fonts/OpenSans-Regular-webfont.ttf
+SHA-256-Digest: D2dn8uiQba4mmwvbjPPMKsDU+KMF4ksdKRYRJOtALKE=
+
+Name: org/mule/tooling/ui/authentication/LoginManager$3.class
+SHA-256-Digest: N/D+FwZcGD5WxXkTKz53vjfUV3Kr0WTFuJAoqfo3H5w=
+
+Name: icons/003_home.svg
+SHA-256-Digest: F71cVfCfmUDR2O68hhUb+1CwN71dTI1bQLqNymM/y+8=
+
+Name: org/mule/tooling/ui/authentication/utils/IAuthenticationConstant
+ s.class
+SHA-256-Digest: dRziaYi0WQwqrQKMMwrUAKLWo6cmyC/4RET5aMTahEM=
+
+Name: resources/fonts/OpenSans-Bold-webfont.eot
+SHA-256-Digest: LwefZt7Tk1EtUdwnBG8Yij+R6BcnJ6YXuowvHq95yoE=
+
+Name: resources/fonts/muleicons.ttf
+SHA-256-Digest: +Dcymw1wpTSwCOYVNsO/RssNcZb5uc77o57F7+87qss=
+
+Name: resources/fonts/OpenSans-Light-webfont.ttf
+SHA-256-Digest: uDIqIlLnk+X+JtYCx9/jhZwGrO8hCm6YmvKnMthmvX8=
+
+Name: resources/fonts/OpenSans-Light-webfont.woff
+SHA-256-Digest: W5/sPiw2TEQtknAnS5iblsaU58RkJc5EGUz6qWEdKl0=
+
+Name: bootstrap/fonts/glyphicons-halflings-regular.ttf
+SHA-256-Digest: NH4L/QeUEh4HZT9v8SstNP5BiA3d/rWssN8dRFxRhcQ=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLoginWithInvalidTo
+ ken$InvalidTokenState.class
+SHA-256-Digest: /cTZEuZc8itFnN8gU4ce1DqnPZ+T0urXao8ldPvDXCs=
+
+Name: org/mule/tooling/ui/authentication/LoginManager$2.class
+SHA-256-Digest: lqQ+gV14BU6AurLInVYMT5Rx3lX+XyDTBlpgb2/VP74=
+
+Name: resources/index.html
+SHA-256-Digest: mhwZJ+x+5AJ6zwC3gTQltaJGM/LPGxDprclRzshrID8=
+
+Name: resources/js/jquery.min.js
+SHA-256-Digest: gdTtD/yegP4Ko5W0IlKsWI9KQuYA8bn8rOUzajFZRMk=
+
+Name: fonts/OpenSans-Regular-webfont.eot
+SHA-256-Digest: lBJTGqDDWiXlS0w6xVpCORWfuYFOq4bVS4pUlpVcOv0=
+
+Name: resources/fonts/OpenSans-Semibold-webfont.ttf
+SHA-256-Digest: QTkSrbAdI3JvQA+scybkQHZZCavIrqsWLBkWJ99p6WI=
+
+Name: org/mule/tooling/ui/authentication/preferences/AuthenticationPre
+ ferencePage.class
+SHA-256-Digest: p6JdRcYAfk+rjCNQoJaMCsCxSMcFQrWpWDp6WOVuY20=
+
+Name: fonts/OpenSans-Light-webfont.woff
+SHA-256-Digest: X3ePo4XnNw8nR5D28LloN8m7KIGLq4XKxHH7mzwqV9U=
+
+Name: resources/fonts/OpenSans-Regular-webfont.svg
+SHA-256-Digest: MOhsklEfFhjbPIQIv1wg3R2C2BKeM0Hvi2iFI0GIj4A=
+
+Name: index.html
+SHA-256-Digest: Lxt77FUxEcpkpzy4IJU3hlZZ5xpl5IWeqnA8IeM57Cw=
+
+Name: fonts/OpenSans-Bold-webfont.svg
+SHA-256-Digest: RVXeHT9/1qL+3y9JTtosnf4JjQ4fAzcCeIq+9vlAzko=
+
+Name: resources/bootstrap/css/bootstrap-theme.css.map
+SHA-256-Digest: QWZ4Pgtb74d/6OdTsaWkKJheq8nHOHfM2V/y9DTwJcw=
+
+Name: bootstrap/css/bootstrap-theme.min.css
+SHA-256-Digest: hDiJYEZDTaRbc2eiXXdjZ8UT54YW2iNc9mIPON2OagQ=
+
+Name: fonts/OpenSans-Semibold-webfont.eot
+SHA-256-Digest: WfkYM+kd/0Dui2Rd+KjcMpF1e6lsqw+01oK9NfmP8G0=
+
+Name: fonts/OpenSans-Semibold-webfont.ttf
+SHA-256-Digest: iuzv6sPt1sJlaWcp2KNhfECGWvpIe6TNnnN6O3stfBc=
+
+Name: icons/006_head.svg
+SHA-256-Digest: lPjycyzmBnsuijWe4woFs3MW+yS6nfMc/JvrBopfpCI=
+
+Name: org/mule/tooling/ui/authentication/preferences/AuthenticationPre
+ ferencePage$1.class
+SHA-256-Digest: csKlKLER6oyThzeUN/m9nGGsUbTMbUcu+xzGdgpl00A=
+
+Name: resources/bootstrap/css/bootstrap.min.css
+SHA-256-Digest: tWusnTs1sjgyruC867rZ4hUbKpcM/4/d3X2Bkl7+YZ0=
+
+Name: resources/bootstrap/css/bootstrap-theme.css
+SHA-256-Digest: BMcPepApr1VX7rIjvm6o8cWJ2YwLcWnqEjRV5RLHros=
+
+Name: fonts/OpenSans-Bold-webfont.eot
+SHA-256-Digest: Bz/nWtWBN0sbj2xBPFIp+H9dDXR2DCoT4rzJmIguiC4=
+
+Name: license.txt
+SHA-256-Digest: tTxiOlIZ85gLCTlkgyHpes+YiBjCRLDD/+goHhzk5Ts=
+
+Name: fonts/muleicons.woff
+SHA-256-Digest: 1nxZWrp7UQCHgkO8MxsKLZ7OFc5NH0FRG98TjljftFA=
+
+Name: resources/bootstrap/fonts/glyphicons-halflings-regular.eot
+SHA-256-Digest: oG1Hsn1DsyyPYxfJT7GcYi8QeMxo/Af4aJiZwrzw+Yo=
+
+Name: resources/icons/002_breadcrumb-separator.svg
+SHA-256-Digest: Trsa3uWobTCCDbRH1vcEYNWMZldw7wnTe+3a4HhL91I=
+
+Name: bootstrap/fonts/glyphicons-halflings-regular.eot
+SHA-256-Digest: NbgdrZlG5KrajursuNPX23hxb7xHTp1FewWjAAjmcdI=
+
+Name: resources/icons/003_home.svg
+SHA-256-Digest: DKSR8nYktYlomtXjDifGEmuW/2oFXwSaUHb+fb6M04o=
+
+Name: bootstrap/fonts/glyphicons-halflings-regular.svg
+SHA-256-Digest: GnC6xp0HCucbO18FXat5Df1AlHnTNXMMD6a4LTvm4bA=
+
+Name: fonts/OpenSans-Light-webfont.ttf
+SHA-256-Digest: HxBGofBZe8qc9RSpwVEUIIHD9mwIgMQhSTnamUWHj0s=
+
+Name: fonts/OpenSans-Regular-webfont.svg
+SHA-256-Digest: xBVEZTvhDN5yr3OHja3BiyPMO5ia1j35iaADq/8VqPg=
+
+Name: resources/fonts/SourceCodePro-Regular.svg
+SHA-256-Digest: iOH+wRpq2lgsaqVL9dThYbXLX2dAqngJVNFqgVLG5Bo=
+
+Name: fonts/SourceCodePro-Regular.woff
+SHA-256-Digest: C9SWF7G2UUKU8yhpAPtcjrdKkq4dRJ1kY/a7L3bQF7g=
+
+Name: resources/fonts/muleicons.woff
+SHA-256-Digest: KoJV8zNRrIDPSjVB8NlWCdtHIFUmlIiCag+g7RzkkGc=
+
+Name: resources/bootstrap/css/bootstrap-theme.min.css
+SHA-256-Digest: FaLbXfgiDPy6FPMdKtC02P+mEf63TpHl6b+ZvMGPJ+0=
+
+Name: resources/css/example.css
+SHA-256-Digest: 4ppsXuaBlVEdp9NaAncmpj/WaETFJ0giPEzeiXfmGMg=
+
+Name: resources/bootstrap/fonts/glyphicons-halflings-regular.ttf
+SHA-256-Digest: 2IlqasQNBf8fKe/2dAmxZBUyMnU1s1jRkfCMqb4uu5U=
+
+Name: org/mule/tooling/ui/authentication/PlatformAuthenticator.class
+SHA-256-Digest: BVV23lXJpbwlkG9GTrv/0jSs1H+SWprhSyskHGF9Guc=
+
+Name: org/mule/tooling/ui/authentication/widgets/CredentialsViewer$Aut
+ hUserLabelProvider.class
+SHA-256-Digest: M7/pSKxqsBADhRxn87K17dDPWekh6+Y/lfP6g6pf3Ss=
+
+Name: resources/fonts/OpenSans-Light-webfont.eot
+SHA-256-Digest: 9UQzUdQhxKU5ZTQJBBpG+SJmFpoqsl0Yb08dl/IQKJM=
+
+Name: resources/fonts/Ubuntu-Light-webfont.woff
+SHA-256-Digest: r2Do3w80HM5pCRh3YWHBLbumabBx7FUhHDFUcGFgoU0=
+
+Name: fonts/muleicons.eot
+SHA-256-Digest: +EXMyrHqDMMCK0KYNPd5u/wWo8xUu7LDnG8ZeQcc060=
+
+Name: resources/bootstrap/css/bootstrap.css
+SHA-256-Digest: 1So8XlMfRejIPy/+zEHn2vqIoJ4gheCQ+hR6odKKhCw=
+
+Name: resources/bootstrap/fonts/glyphicons-halflings-regular.woff
+SHA-256-Digest: 1hOUKfgMiIVZQFymXSD7j3EN7bplOagFCUDeHn7Crxw=
+
+Name: resources/icons/001_angle-right.svg
+SHA-256-Digest: sjN+PqGUvXjguzWnqkppeDW8micLSeh7g29wm8cl2Nc=
+
+Name: resources/bootstrap/css/bootstrap.css.map
+SHA-256-Digest: /wN8JCkLc+QEWPyXLtEBi01HIg6XjmnK1ARbo2g2JWE=
+
+Name: fonts/SourceCodePro-Regular.ttf
+SHA-256-Digest: v5YyiUuWDSRoIzrzdVur0vTRg86jVp6BX7uI8v68QDM=
+
+Name: bootstrap/css/bootstrap.min.css
+SHA-256-Digest: INMEF/5qdoLSgshVxoMZ0Nbrml4maZzMbpSxpvUi6K0=
+
+Name: org/mule/tooling/ui/authentication/preferences/AuthenticationPre
+ ferencePage$2.class
+SHA-256-Digest: aYirp2OBO1QAV45TM69U1FCW1nI3nSaXv2eLdbAfepI=
+
+Name: fonts/OpenSans-Semibold-webfont.woff
+SHA-256-Digest: j9CCTN1f8WfeIRTCSoj4h7Viu5l/gjXWPAR6X8OzHQw=
+
+Name: fonts/Ubuntu-Light-webfont.woff
+SHA-256-Digest: iZYnyAgBZQ3ZwRbajHB//8QE7lcLS+pSMl5aIL4nH7o=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLogin$BlankState.c
+ lass
+SHA-256-Digest: Xs/Suzc8rJwl+FBJe9QI0HVlv8NiefkmOUpvKqcsczU=
+
+Name: icons/icons.sketch
+SHA-256-Digest: pBKW0J9+Y2tIlja4Dy359J/jTY8RrfmN/4GapxG2vQo=
+
+Name: plugin.xml
+SHA-256-Digest: yzvvQgtpvoPNOrqdwaGHTGY0ZXT+mMCPOeyB9vqKRzQ=
+
+Name: org/mule/tooling/ui/authentication/widgets/SWTFactory.class
+SHA-256-Digest: PRM9PAtB/GzFxCOBYecfKTnFB5G42eDq8s+by9oVvMA=
+
+Name: resources/fonts/OpenSans-Light-webfont.svg
+SHA-256-Digest: nkZwIcqVag/blLB1FvH8U1GHsFubrtGLe6Km6jcWMLc=
+
+Name: resources/icons/icons.sketch
+SHA-256-Digest: hI5Q70Jhr6HBW6FsAHquUDpUqBLHEpp4aLCJgU33BdA=
+
+Name: resources/icons/muleicons.template.css
+SHA-256-Digest: LfWL5LfWex4TkQb81YeT/QmPjYkCNlnXOIwrYxevNgM=
+
+Name: fonts/SourceCodePro-Regular.eot
+SHA-256-Digest: pNalmKGo3O1nue7sTg9Bd3+qWLZxYy/q/pb7+fYCEIo=
+
+Name: icons/000_angle-left.svg
+SHA-256-Digest: N533xMtu2qXCgKMow4ByMN5Rx8FhfPTxI4i4xRl4GOw=
+
+Name: fonts/OpenSans-Light-webfont.eot
+SHA-256-Digest: B/QFeByTMf4swHG9ynEj6HghGoHifSaJaZbr7wKkNOI=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLogin.class
+SHA-256-Digest: BqAfjpIyeBTvL+2cYWsinUnZCNsuEUL/iTi79sXU7tI=
+
+Name: org/mule/tooling/ui/authentication/LoginManager.class
+SHA-256-Digest: XhUxiS6gaOxcI4kZsLiVAc/nNGNyx/uOulk8YUmwdco=
+
+Name: org/mule/tooling/ui/authentication/preferences/AuthenticationPre
+ ferencePage$3.class
+SHA-256-Digest: dohVQXtm1NBYwDeSscJg8F4nAvr9fjcnQ1weSVDHk6A=
+
+Name: resources/fonts/OpenSans-Regular-webfont.woff
+SHA-256-Digest: t5YrN+mz4+ZSu+Um8k96RNrrfzJYTwqgPHD2g421mgk=
+
+Name: fonts/Ubuntu-Light-webfont.ttf
+SHA-256-Digest: 01KZ/Oo9vBYUwoyKulaD3+ovSJ4jpGBGe/FPgC6V6pQ=
+
+Name: resources/icons/004_logo.svg
+SHA-256-Digest: xlVbLXwKx+38L3qQa/117XQUQSuhci52SgSyaburgTU=
+
+Name: bootstrap/fonts/glyphicons-halflings-regular.woff
+SHA-256-Digest: whyVblyD3dM53exsCnRtecTWKNfIADG5kZUKEBeY8JU=
+
+Name: bootstrap/js/bootstrap.js
+SHA-256-Digest: IwIfEul0mDbMUJHuTrR8BTbs8g08YzHlteAqETmX5LM=
+
+Name: fonts/muleicons.ttf
+SHA-256-Digest: 8I1tRGn04cdRuZN+HGcbxARtEi9XWFUIEnnlYVOtv14=
+
+Name: bootstrap/css/bootstrap.css.map
+SHA-256-Digest: 2iiJTM8ERGkyysTdhRlcyYXLRG7C2/vldjwCLvYIlfA=
+
+Name: org/mule/tooling/ui/authentication/preferences/AuthenticationPre
+ ferencePage$4.class
+SHA-256-Digest: pijFDgLhTgYstNASsBBz6NZK1B39T3MvOXJ4N8ufLOc=
+
+Name: css/example.css
+SHA-256-Digest: u2/w7Hfxyr/OFA5yW8NnBbozuTWo7oCRAcV4lWCroRs=
+
+Name: org/mule/tooling/ui/authentication/LoginManager$1.class
+SHA-256-Digest: lB74GHtQY04gX8DPDRrN4L+e2xAsIjp2fARR+AGYOY4=
+
+Name: resources/fonts/SourceCodePro-Regular.eot
+SHA-256-Digest: eaA1hmqHA1qdbYpKpU34xnjOlBe9bsxJ3nHgf+QTTIY=
+
+Name: resources/fonts/OpenSans-Bold-webfont.woff
+SHA-256-Digest: uoNpAkWVHC71kXO9r5tDjJtMZtQJ/3sNFztr1SQa4sw=
+
+Name: resources/fonts/Ubuntu-Light-webfont.ttf
+SHA-256-Digest: 34B/Qz2iR0jFcGfE0dtb1BqTze5XoIXbDXYH/KDrfuY=
+
+Name: fonts/OpenSans-Bold-webfont.woff
+SHA-256-Digest: PS9L6eXcY3Gn70NVvRZNsdc12yAryk/MJZJg3YZn2uI=
+
+Name: org/mule/tooling/ui/authentication/AuthUser.class
+SHA-256-Digest: U1b2pWcD6WAIctLf5idHarxYPF1y2MipPklk5us8+xo=
+
+Name: bootstrap/css/bootstrap-theme.css
+SHA-256-Digest: NLwHpclydN0DBIEg00kbwz48CR+EWQ+6MzkViFSj0oM=
+
+Name: org/mule/tooling/ui/authentication/preferences/PlatformUrlPrefer
+ enceInitializer.class
+SHA-256-Digest: lAQbotXVKHlEkUUq1wC1k/hZRH6HkTeMQwr/jMBU+SA=
+
+Name: org/mule/tooling/ui/authentication/widgets/CredentialsViewer$1.c
+ lass
+SHA-256-Digest: P9/ykpFSoKJn0oOQZCbEGUsJpLfMtwHk0CvxYkdnWHs=
+
+Name: fonts/SourceCodePro-Regular.svg
+SHA-256-Digest: 1S1GDWxNH/bffEc2/AXjRlLhuMX2I6Z1WLcRvB+QpJQ=
+
+Name: resources/js/login.js
+SHA-256-Digest: c09V5Ho7RQZF1fCvkfrNPxsNhvy5s6PTOlGI63mKVts=
+
+Name: bootstrap/css/bootstrap.css
+SHA-256-Digest: qFsAC3mNnZtIHkMmg8GCuNfghO/ZmouMu3PwYBp3gnM=
+
+Name: org/mule/tooling/ui/authentication/AuthenticationActivator.class
+SHA-256-Digest: JKpoHWE3ez5DGkfmKsnLsggDZUmHIaiPMx0uiEuqMPA=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLogin$PlatformLogi
+ n.class
+SHA-256-Digest: cV4q2Wr0IQNOr+l3SAumtShAFRm60Sdt42Yb4yXNlbo=
+
+Name: resources/bootstrap/fonts/glyphicons-halflings-regular.woff2
+SHA-256-Digest: mOGvVCMEOyTnQoWQMHqbNZvjZFWDvHsPJsU49uKs88g=
+
+Name: icons/004_logo.svg
+SHA-256-Digest: udRhEeCWLGWsGy85/SBSMtpET27euZrFcZd+iwNCEvI=
+
+Name: resources/fonts/SourceCodePro-Regular.woff
+SHA-256-Digest: iNDaGYvEX545ECGa8lQ8xI57VuyzAKBkdImbd+vrCeI=
+
+Name: resources/fonts/Ubuntu-Light-webfont.eot
+SHA-256-Digest: vLYfw9tSmHuRSLjBKrepETM6NQhutJPk8r9srDWnT/w=
+
+Name: org/mule/tooling/ui/authentication/widgets/CredentialsViewer.cla
+ ss
+SHA-256-Digest: 4TmLEJJg77/i87He09qIJqzOeXoVeAX/hFiPXo/MCIw=
+
+Name: resources/fonts/OpenSans-Bold-webfont.svg
+SHA-256-Digest: bjrDwBfV23fP6TzvZNSSs8rX1s1AI+2mWyZE+u+MLcM=
+
+Name: fonts/Ubuntu-Light-webfont.eot
+SHA-256-Digest: 1VlO5SV8++YZtXSCHLFfCtmdK7y4upsStKNmsInfiaw=
+
+Name: icons/002_breadcrumb-separator.svg
+SHA-256-Digest: 70ww7TAV0bZlLPzzOM5PrnNIs2bEcKRSaExEADVwbhU=
+
+Name: resources/fonts/Ubuntu-Light-webfont.svg
+SHA-256-Digest: 1xcUoVjPPjeneRYSFqITWru7QKE+/4uNpixBoIQ74pk=
+
+Name: icons/005_remove-row.svg
+SHA-256-Digest: fj+Ir9zTYz2sgt6FM0WvKvcdElk9MT6Ak83yDBHn4o4=
+
+Name: resources/bootstrap/js/bootstrap.js
+SHA-256-Digest: i2nUfsOHDweqVs9NUN6QL3FzCRdtVge8kI9eJAzqLCw=
+
+Name: resources/fonts/muleicons.eot
+SHA-256-Digest: YelVa0vNHNrUW+1XzV/jKNHCQ6jKbo0A4HCE9HZHfqQ=
+
+Name: resources/fonts/OpenSans-Semibold-webfont.woff
+SHA-256-Digest: lgsqahUB1QJ+G9GxghETkeMQ1SAsCIb0MDZR8pknKtk=
+
+Name: fonts/OpenSans-Regular-webfont.woff
+SHA-256-Digest: ooIzt0zbFIN3bBH0H0La3zwq3f5SFA071jtU5yKgigY=
+
+Name: resources/bootstrap/js/bootstrap.min.js
+SHA-256-Digest: dKtgV4y/aKQ6pZUU+WFhDXLc0nffLbLjXtVxfhEoD2k=
+
+Name: resources/fonts/OpenSans-Semibold-webfont.eot
+SHA-256-Digest: O0hKqVkwuBS7mRRo/42V8UfD4mfUi1IB73KRRRtT6f8=
+
+Name: fonts/Ubuntu-Light-webfont.svg
+SHA-256-Digest: HQFHFlB1C5RLaO2i0aKJXE9AVo7varyQFwQZXztg62E=
+
+Name: org/mule/tooling/ui/authentication/Authentication.class
+SHA-256-Digest: 7Nd7FWn9fBwoS9jpx3LJ3ezVfGpoc4REz7MJ2HP1hj0=
+
+Name: resources/license.txt
+SHA-256-Digest: mv/8vsbP+w+0VHa/Kv/AYwebsd+8msu1g4owQs+HnOo=
+
+Name: icons/001_angle-right.svg
+SHA-256-Digest: 4r+BU4hx0TzaxTljFyppOXZAQ6mAd836lwZDP9lQBFg=
+
+Name: resources/fonts/OpenSans-Regular-webfont.ttf
+SHA-256-Digest: BQr4qnL5GGYQdbekBaD5kUQjyWVzI3S6ZJBpOsEFtrQ=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.authenticati
+ on/pom.xml
+SHA-256-Digest: U6PglvaEX3RhRAVoOY1ws+kAFxbGwAfopCEs0ADhOYU=
+
+Name: org/mule/tooling/ui/authentication/widgets/CredentialsViewer$2.c
+ lass
+SHA-256-Digest: YUVPufurYxsPPF+tmiQ1G5wCFvjLMG47sNWplsrNzjg=
+
+Name: resources/icons/005_remove-row.svg
+SHA-256-Digest: 0m5moTHT1zR9qdfmzyzbcB+0I7CSrTYslfkjPgHncpc=
+
+Name: resources/bootstrap/fonts/glyphicons-halflings-regular.svg
+SHA-256-Digest: HlfGq5BI1NKRY2Civ9gmaH4aoUM9WI4dVMNblEZrp6A=
+
+Name: js/jquery.min.js
+SHA-256-Digest: kKwekmcc0AQBJxURbWF1hT0C8JPnw2ikq1NGaGPRXBM=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLoginWithInvalidTo
+ ken.class
+SHA-256-Digest: 2owi1fXHGVe2a7wlyXaSjVVesz2xgc9qyYiBiJC9E5A=
+
+Name: resources/icons/000_angle-left.svg
+SHA-256-Digest: 8elfcbGNt9AI0caQO7rt2APSlzV6xq5xxEHUaYzqMGI=
+
+Name: js/login.js
+SHA-256-Digest: hsdBbCtFbDWHYVwfWsea8TABTzpjOfTz7ihcz83nqls=
+
+Name: bootstrap/js/bootstrap.min.js
+SHA-256-Digest: wlSqgP38zMSFyaLSo/qLQrIzDs9pFGNd+lUziEPZlkw=
+
+Name: resources/fonts/OpenSans-Semibold-webfont.svg
+SHA-256-Digest: wWxbXbG3M3VobztoZlJs9Lns78mbm5W7xsaFIXT/d9g=
+
+Name: bootstrap/js/npm.js
+SHA-256-Digest: l+MJxH6X7cKpQmac1St/zax/H36bNa3HQvE9nFgk0p8=
+
+Name: org/mule/tooling/ui/authentication/widgets/WebLogin$1.class
+SHA-256-Digest: HAl+QDir+pO51vPmzLiFeC9Quvv1M0Fc8ZQ2du2xDx8=
+
+Name: org/mule/tooling/ui/authentication/UnauthorizedException.class
+SHA-256-Digest: v5igeZbQKmvSgWOdbLixfY4bRe0A7O8a8aQ0lQq5nxg=
+
+Name: resources/bootstrap/js/npm.js
+SHA-256-Digest: 0xNFUFPyadMr20nWopVLhygbWTzS0qo+WZpNJdp97kw=
+
+Name: bootstrap/css/bootstrap-theme.css.map
+SHA-256-Digest: ERiOrDqvfSpY3f2+Hq8Vqx0HDptB8Uzl3Fb53FIKBUQ=
+
+Name: icons/muleicons.template.css
+SHA-256-Digest: eT+m+mPIkRGDrv10ETDhPA7vPU6LNTTAB3Ea5wGRbeA=
+
+Name: fonts/OpenSans-Light-webfont.svg
+SHA-256-Digest: BNbFRS3PADE6AMTVGLiCI6vL7BVu4Bi0aOy+pw9z61w=
+
+Name: resources/fonts/OpenSans-Bold-webfont.ttf
+SHA-256-Digest: atabwiRQQNokJ8O1ilypWyBPrW2qaRDGmzT+wJtpYyc=
+
+Name: resources/fonts/SourceCodePro-Regular.ttf
+SHA-256-Digest: hHqZmkN3Pbseu6GbdUbn0hlv6uXF3iytZYnmoyNDmCo=
+
+Name: fonts/OpenSans-Semibold-webfont.svg
+SHA-256-Digest: ThBaSceERsyPDL/gkUBZ7AwYDU2OIcoR5fBT1At41wI=
+
+Name: fonts/OpenSans-Bold-webfont.ttf
+SHA-256-Digest: RExi/4PVAjBZA1qJ/rIuMaQF0f9A2+7Gt8PW3SF330s=
+
+Name: org/mule/tooling/ui/authentication/preferences/PlatformUrlPrefer
+ encePage.class
+SHA-256-Digest: CInzHyLgLfQ0n3MmCs7QHu8PcNb/qt5hYhDfelcIp+g=
+

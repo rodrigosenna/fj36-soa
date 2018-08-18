@@ -1,0 +1,35 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: ZEvnnK5R+6p6ZY4tJxjvxY2sjCc=
+Created-By: 1.6.0_65 (Apple Inc.)
+SHA1-Digest-Manifest: 7yI6CpwwbIaVpiYsRlt+kQN3/Yw=
+
+Name: mule-module-twitter-3.2.0.jar
+SHA1-Digest: u/X344tUKMLsPbMojUm1eHzEX3o=
+
+Name: editors.xml
+SHA1-Digest: Izmw5vOUvplUuzJ7h9PLpkNA1/E=
+
+Name: icons/large/twitter-connector-48x32.png
+SHA1-Digest: 7EwzO5DE204QHL0Ssqq/Mz47WkU=
+
+Name: org/mule/tooling/ui/contribution/TwitterActivator.class
+SHA1-Digest: CQgqvggLNGtbws1UhMVn88vsywk=
+
+Name: mule-module-twitter-3.2.0-sources.jar
+SHA1-Digest: 4mrAUBy29UhgqQg6WlIyO4d6vOQ=
+
+Name: plugin.xml
+SHA1-Digest: 4k5brLKr5ZcRNCchrhTq38dsdVo=
+
+Name: mule-module-twitter-3.2.0.zip
+SHA1-Digest: tEEK/g4CxvRSYk4pAWRKA1Ts7bU=
+
+Name: icons/small/twitter-endpoint-24x16.png
+SHA1-Digest: ey6LZ+3wwgXEILLgXwEBGATtXfI=
+
+Name: icons/large/twitter-endpoint-48x32.png
+SHA1-Digest: NRLvybZt2Ip5mLDhtPhTi5FmK08=
+
+Name: icons/small/twitter-connector-24x16.png
+SHA1-Digest: EAQFFRfHWqjRUC21ipkDD1QEsA8=
+

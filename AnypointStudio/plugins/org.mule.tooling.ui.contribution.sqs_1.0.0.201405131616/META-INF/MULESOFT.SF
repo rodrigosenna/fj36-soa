@@ -1,0 +1,32 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: t7XXTq6FbkfiqnRvpBhnCZ8DW+k=
+Created-By: 1.6.0_65 (Apple Inc.)
+SHA1-Digest-Manifest: Br8RNvtvrBZw2gSRMSV5MdDLp98=
+
+Name: icons/small/sqs-connector-24x16.png
+SHA1-Digest: rPDOakPaeSa9Yvqudl54PPjOF4Q=
+
+Name: editors.xml
+SHA1-Digest: M65nlhpiYVTxMugvE0X/EjQA4k8=
+
+Name: icons/large/sqs-connector-48x32.png
+SHA1-Digest: C2joDjCfs6UdOv5iB45qX3nHA+k=
+
+Name: icons/large/sqs-endpoint-48x32.png
+SHA1-Digest: wHNkHtce1pdywPebdArfzP+Encw=
+
+Name: icons/small/sqs-endpoint-24x16.png
+SHA1-Digest: kHAoIp3nF5x10RQgcau7wTzDaEs=
+
+Name: plugin.xml
+SHA1-Digest: CM6WiaHS6vYxcH9e1KWmS9Ds1D8=
+
+Name: mule-module-sqs-2.4.4.jar
+SHA1-Digest: 0EfbvPICD3zmv7TV4077ANgZ5N0=
+
+Name: mule-module-sqs-2.4.4.zip
+SHA1-Digest: rz2LNmW16M0LXCZOetTq2yTkqrs=
+
+Name: org/mule/tooling/ui/contribution/SqsActivator.class
+SHA1-Digest: Vustzrt9DIisDs0a7MmmD84PE5I=
+

@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Salesforce
+Created-By: 24.55-b03 (Oracle Corporation)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 6.0.2.201503131455
+Bundle-Activator: org.mule.tooling.ui.contribution.SfdcActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.sfdc.3.5.0;singl
+ eton:=true
+Archiver-Version: Plexus Archiver
+
+Name: editors.xml
+SHA-256-Digest: cxnbzPm3kzDtCWCOTPTP3U+8tlbLwNTLK158zNR6g3Q=
+
+Name: icons/large/sfdc-connector-48x32.png
+SHA-256-Digest: /E5G1vrT9vJDXy5XuK1BU9gqSB/WP7+1Q5byKd9euoE=
+
+Name: mule-module-sfdc-6.0.2.jar
+SHA-256-Digest: GblS+rtFXe7+5JWnLlCTifvM2Us6EXQminbzG7Q1rfM=
+
+Name: icons/large/sfdc-endpoint-48x32.png
+SHA-256-Digest: zweaYJttfneWN61s3CXPE7HV6hMkjpOR2vu9mY4ss64=
+
+Name: plugin.xml
+SHA-256-Digest: dIhN44IVCYJ+RYQw22HrxGa25r6lK5yNlzlcgRJAVY4=
+
+Name: icons/small/sfdc-endpoint-24x16.png
+SHA-256-Digest: C3ide7J/SiKfavVXsKyVjgNbi/TzvUehzpxd6CKuSxA=
+
+Name: icons/small/sfdc-connector-24x16.png
+SHA-256-Digest: XXurlqroL4lmnIlVDI7zx9Xyw0mtkaZuMassc3JYmrU=
+
+Name: org/mule/tooling/ui/contribution/SfdcActivator.class
+SHA-256-Digest: 6ojbFGix0Ve7wHgXSF18rn9bO+gVZK9fIamJcgXqD/M=
+
+Name: mule-module-sfdc-6.0.2.zip
+SHA-256-Digest: mkgr8IcBzYOERomu5/OtiM3qlztcpRwNMelYn+kyZmw=
+

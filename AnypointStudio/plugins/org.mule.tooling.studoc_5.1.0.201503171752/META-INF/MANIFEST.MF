@@ -1,0 +1,129 @@
+Manifest-Version: 1.0
+Export-Package: org.mule.tooling.studoc.handlers,org.mule.tooling.stud
+ oc.ui,org.mule.tooling.studoc.utils
+Bundle-ClassPath: .,lib/markdownj.jar,lib/studoc-commons.jar
+Built-By: j2ee-bamboo
+Eclipse-BundleShape: dir
+Bundle-Name: Studoc
+Created-By: Apache Maven 3.0.4
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,org.mule.tooling.core;bundle-version="[
+ 5.0.0,6.0.0)",org.mule.tooling.messageflow;bundle-version="[5.0.0,6.0
+ .0)",org.mule.tooling.ui;bundle-version="[5.0.0,6.0.0)",org.eclipse.c
+ ore.runtime,org.eclipse.core.resources,org.eclipse.gef,org.apache.com
+ mons.lang,org.apache.xml.serializer;bundle-version="2.7.1",org.eclips
+ e.ui.forms,org.eclipse.ui.ide,org.dom4j;bundle-version="1.6.1",org.ec
+ lipse.core.filebuffers,org.eclipse.jdt.core
+Bundle-Vendor: MuleSoft Inc.
+Bundle-Version: 5.1.0.201503171752
+Build-Jdk: 1.7.0_51
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.mule.tooling.studoc.ui.Activator
+Import-Package: org.apache.velocity,org.apache.velocity.app,org.apache
+ .velocity.context,org.eclipse.ui,org.eclipse.ui.forms.editor
+Bundle-SymbolicName: org.mule.tooling.studoc; singleton:=true
+Archiver-Version: Plexus Archiver
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.studoc/pom.prop
+ erties
+SHA-256-Digest: 2+hV6mbXQtjkFBoGcxIbXFxzmY0iO0YelcdaYlIPCjI=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$GenerateHtmlFilesOperation.class
+SHA-256-Digest: Dj5Gt8REtEKGNvTK6aBopTtHzFgHZYeiz2js4P2rSpw=
+
+Name: icons/sample.gif
+SHA-256-Digest: 6jMftqI7oSaDQ6w4VCjJEtTiJvYpMr0Z1u+lWgsbkjY=
+
+Name: lib/markdownj.jar
+SHA-256-Digest: v2/IGP0zcj/WynEl2YW5cLBG8y0/vbE7YhxyIMJpmYc=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$GenerateHtmlFilesOperation$2.class
+SHA-256-Digest: btMVNcHOdt071cTg+2CUKXpfiOx/bzyhxnQtJaP+i/4=
+
+Name: org/mule/tooling/studoc/dialogs/MuleDocumentationExportDialog.cl
+ ass
+SHA-256-Digest: zMENwoMGJF+RAig+WoCAKEBFQhBN++xVvmk3NLBbFgs=
+
+Name: icons/export-icon16.png
+SHA-256-Digest: vH2kChEyWkaWAyp2re5bDWYzVflo5gQqfEudAUQPad8=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$GenerateHtmlFilesOperation$1.class
+SHA-256-Digest: uvBkadkU0HJ2BqiaCCzCcktyW6z8aipCpcv511KP9cs=
+
+Name: org/mule/tooling/studoc/dialogs/MuleDocumentationExportDialog$3.
+ class
+SHA-256-Digest: auiPSx2elCb/bD8lrHvxlPB7P7GcSkbLaAE4oHsFuPg=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$3.class
+SHA-256-Digest: t0ikSSKXppJDDdMfx4l5/yCphHT2wfB1mv6DsGwsb+w=
+
+Name: org/mule/tooling/studoc/dialogs/MuleDocumentationExportDialog$1.
+ class
+SHA-256-Digest: IVMD0UMvZzeIowYuZewzTX7Dy04NvywYCm8uXS0xWq4=
+
+Name: lib/studoc-commons.jar
+SHA-256-Digest: b5NO+qb0DPn7ijiDXfqZlpszNc4DGQU/D4AD3qzBsXE=
+
+Name: org/mule/tooling/studoc/ui/Activator.class
+SHA-256-Digest: vDb4cHEDoHC2XCcrZ4hDqiTxG4tCHdDRcQGtzc/KKyk=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$2.class
+SHA-256-Digest: 5Gsa7+FuHWZG7VDfhpFeMGTCKGSPqtW+5xWuckukUyM=
+
+Name: org/mule/tooling/studoc/utils/DocElementHelper.class
+SHA-256-Digest: cOP1Ro86ZwH+WEfshQKh9jY+hknHtgTeJuA73NLu9lM=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$3$1.class
+SHA-256-Digest: xopFM4aqZTBLa9/csQTaAxWoJ4JL3Q01vlVaBzxriu4=
+
+Name: org/mule/tooling/studoc/dialogs/MuleDocumentationExportDialog$2.
+ class
+SHA-256-Digest: VCpBfc4y5f9eVdM+zrIb41BoSFBhrG1k1U0/zQgE1iQ=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.studoc/pom.xml
+SHA-256-Digest: Iy1TRgbS8so3WuqWt3RP5NFpm/z5N4STUkcncHo0400=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$ImageCreationRequest.class
+SHA-256-Digest: DWUKFiL8MDW75VOKdjkSZPLV+s64wUyQuQfMrTy9DNE=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$1$1.class
+SHA-256-Digest: 5Z72OPJoGwaC9AUdcqjaVSeZebyYL/iZebJ1bgUWa+4=
+
+Name: org/mule/tooling/studoc/utils/GetQualifiedNodeNameVisitor.class
+SHA-256-Digest: YuxAzpVkIHjuLvDZpME/n7HXol8PvP6O9g2vqirZ6fk=
+
+Name: org/mule/tooling/studoc/model/DocConfigFactory$1$1.class
+SHA-256-Digest: 2+cNNp/KS3YkJTwtNu+XaGDXiYLy0BUhxUfOgnOly9w=
+
+Name: org/mule/tooling/studoc/model/DocConfigFactory.class
+SHA-256-Digest: 93hwvtoh2Kag2tYy/S4DkQbxq4Ud91BR/3jo2UE79Lo=
+
+Name: plugin.xml
+SHA-256-Digest: VbkL0OCIaXR0FvQY7jg4r5ebRHDawF4+iNfhFHSPje4=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r$1.class
+SHA-256-Digest: yPzh32NCx0lnG2Dh63J8BipbeZKSB1re1EJlk94JEV0=
+
+Name: org/mule/tooling/studoc/handlers/ExportStudioDocumentationHandle
+ r.class
+SHA-256-Digest: zGfcBwuhmSHmcfcsBT74YKTnQKLV+yv2jqzrYFFf0Vk=
+
+Name: org/mule/tooling/studoc/utils/DocElementHelper$1.class
+SHA-256-Digest: 5qviLswOezplKoZgeyUbo6wT67wDUpQ1Xs4NVqZ88Js=
+
+Name: org/mule/tooling/studoc/dialogs/MuleDocumentationExportDialog$4.
+ class
+SHA-256-Digest: JtQzqszZP0oMpE9whjAounoli07adVrO9o7fu93Gezc=
+
+Name: org/mule/tooling/studoc/model/DocConfigFactory$1.class
+SHA-256-Digest: ntT3cRingvSjQKx5y8SqF9avASfcMWyuhw/RI7Tr+p0=
+

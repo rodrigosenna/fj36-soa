@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Built-By: j2ee-bamboo
+Eclipse-BundleShape: dir
+Bundle-Name: Release Notes Fragment
+Created-By: Apache Maven 3.0.4
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: MuleSoft Inc.
+Fragment-Host: org.mule.tooling.update;bundle-version="[5.0.0,6.0.0)"
+Build-Jdk: 1.7.0_51
+Bundle-Version: 5.1.0.201503171752
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.update.releasenotes
+Archiver-Version: Plexus Archiver
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.update.releasen
+ otes/pom.properties
+SHA-256-Digest: welxovBbApgWLy43RJpwgI5Y/Z0ccCXPS9P+z0nNv9g=
+
+Name: releasenotes/release-notes.xml
+SHA-256-Digest: P9oG6h+K2okv9YIa25rPl7dKA5QQv6TmxDl/sTVaV8Y=
+
+Name: releasenotes/ds_background.png
+SHA-256-Digest: FeazVhBALLvM8Tt5dCscUqVaMWXQ0i13IJhfsO43NC8=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.update.releasen
+ otes/pom.xml
+SHA-256-Digest: lcwRrwS8f24eLHeNW/n9NKT6K8bRsqXtXnslcjNsuVk=
+
+Name: releasenotes/login.png
+SHA-256-Digest: HvNRUkVVpoFN4z0nz8tPaxPR2p4Popv+yb/R4mNI9Qg=
+

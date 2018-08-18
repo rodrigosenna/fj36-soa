@@ -1,0 +1,49 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 1w0qys7oQgiIXnxxGgguMNc6nHJuj
+ 2HiLJa2QaCk2gk=
+SHA-256-Digest-Manifest: cm/RwotK+KQyzXNz84ykvEcSHdG+7g8Cxx28ABUhF2c=
+Created-By: 1.7.0_51 (Oracle Corporation)
+
+Name: icons/large/sap-endpoint-48x32.png
+SHA-256-Digest: VjpIbl/FsNdrhc6MEzB6jqaCwm9sQgi1V1Uw5dYZ9i0=
+
+Name: org/mule/tooling/ui/contribution/sap/Activator.class
+SHA-256-Digest: SaruvLfmEeIA6loPBtnD9xShl9U5yJcHT6mP4BEFbQw=
+
+Name: build.properties
+SHA-256-Digest: dppuw8WpE3MxJhj4HzeodtC8a8ApeLCBc+vc7Cj/cIw=
+
+Name: icons/small/Transformer-24x16.png
+SHA-256-Digest: EYwM/E4qpPdwFfssxrQHN38+G4ekDipN/qav4ZdFe2g=
+
+Name: icons/small/sap-endpoint-24x16.png
+SHA-256-Digest: B3irLeOpEmyIf3Qo0uP+MYzCblXf5CT4MpuSyE+HkVA=
+
+Name: plugin.xml
+SHA-256-Digest: oSBgN2YJ/0ahQKFTFhBM9FO3U9wmZySanCmP0NzcImA=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/SAPTransaction
+ ValuePersistence.class
+SHA-256-Digest: esBbDf/PaItpHDzZEZlCbMaIy5ZKsTmACjJSNTVwzR4=
+
+Name: icons/large/Transformer-48x32.png
+SHA-256-Digest: HbNufI1kSjdq29JVa18nqeeDXyNEO3rg+YOrza9uVFA=
+
+Name: mule-transport-sap-2.1.2.jar
+SHA-256-Digest: Bx/LFrEka9+IlWvAilV6GkPqQIpsAGxP0fQLYebukuY=
+
+Name: sap.EE.xml
+SHA-256-Digest: 56t9nRRvMvGDrhQ6ZOBe9B4zcYcv82fK7TGKbwxMa1E=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .sap/pom.xml
+SHA-256-Digest: 97uq9cuvWgIp0YXxunbEDSWDdZBjLKFuZUXm/4vibIs=
+
+Name: org/mule/tooling/ui/contribution/sap/widgets/meta/TIdStoreValueP
+ ersistence.class
+SHA-256-Digest: H1mJw6xv04TcWsNjcrhabw/Cchh8FVDTXUW7se7TjiA=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .sap/pom.properties
+SHA-256-Digest: pegORQAZQWKQ6euAi1FYRUwEqqZO+OOpiERd5DxeszQ=
+

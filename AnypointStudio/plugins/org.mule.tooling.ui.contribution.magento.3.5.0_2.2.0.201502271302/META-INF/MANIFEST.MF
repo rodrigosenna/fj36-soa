@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Magento
+Created-By: 24.71-b01 (Oracle Corporation)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, Inc.
+Bundle-Version: 2.2.0.201502271302
+Bundle-Activator: org.mule.tooling.ui.contribution.MagentoActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.magento.3.5.0;si
+ ngleton:=true
+Archiver-Version: Plexus Archiver
+
+Name: editors.xml
+SHA-256-Digest: qweAm0zTcYKXCvRP49t/GQTiOI5Vn/NXG8bK/EBu61Q=
+
+Name: mule-module-magento-2.2.0.zip
+SHA-256-Digest: otPuNDAtaMAAVYenN4vLbN8hfQFO5c/5Xy8iY1HDdQI=
+
+Name: plugin.xml
+SHA-256-Digest: YksN8YX94iyiMrzlBlh6AXyKcTeKYqwV4x1rHtjMIyY=
+
+Name: mule-module-magento-2.2.0.jar
+SHA-256-Digest: fGhsZqyRjvvGMvcVZE5DWKEJ4fSFd6OKXf4NBquJ6Eo=
+
+Name: icons/small/magento-connector-24x16.png
+SHA-256-Digest: pMgehiTWBmywKJhrOuoY4fmxJFzp5MygrlNvR2iI5UM=
+
+Name: org/mule/tooling/ui/contribution/MagentoActivator.class
+SHA-256-Digest: ypR75sEcRxdyIJwjiCl/5lHibvx9nbwQ4ysTQ2LLhT8=
+
+Name: mule-module-magento-2.2.0-sources.jar
+SHA-256-Digest: Wj3YkHCS4cIrtii7ckep9BIILBA9sNLTxDVXikgK3y8=
+
+Name: icons/large/magento-connector-48x32.png
+SHA-256-Digest: dM2wKVBAgxbeNdscV1/X9FEaFZTWNrOifT3PGkMC9Ew=
+

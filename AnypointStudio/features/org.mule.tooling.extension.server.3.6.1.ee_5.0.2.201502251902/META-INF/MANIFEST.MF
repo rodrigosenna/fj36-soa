@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.7.0_51
+Built-By: j2ee-bamboo
+Created-By: Apache Maven 3.0.4
+Archiver-Version: Plexus Archiver
+
+Name: build.properties
+SHA-256-Digest: 9TWoUmKzXAAX94q2BZSSUjVcdycsxrCzNZ0yYwGpgqc=
+
+Name: target/maven-archiver/pom.properties
+SHA-256-Digest: Y3RZTIh/kjc9kiU5wQePIC5hCBjOtY03aGK32w3HNPo=
+
+Name: .project
+SHA-256-Digest: 3MDrJ8nX3V5r7Q7YWeiewJnAyVLS0imn4WGBgSd+LIM=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.extension.serve
+ r.3.6.1.ee/pom.properties
+SHA-256-Digest: Y3RZTIh/kjc9kiU5wQePIC5hCBjOtY03aGK32w3HNPo=
+
+Name: pom.xml
+SHA-256-Digest: Le+QiLJGcUsReS0jj7WPBxBJvaot2Mode5RGN9IMzhg=
+
+Name: feature.xml
+SHA-256-Digest: /Z134PcJWUOa2jzz33z4u42XVUQY2O7nQ7Kb7No5+lI=
+
+Name: target/antrun/build-main.xml
+SHA-256-Digest: oAlJXy3AUyzPjsDoMAzF3EYTLSTHx5KOkBghA6nMH+E=
+
+Name: target/feature.xml
+SHA-256-Digest: /Z134PcJWUOa2jzz33z4u42XVUQY2O7nQ7Kb7No5+lI=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.extension.serve
+ r.3.6.1.ee/pom.xml
+SHA-256-Digest: Le+QiLJGcUsReS0jj7WPBxBJvaot2Mode5RGN9IMzhg=
+
+Name: feature.xml.template
+SHA-256-Digest: 8m8HmH5fp1jwHGL88m9FX8YQmYh+jWXQoh5LMry5VTk=
+

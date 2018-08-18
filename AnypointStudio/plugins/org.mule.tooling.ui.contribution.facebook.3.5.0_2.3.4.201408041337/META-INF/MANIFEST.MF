@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: Facebook
+Created-By: 20.65-b04-462 (Apple Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.mule.tooli
+ ng.core;bundle-version="1.0.0"
+Bundle-Vendor: MuleSoft, inc.
+Bundle-Version: 2.3.4.201408041337
+Bundle-Activator: org.mule.tooling.ui.contribution.FacebookActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.mule.tooling.ui.contribution.facebook.3.5.0;s
+ ingleton:=true
+Archiver-Version: Plexus Archiver
+
+Name: icons/small/facebook-connector-24x16.png
+SHA1-Digest: 8rKvVfXCVmuZvy8x9F/0q5gVNOo=
+
+Name: mule-module-facebook-2.3.4.zip
+SHA1-Digest: xJCHO65ZrdfV0C6Ef9cEEkFJWa4=
+
+Name: editors.xml
+SHA1-Digest: YreOMJ6jsaU5Z0Gr0wiWJPlbLNY=
+
+Name: icons/large/facebook-connector-48x32.png
+SHA1-Digest: Z61O0SlvninV5uVwrQTc1R/08zA=
+
+Name: org/mule/tooling/ui/contribution/FacebookActivator.class
+SHA1-Digest: bgvXKnp97mZuCNACEsN7RIZErhM=
+
+Name: mule-module-facebook-2.3.4.jar
+SHA1-Digest: Pv3DL4kyqN2wdHrVi2vLEHILqK4=
+
+Name: plugin.xml
+SHA1-Digest: YouyrxxF4qw60PrhRCyOujXIIBU=
+
+Name: mule-module-facebook-2.3.4-sources.jar
+SHA1-Digest: I/UiF9kCQWfyCpafx5SQK8bQsnM=
+

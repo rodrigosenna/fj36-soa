@@ -1,0 +1,40 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: ueExNo/dtkhjhE7pIfL3hmRBt55ed
+ ehL78SZIO6Da/g=
+SHA-256-Digest-Manifest: l/OOGRNJFLsOgMjt9ChIKUXpGCm/wBPue5YTlwObkgM=
+Created-By: 1.7.0_51 (Oracle Corporation)
+
+Name: org/mule/tooling/ui/contribution/datamapper/Activator.class
+SHA-256-Digest: n4eZTVonoFD4CmqXKvlZ7MyCzz3HLDuUZM1mbarvV7k=
+
+Name: org/mule/tooling/ui/contribution/datamapper/editor/MappingFileVa
+ lidator.class
+SHA-256-Digest: 6HH8NgDDTJgEHOuuFLmNKLTL6dCUN0OxR84LPDvJqBg=
+
+Name: org/mule/tooling/ui/contribution/datamapper/editor/MappingFileCa
+ lculator.class
+SHA-256-Digest: B/7da6bS9fRGxOACyvv8dPQW1zNSewlA9SDTAiSRopA=
+
+Name: icons/small/datamapper-24x16.png
+SHA-256-Digest: BL0bOgzxf2sroW6SkyPHPTK5fAipn2lW4xaG1jB/vIs=
+
+Name: plugin.xml
+SHA-256-Digest: ZpdaVPK8SIcbZwJrRD+xJH3cKvxaLGJC3QM1QaKtXDg=
+
+Name: icons/small/datamapper-16x16.png
+SHA-256-Digest: 5apFQFOTbcvOeG/sPq8brjsKfswDLSo5b3pmIbYEOWk=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .datamapper/pom.xml
+SHA-256-Digest: o4SyZoThUNNIM3MQsEi7YM7LI0fPVumREjBWwYuHTNk=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.contribution
+ .datamapper/pom.properties
+SHA-256-Digest: WEumeUTJ4WiggB6jkgwLANc/GwnjX3q6DFAVFw/amqM=
+
+Name: icons/large/datamapper-48x32.png
+SHA-256-Digest: 2VhIZPsgr5T4UfwcB2U1F4UmE3YK25Tp7pYGAJEKFfw=
+
+Name: datamapper.xml
+SHA-256-Digest: DtLRN6jms5vfZdTArIyQIlqDEyGBuQ0oshN3aiCxzoo=
+

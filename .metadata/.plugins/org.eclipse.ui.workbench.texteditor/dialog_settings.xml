@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="pass" key="selection"/>
+		<item value="Camel" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Camel"/>
+			<item value="jndiTemplate"/>
+			<item value="camelDestinationResolver"/>
+			<item value="camelContext"/>
+			<item value="camel:camelContext"/>
+			<item value="camel.apache"/>
 			<item value="pass"/>
 		</list>
 		<list key="replacehistory">
@@ -17,7 +23,7 @@
 		<item value="342" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="435" key="DIALOG_HEIGHT"/>
-		<item value="513" key="DIALOG_X_ORIGIN"/>
-		<item value="70" key="DIALOG_Y_ORIGIN"/>
+		<item value="324" key="DIALOG_X_ORIGIN"/>
+		<item value="92" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,533 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: /7QpmAX85Di1j3LIIvpBi4pSQ/0=
+Created-By: 1.6.0_26 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: RiwY1/m3U0KzS17t04CNIwP6zLQ=
+
+Name: icons/cluster/ClusterRepartition-32x32.png
+SHA1-Digest: KX4/z5oVFpEK4g55Jm/k4Ow867w=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/jcifs-1.3.17.jar
+SHA1-Digest: kEdyzYLTuM6KZdc++AJJK5WL+Jg=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/commons-beanutils
+ -core-1.8.3.jar
+SHA1-Digest: 5KpNLmTQhp3IW3Uv+orBG0M6/2A=
+
+Name: icons/cluster/ClusterGather-32x32.png
+SHA1-Digest: 1+gWQW333DedFir+9RpaxP5teuo=
+
+Name: icons/jobControl/MonitorJobflow-32x32.png
+SHA1-Digest: tTld5/CuEOS4AB9Wofx+VtUKW8A=
+
+Name: icons/jobControl/KillGraph-32x32.png
+SHA1-Digest: cC1kS+mdWucBJNTP2w+blcuTdWc=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpcore-4.2.2.ja
+ r
+SHA1-Digest: bZXNORPLHWYcwI6+GvVyOOLOxHc=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpmime-4.2.2.ja
+ r
+SHA1-Digest: lkKzQjbAYYulk+10nedSbXfENsg=
+
+Name: icons/transformers/WebService-32x32.png
+SHA1-Digest: nYeQBKaPm/3USJvUvhOWkq0hOBo=
+
+Name: icons/writers/JavaBeanWriter-16x16.png
+SHA1-Digest: BDRyBsl9lvCkROqii66az/5qMa0=
+
+Name: icons/readers/JavaBeanReader-32x32.png
+SHA1-Digest: HDRMPtAh0YH5RJnwMQDnX/3fAeA=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-modules/san
+ desha2-core-1.3.jar
+SHA1-Digest: u+zlYDO6fJ56215MEIp8Chywj9s=
+
+Name: lib/plugins/org.jetel.tlfunction.commercial/plugin.xml
+SHA1-Digest: uXaH3mR6Nt0tr+JnRr5mpirzOTU=
+
+Name: icons/jobControl/Success-64x64.png
+SHA1-Digest: fyqND/kQi87KJwlLwD4JWVBO+24=
+
+Name: icons/joiners/Combine-16x16.png
+SHA1-Digest: oOger5Io+IYnO+ttaMRdGtS/U8E=
+
+Name: icons/jobControl/ExecuteMapReduce-16x16.png
+SHA1-Digest: HpQram//+Of3bK1ehCVtiZiQ5x0=
+
+Name: icons/jobControl/ExecuteScript-64x64.png
+SHA1-Digest: 0rAcrC3YHmjZe/41CAa3omeFM0Y=
+
+Name: icons/jobControl/ExecuteJobflow-32x32.png
+SHA1-Digest: DWDj3cb61bH5shgvPyeUq+xk7Rk=
+
+Name: icons/writers/JavaMapWriter-16x16.png
+SHA1-Digest: a4Mr7XVZ+yuGeAKwfgxtGha105k=
+
+Name: icons/jms-external-16.png
+SHA1-Digest: ilDTSS+ztXFVTqrm3rs+FYezvUA=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/neethi-LICENSE.tx
+ t
+SHA1-Digest: B5OgWLMljpLV8xYBUEQOZ8b1gDc=
+
+Name: icons/jobControl/GetJobInput-16x16.png
+SHA1-Digest: MgxYgzRI/63zkvzv1CBIKpaCBXI=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/mail-LICENSE.txt
+SHA1-Digest: XWEj4K/4CxJHKjf0bv5OQWS7Q+Y=
+
+Name: icons/readers/JSONReader-32x32.png
+SHA1-Digest: k+l/w8s4ROcNwkH1xgw/qzYu2Wc=
+
+Name: icons/jobControl/ExecuteGraph-16x16.png
+SHA1-Digest: f2S5DHkiUhWwx6Snb+JLaC+nLWQ=
+
+Name: icons/jobControl/MonitorJobflow-64x64.png
+SHA1-Digest: 4hLNC/3T19vBQoTOaSMDrc9gVmw=
+
+Name: icons/cluster/ClusterRepartition-64x64.png
+SHA1-Digest: JS5BIYFOen4spDC4nOyXWcDByxA=
+
+Name: icons/file operations/MoveFiles-32x32.png
+SHA1-Digest: csYCDXOlLOw4nzpHVEFOFaeJsVo=
+
+Name: icons/jobControl/SetJobOutput-64x64.png
+SHA1-Digest: 9+pEvpZ+jtZ+bIvG7kZWU+P3rVU=
+
+Name: lib/jgraphx-1.6.1.2.jar
+SHA1-Digest: j5qzbZyZl5O7wOO8ljo6JNNnY1w=
+
+Name: icons/jobControl/Fail-16x16.png
+SHA1-Digest: 643uXUEo5pvy3bBFmi2Em66U4Rs=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpcore-LICENSE.
+ txt
+SHA1-Digest: 4qFV5t89ilg5feycUKeSLSBa6nE=
+
+Name: lib/plugins/org.jetel.compiler.commercial/plugin.xml
+SHA1-Digest: usGWakjhQRm/OCHc+jnrXqFDG4Y=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-adb-1.5.6.j
+ ar
+SHA1-Digest: 3bCfYuWgU1u9hNKWRZJecuDlFiA=
+
+Name: icons/readers/JSONReader-16x16.png
+SHA1-Digest: XVxyTBouOoH/oiB5/9MO7s+HO9A=
+
+Name: icons/lookup-external-16.png
+SHA1-Digest: DtbHjYKFCmhPXcO3rINUTMAQS+I=
+
+Name: icons/readers/ComplexDataReader-64x64.png
+SHA1-Digest: RlVxxS4cVt+knctIG/Sw2YA1IdU=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-impl-1.2.12
+ .jar
+SHA1-Digest: TdrcMKbKfMmMqrnPmGt7eP9AAsM=
+
+Name: icons/writers/SpreadsheetDataWriter-64x64.png
+SHA1-Digest: otH+MrW9vIZI3Jb7bBudUmSLGW4=
+
+Name: icons/jobControl/ExecuteScript-32x32.png
+SHA1-Digest: sJHucGzZzSsiKy/qtNL08bu8aXc=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/activation-1.1.ja
+ r
+SHA1-Digest: dCDVsC5D0wMcqoWfMsenPNiTKSQ=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-kernel-1.5.
+ 6.jar
+SHA1-Digest: jUkznt5a+vemfQBX1z8jAhqmqjU=
+
+Name: icons/jobControl/Condition-16x16.png
+SHA1-Digest: EWjQ7XFtoQLp0Lz8GBiyMLsl3Qs=
+
+Name: lib/jgraphx-LICENSE.txt
+SHA1-Digest: WsxGWW/tTP/5Q3YibUd/x8GLYFE=
+
+Name: icons/jobControl/ExecuteGraph-64x64.png
+SHA1-Digest: V+lNaXRLBK3pGqGnM6BZWP1XYbg=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/commons-fileuploa
+ d-LICENSE.txt
+SHA1-Digest: l5A5or3es6NqEtKNRAYzfxRSahU=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-dom-1.2.12.
+ jar
+SHA1-Digest: UQgzzPeW19nRg4TyFw0Pbx9vkCA=
+
+Name: icons/jobControl/ExecuteJobflow-64x64.png
+SHA1-Digest: vbxIIMk4jeHQaR+6A3+9Pi0kAAU=
+
+Name: icons/editor16.png
+SHA1-Digest: Dz9mvxbPV00lbktC4A2/eZNZDv4=
+
+Name: icons/jobControl/MonitorGraph-32x32.png
+SHA1-Digest: k/2S/UoUdaD7VZnnY0RmCmMXQR4=
+
+Name: icons/file operations/DeleteFiles-64x64.png
+SHA1-Digest: weaeDexk/ZFFBAT/4uvj7utl89I=
+
+Name: icons/readers/ComplexDataReader-32x32.png
+SHA1-Digest: KwV6g+ZnwDP5QxIwFIZpJztFleM=
+
+Name: icons/writers/JSONWriter-64x64.png
+SHA1-Digest: vIzEK0QTZXPEZtkwwOFxPacHXgQ=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/commons-fileuploa
+ d-1.2.1.jar
+SHA1-Digest: uNpqBIyY9XSUR+c9OW9/70Qve+I=
+
+Name: icons/jobControl/GetJobInput-64x64.png
+SHA1-Digest: e+H5gyx6YF3mbMmV7B9kNI3KDMU=
+
+Name: components.xml
+SHA1-Digest: cH66Pq1Akm7ST6devsu2g1YRq44=
+
+Name: com.cloveretl.gui.commercial.jar
+SHA1-Digest: 831jxVDSlsEMsj7Sh2l5ACH2LZ8=
+
+Name: lib/plugins/org.jetel.lookup.commercial/cloveretl.lookup.commerc
+ ial.jar
+SHA1-Digest: IODNkzPBZwA41oCZLkO97Bw1bLo=
+
+Name: lib/plugins/org.jetel.lookup.commercial/plugin.xml
+SHA1-Digest: FRYx4eSDUleRTbpgfaqalmfw054=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpclient-4.2.2.
+ jar
+SHA1-Digest: UaKH4+tfFNyHAIoa4OUgGkcx/r8=
+
+Name: about.html
+SHA1-Digest: Eh8pGMUec7ZaZUxtg4iAotlNv5E=
+
+Name: icons/jobControl/GetJobInput-32x32.png
+SHA1-Digest: PwP4+LB8L3gJQ0QanbC1SL1F8ME=
+
+Name: icons/writers/JSONWriter-16x16.png
+SHA1-Digest: gP1fpjSht0QiEREkW6a9VbKdu3A=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/commons-jxpath-1.
+ 3.jar
+SHA1-Digest: vD0+75vjG9dbix91p9BwFaoEJ1I=
+
+Name: lib/plugins/org.jetel.ctlfunction.commercial/cloveretl.ctlfuncti
+ on.commercial.jar
+SHA1-Digest: QgKn81h7F8SwnkobD7oK+sIWnGk=
+
+Name: icons/jobControl/MonitorGraph-64x64.png
+SHA1-Digest: TxGgNG+EwTeUtwKQG2+XKCbJnl4=
+
+Name: icons/metadata-external-16.png
+SHA1-Digest: bvG9xdLXBXeJ3pV82bmnfgrtxKE=
+
+Name: icons/jobControl/Condition-64x64.png
+SHA1-Digest: Vo1RNBBgG7RyiTXFi/BzkEqxuPM=
+
+Name: icons/cluster/ClusterGather-16x16.png
+SHA1-Digest: lY+KGzIfFuCurk1VUxK/FdpCuyI=
+
+Name: icons/cluster/ClusterRepartition-16x16.png
+SHA1-Digest: Lv+//1Vq7fSUmUP4v3JvVrYmfXI=
+
+Name: icons/readers/JSONReader-64x64.png
+SHA1-Digest: JR6AXpxEdLQCsqJuNQszcIHR5Mo=
+
+Name: icons/jobControl/SetJobOutput-32x32.png
+SHA1-Digest: q2hZHNwFB/cVM2doIZLT/e0e/bI=
+
+Name: icons/writers/JavaMapWriter-64x64.png
+SHA1-Digest: SW02Sz4GTTPs5p5Q5fQ+qhc3u3s=
+
+Name: icons/jobControl/Barrier-64x64.png
+SHA1-Digest: mlku5lq8is1UiZEn9DQwW5+prxI=
+
+Name: icons/jobControl/DoNothing-32x32.png
+SHA1-Digest: +EwWefyK5im8iqA6HBmi4pOzDWE=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/jackson-core-asl-
+ 1.9.3.jar
+SHA1-Digest: qsI3qbnPfNp8UDpPaCVM4etxxdM=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-impl-LICENS
+ E.txt
+SHA1-Digest: AussMU8L9IonkYE9CPE5puDEOyE=
+
+Name: icons/jobControl/DoNothing-64x64.png
+SHA1-Digest: 8wSJDp1mLIBXw5g995xqz7XpDn4=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-api-LICENSE
+ .txt
+SHA1-Digest: f/3GX485Gpw2zialnzg0Oc8/l9k=
+
+Name: icons/cluster/ClusterPartition-32x32.png
+SHA1-Digest: F/Q+2sa/uThehzV3lNzmEkhR820=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-transport-h
+ ttp-1.5.6.jar
+SHA1-Digest: 13671PVQ0myNAhwLndgHaiOcC7M=
+
+Name: icons/jobControl/KillJobflow-64x64.png
+SHA1-Digest: IPuIQBJycWsMF5IAyF3M+BDkXbE=
+
+Name: icons/jobControl/Success-32x32.png
+SHA1-Digest: IbAd7TgsFf0QK2sm3JfziDuFSOw=
+
+Name: icons/readers/JavaBeanReader-64x64.png
+SHA1-Digest: kBWAn3fo46Gp0d/JcfVr4cD3Z0M=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/wsdl4j-1.6.2.jar
+SHA1-Digest: 3jKPGJP/RCvpcIbBpt4bNsJxNNo=
+
+Name: icons/jobControl/Fail-64x64.png
+SHA1-Digest: 5ETY0UIDoF+JIXGkWNob+oPWsvg=
+
+Name: icons/jobControl/Barrier-32x32.png
+SHA1-Digest: UTAwFoNRQ13sriWBXhutsKScTxc=
+
+Name: about.properties
+SHA1-Digest: CmEi0kGxpb6I74/plpiHnEEoy5U=
+
+Name: plugin.xml
+SHA1-Digest: b2pklxh2tYNxMp80/Vo+jAA35YQ=
+
+Name: icons/jobControl/MonitorGraph-16x16.png
+SHA1-Digest: puvW+MZxLAdHJkwbm1Pk3G6T9E4=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpclient-LICENS
+ E.txt
+SHA1-Digest: FivOykuDc8TdTHWQcU1aT0jgPMA=
+
+Name: icons/writers/JSONWriter-32x32.png
+SHA1-Digest: Xm7fEcZ+c+IvRjyl6UzQVR1FDVE=
+
+Name: icons/jobControl/KillGraph-64x64.png
+SHA1-Digest: P0Tebi4/5xzg/arVsaCsD8YKezg=
+
+Name: icons/file operations/CreateFiles-16x16.png
+SHA1-Digest: IWPewUeLMd5VRytqz4KibrU5c/0=
+
+Name: icons/file operations/DeleteFiles-32x32.png
+SHA1-Digest: YdxC20l5t/T4cbDjkHTfGFwKOkA=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-api-1.2.12.
+ jar
+SHA1-Digest: aAws/kNQyzbSBqbmg2z5HCeOD9E=
+
+Name: icons/jobControl/Fail-32x32.png
+SHA1-Digest: n/X358g2k4mquAR7yJf4xrGKySI=
+
+Name: icons/cluster/ClusterGather-64x64.png
+SHA1-Digest: O90+E4vSA99ccDAGZ+BNhiXWbG0=
+
+Name: icons/writers/JavaMapWriter-32x32.png
+SHA1-Digest: HVFctBjH989C/pxydzPFXax7PDo=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/dnsjava-2.0.6.jar
+SHA1-Digest: zAORkK5k/RYkoNRzdYL2YmvwtPU=
+
+Name: icons/cloveretl32_feature_icon.gif
+SHA1-Digest: H+toPfeQSzcYUl+PBk5GnZIjOvM=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/woden-api-1.0M8.j
+ ar
+SHA1-Digest: psglFZjhKJ91fg+L4bR3IhKobT0=
+
+Name: icons/joiners/Combine-32x32.png
+SHA1-Digest: mospVXHb62fx0z5CCBOXclykVhI=
+
+Name: icons/sequence-external-16.png
+SHA1-Digest: zK/aq3VwuUdUG9x4QGXgiJP/v3o=
+
+Name: icons/jobControl/Success-16x16.png
+SHA1-Digest: mntx5Ogrph8t4w9bZ3ZQgDZ29nk=
+
+Name: lib/plugins/org.jetel.tlfunction.commercial/cloveretl.tlfunction
+ .commercial.jar
+SHA1-Digest: 5s0jOo9JDsFLo3UFoScn4IZMcBI=
+
+Name: icons/jobControl/SetJobOutput-16x16.png
+SHA1-Digest: ZXieZdJjLOvoMnMFRXz7av2Gsi0=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/httpmime-LICENSE.
+ txt
+SHA1-Digest: P1HFvFT8a2o1QOwdAI/OCYvDNlQ=
+
+Name: icons/transformers/WebService-16x16.png
+SHA1-Digest: ePJOhvi9lDhfeX7hBM7Un11Nd+Q=
+
+Name: icons/file operations/CopyFiles-64x64.png
+SHA1-Digest: 6h3CpBpqE1uRJYA4Tswo5KIL6aw=
+
+Name: icons/jobControl/DoNothing-16x16.png
+SHA1-Digest: RQjjq8V+O6H8gLW5txV/j2QD6Gg=
+
+Name: icons/writers/JavaBeanWriter-64x64.png
+SHA1-Digest: 0lJYDRWSesyrL0AuXbBSNtc1zW4=
+
+Name: plugin.properties
+SHA1-Digest: vgox7GKftfjuCBKZ8oct09jH318=
+
+Name: icons/jobControl/ExecuteMapReduce-64x64.png
+SHA1-Digest: 6Fyo4HQ9Aqhwf34jNvbIa75dyvk=
+
+Name: about.ini
+SHA1-Digest: 8N0aGxzI5LgmaDqa3x2hvyJ1sec=
+
+Name: lib/plugins/org.jetel.ctlfunction.commercial/plugin.xml
+SHA1-Digest: 5NYYUJ8WiqQykE54G+gOAXxZXHU=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/neethi-2.0.5.jar
+SHA1-Digest: 9FfyhKvHWJccRl1rbJaBdbEKFIs=
+
+Name: icons/cluster/ClusterPartition-64x64.png
+SHA1-Digest: 6B5wymJT/qemsenL01Zcxmj+72M=
+
+Name: icons/jobControl/KillJobflow-16x16.png
+SHA1-Digest: aYAryO6Mqo2ptvGK6DvFq9O9fg0=
+
+Name: icons/file operations/DeleteFiles-16x16.png
+SHA1-Digest: 7TKylZAk3seQmOKqNpYIz2HYg9Y=
+
+Name: icons/readers/SpreadsheetDataReader-32x32.png
+SHA1-Digest: dlkjzuRt9W/guyqcTgN23Lq7D/Q=
+
+Name: icons/joiners/Combine-64x64.png
+SHA1-Digest: HXOuW8xQe1OMrFwLxCz1mvPmVDk=
+
+Name: icons/writers/SpreadsheetDataWriter-16x16.png
+SHA1-Digest: VXBMVHwk9t/etFUx0pjtoJnSXfc=
+
+Name: lib/plugins/org.jetel.compiler.commercial/cloveretl.compiler.com
+ mercial.jar
+SHA1-Digest: znNGZsrqNHCP2uQ+1YUEnBlWwjQ=
+
+Name: icons/jobControl/KillGraph-16x16.png
+SHA1-Digest: +IX4SqLtn/VnI6kbthPeQavvFB8=
+
+Name: icons/jobControl/KillJobflow-32x32.png
+SHA1-Digest: tnAper2QMwo4CcLqyq1r9tIai/U=
+
+Name: icons/jobControl/ExecuteJobflow-16x16.png
+SHA1-Digest: 3nN/WLUtDHIavVopxw3uGPAlB2k=
+
+Name: lib/plugins/org.jetel.lookup.commercial/lib/jdbm-1.0.jar
+SHA1-Digest: SgDcRSEvhMX3iiEhWY+YIae1HY0=
+
+Name: icons/jobControl/ExecuteScript-16x16.png
+SHA1-Digest: +QHZfY4YNB9R3/90F5FftW25O9E=
+
+Name: icons/file operations/ListFiles-32x32.png
+SHA1-Digest: /vAyALjCgtZUoChYXa/4EZ+Z1Lg=
+
+Name: icons/file operations/ListFiles-64x64.png
+SHA1-Digest: titKNsi+0TYGXgTpEwYkegSFKZA=
+
+Name: icons/file operations/CreateFiles-32x32.png
+SHA1-Digest: uRMiZXz+KAlJuxmj4g/8FKqmzbE=
+
+Name: icons/jobControl/Barrier-16x16.png
+SHA1-Digest: I9z5r4nXYe01Qi2BTNIzzGOMtZw=
+
+Name: icons/connection-external-16.png
+SHA1-Digest: 3LVMvHSpNMUv4hpEqqVa8Y7ZHbQ=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/jsr181-api.jar
+SHA1-Digest: 9tHeRA34F3tibLKIQDwF3ve4LNY=
+
+Name: icons/jobControl/Condition-32x32.png
+SHA1-Digest: wpqE+xeiPZnob7gdexzSzfC5O/g=
+
+Name: lib/plugins/org.jetel.component.commercial/cloveretl.component.c
+ ommercial.jar
+SHA1-Digest: 4ujUnTw+k5SHU/SLSYLRWGsX8us=
+
+Name: icons/file operations/CopyFiles-16x16.png
+SHA1-Digest: ck6WgCVC1xwucFO6iHraNI69LJo=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/mail-1.4.2.jar
+SHA1-Digest: Cp5sTn5HrZUZirjMUHepXG7VpKs=
+
+Name: icons/jobControl/MonitorJobflow-16x16.png
+SHA1-Digest: 3Zvh4+Zw1djxTR/8nWi/6cWmn4k=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-LICENSE.txt
+SHA1-Digest: w2dmUgWHl3tFyceQaMXJYey1XbM=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axiom-dom-LICENSE
+ .txt
+SHA1-Digest: 7j9uvAVEjVSwP9Zn0EEVCESyZTg=
+
+Name: icons/jobControl/ExecuteGraph-32x32.png
+SHA1-Digest: /IOpFQSL4mIgSgA6RxUAcU9r4QM=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-transport-l
+ ocal-1.5.6.jar
+SHA1-Digest: kE8ikBWA94i+oLxwv7R8dxV9mG0=
+
+Name: lib/plugins/org.jetel.component.commercial/plugin.xml
+SHA1-Digest: 2VWgyAOvzuDx8/zibQz8HBNvMIE=
+
+Name: icons/transformers/WebService-64x64.png
+SHA1-Digest: pjOPmIe5TC98gCvdDm5odS46pr0=
+
+Name: icons/readers/SpreadsheetDataReader-64x64.png
+SHA1-Digest: lQyJKpbls3oxlIJ/4MwX5D5rjNs=
+
+Name: icons/file operations/ListFiles-16x16.png
+SHA1-Digest: v6XSQSJFHv/16SyfQtd0KxNDnlk=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/woden-api-LICENSE
+ .txt
+SHA1-Digest: zhgmODhxqO2uWbDyCE2qwhacnLI=
+
+Name: icons/jobControl/ExecuteMapReduce-32x32.png
+SHA1-Digest: MzrPNkP++YgUiINqzVWilQIzk2Y=
+
+Name: icons/cluster/ClusterPartition-16x16.png
+SHA1-Digest: ZhpFKClklJQ7xfsxpMad4S5W118=
+
+Name: about.mappings
+SHA1-Digest: iGe8EWIIFBfd3E6knTlEOeCpEJA=
+
+Name: icons/file operations/CreateFiles-64x64.png
+SHA1-Digest: akSLAzh5NfPoqjwm57wqHY//cpM=
+
+Name: icons/readers/JavaBeanReader-16x16.png
+SHA1-Digest: Uxz9XURmMZpgh2lcezoIGYrNMww=
+
+Name: icons/readers/ComplexDataReader-16x16.png
+SHA1-Digest: UwOIISuI+L2GpF0KyvqNtNn00Jk=
+
+Name: icons/file operations/CopyFiles-32x32.png
+SHA1-Digest: yQzpE3BpSzL9xWgh8Ek20mdTBRY=
+
+Name: icons/readers/SpreadsheetDataReader-16x16.png
+SHA1-Digest: /Hw44X0oEA/xtPX8WUWoPS+OF/g=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/stax-1.2.0.jar
+SHA1-Digest: kWCy12YCAus0e+sYmjofNvkwuvw=
+
+Name: icons/writers/JavaBeanWriter-32x32.png
+SHA1-Digest: XwSVSgrA8H1WOsiuR8T+0Z0JBXY=
+
+Name: icons/file operations/MoveFiles-64x64.png
+SHA1-Digest: ORX5g+6Wq//U0T1sUlVkpWxyMLU=
+
+Name: icons/cloveretl32.gif
+SHA1-Digest: yl1zy0yI/6JHx2gRK65tIOvp2fo=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/wsdl4j-LICENSE.tx
+ t
+SHA1-Digest: SryDeO3Of8jYiFincjA3q0neVvU=
+
+Name: lib/plugins/org.jetel.component.commercial/lib/axis2-jaxws-1.5.6
+ .jar
+SHA1-Digest: HZStWKWBMVeRd1FWazAq/YoW0bc=
+
+Name: icons/file operations/MoveFiles-16x16.png
+SHA1-Digest: y+Yb7t4rcoPpwJ5bhlYOBlFWUMI=
+
+Name: icons/writers/SpreadsheetDataWriter-32x32.png
+SHA1-Digest: 2nnjos3nENnfLXelRMW3smlgRjk=
+

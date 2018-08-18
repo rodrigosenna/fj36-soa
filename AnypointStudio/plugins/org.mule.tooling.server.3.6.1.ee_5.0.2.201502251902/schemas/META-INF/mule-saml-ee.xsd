@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    (c) 2003-2010 MuleSoft, Inc. This software is protected under international copyright
+    law. All use of this software is subject to MuleSoft's Master Subscription Agreement
+    (or other master license agreement) separately entered into in writing between you and
+    MuleSoft. If such an agreement is not in place, you may not use the software.
+
+-->
+
+<xsd:schema xmlns="http://www.mulesoft.org/schema/mule/ee/saml"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+            xmlns:schemadoc="http://www.mulesoft.org/schema/mule/schemadoc"
+            targetNamespace="http://www.mulesoft.org/schema/mule/ee/saml"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+                schemaLocation="http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd"/>
+     <xsd:import namespace = "http://www.mulesoft.org/schema/mule/schemadoc"
+                schemaLocation = "http://www.mulesoft.org/schema/mule/schemadoc/3.6/mule-schemadoc.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Mule enterprise offers support for the Security Assertion Markup Language (SAML), a standard for exchange of security information between federated systems.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <schemadoc:short-name>SAML</schemadoc:short-name>
+            <schemadoc:page-title>SAML Module</schemadoc:page-title>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:element name="security-manager" type="securityManagerType" substitutionGroup="mule:abstract-security-manager"/>
+    <xsd:complexType name="securityManagerType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This is the security provider type that is used to configure security related functionality.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractSecurityManagerType">
+                <xsd:sequence>
+                    <xsd:element ref="saml-security-provider"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="saml-security-provider" type="samlSecurityProviderType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A security provider that delegates authorization to some other provider.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="samlSecurityProviderType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:securityProviderType">
+                <xsd:sequence>
+                       <xsd:element ref="abstract-key-provider" minOccurs="1" maxOccurs="unbounded"/> 
+                    <xsd:element ref="abstract-security-realm" minOccurs="1" maxOccurs="unbounded"/>
+                </xsd:sequence>
+                 <xsd:attribute name="saml-version" type="samlVersion" use="optional" default="1.1"/>
+                 <xsd:attribute name="default-realm" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="samlVersion">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="1.0"/>
+            <xsd:enumeration value="1.1"/>
+            <!-- Not supported until the port to OpenSAML 2.0
+            <xsd:enumeration value="2.0"/>
+            -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="abstract-key-provider" abstract="true" type="abstractKeyProviderType"/>
+    <xsd:complexType name="abstractKeyProviderType" abstract="true">
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="keyStoreProviderType">
+        <xsd:complexContent>
+            <xsd:extension base="abstractKeyProviderType">
+                <xsd:attribute name="key-store-file" type="xsd:string" use="required"/>
+                <xsd:attribute name="key-store-type" type="xsd:string" use="required"/>
+                <xsd:attribute name="key-store-password" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="keystore-provider" type="keyStoreProviderType" substitutionGroup="abstract-key-provider"/>
+
+    <xsd:element name="abstract-security-realm" abstract="true" type="abstractSecurityRealmType"/>
+    <xsd:complexType name="abstractSecurityRealmType" abstract="true">
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+         <xsd:attribute name="key-provider-ref" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="senderVouchesRealmType">
+        <xsd:complexContent>
+             <xsd:extension base="abstractSecurityRealmType">
+                 <xsd:attribute name="sign-key-alias" type="xsd:string" use="optional"/>
+                 <xsd:attribute name="sign-key-password" type="xsd:string" use="optional"/>
+                 <xsd:attribute name="resign-assertions" type="xsd:boolean" use="optional"/>
+             </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="sender-vouches-realm" type="senderVouchesRealmType" substitutionGroup="abstract-security-realm"/>
+
+    <xsd:complexType name="holderOfKeyRealmType">
+        <xsd:complexContent>
+            <xsd:extension base="abstractSecurityRealmType">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="holder-of-key-realm" type="holderOfKeyRealmType" substitutionGroup="abstract-security-realm"/>
+
+    <xsd:complexType name="abstractSamlSecurityFilterType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractSecurityFilterType">
+                <xsd:attribute name="certificate-alias" type="xsd:string" use="optional"/>
+                <xsd:attribute name="security-realm" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

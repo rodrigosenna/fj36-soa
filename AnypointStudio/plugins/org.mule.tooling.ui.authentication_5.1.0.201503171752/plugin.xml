@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+      		category="org.mule.tooling.ui.messageflowpage"
+            class="org.mule.tooling.ui.authentication.preferences.AuthenticationPreferencePage"
+            id="org.mule.tooling.ui.authentication.AuthenticationPreferencePage"
+            name="Authentication">
+      </page>
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.mule.tooling.ui.authentication.preferences.PlatformUrlPreferenceInitializer"/>
+   </extension>
+</plugin>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.7.0_51
+Built-By: j2ee-bamboo
+Created-By: Apache Maven 3.0.4
+Archiver-Version: Plexus Archiver
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.extension.sa
+ p.3.5.0/pom.xml
+SHA-256-Digest: JeONguKkL32TSYyv6pNQYZFi+vq1YRhvhvM2y1t07fA=
+
+Name: META-INF/maven/org.mule.tooling/org.mule.tooling.ui.extension.sa
+ p.3.5.0/pom.properties
+SHA-256-Digest: vzD1EB036nj8ezev4/b7o77FaYWWjAUOdadVQTC9PKo=
+
+Name: feature.xml
+SHA-256-Digest: jlYdqOm3Zw4OkaXXd/Bv/SH2afDYfAR/t8gk8SNQ/8E=
+

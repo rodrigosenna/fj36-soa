@@ -1,0 +1,482 @@
+Manifest-Version: 1.0
+Export-Package: org.mule.tooling.apikit.common.scaffolder,org.mule.too
+ ling.apikit.common.util
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Built-By: j2ee-bamboo
+Eclipse-BundleShape: dir
+Bundle-Name: APIkit API
+Created-By: Apache Maven
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.apache.commons.lang,org.eclipse.jdt
+ .core,org.eclipse.core.runtime,org.mule.tooling.ui.modules.core;bundl
+ e-version="[5.0.0,5.2.0)",org.mule.tooling.core;bundle-version="[5.0.
+ 0,5.2.0)",org.mule.tooling.ui,org.mule.tooling.messageflow,org.mule.t
+ ooling.maven;bundle-version="[5.0.0,5.2.0)",org.eclipse.debug.core,or
+ g.mule.tooling.utils,org.mule.tooling.metadata,org.eclipse.gef,org.mu
+ le.tooling.runtime,com.google.guava,org.eclipse.ui.forms,org.mule.too
+ ling.apikit.deps,org.dom4j
+Bundle-Vendor: MuleSoft Inc.
+Bundle-Version: 1.6.1.201503121950
+Build-Jdk: 1.6.0_31
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.mule.tooling.apikit.common.Activator
+Bundle-SymbolicName: org.mule.tooling.apikit.common;singleton:=true
+Archiver-Version: Plexus Archiver
+
+Name: org/mule/tooling/apikit/common/launch/APIkitWithConsoleLaunchCon
+ figPart$1.class
+SHA1-Digest: 4oG9+SJZx9ks8nLOIcqirQp+iaI=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$4.class
+SHA1-Digest: BVKAufbfwzA8DLX7IYOdopvFmok=
+
+Name: icons/large/sub-flow-48x32.png
+SHA1-Digest: 4I+t1agmVFq5PwfWUBEmiGHoRc4=
+
+Name: org/mule/tooling/apikit/common/widgets/MappingEditingSupport.cla
+ ss
+SHA1-Digest: eCKEJiBevzAHf5DqvsjoQSfB0J8=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$7.class
+SHA1-Digest: pVUIJ+vkSyxMYk2T5VUI90wtWIk=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$2.class
+SHA1-Digest: 4gbuuU8SbbB0P0GGoSOcZ43slpo=
+
+Name: icons/small/apikit16x16.png
+SHA1-Digest: Cs6TGNwxg7UcyTgAvY8XnbaXJb0=
+
+Name: icons/small/exception-strategy.png
+SHA1-Digest: eCwYYtSGzfWfo14P8ngtYwQ363U=
+
+Name: icons/small/scaffolder.png
+SHA1-Digest: e6/quGnCdL/Cq0JxBAEyGQ1PNlI=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$7.class
+SHA1-Digest: YUKtG3UB8dmgK5mkUB1uLNvQqlY=
+
+Name: META-INF/maven/org.mule.tools/org.mule.tooling.apikit.common/pom
+ .properties
+SHA1-Digest: Cnbr36DGLNJ+AIxeckziei0QC84=
+
+Name: icons/small/CatchExceptionStrategy-24x16-1.png
+SHA1-Digest: dqoh3LTXgbw3fOoDWA/iJUlTWLI=
+
+Name: org/mule/tooling/apikit/common/scaffolder/FlowGenerator$1.class
+SHA1-Digest: odu1WrMmyI8yEvHv3NS9pxXpXok=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$8.class
+SHA1-Digest: a/J1fpwD/QzY45NZz1+S8qP36oU=
+
+Name: org/mule/tooling/apikit/common/widgets/MediaTypeEditingSupport.c
+ lass
+SHA1-Digest: byoqhmWYW7EF3jXa2W1OSYoEr10=
+
+Name: org/mule/tooling/apikit/common/handlers/OpenAPIkitNavigationPopu
+ pHandler.class
+SHA1-Digest: nyaF+AbF/IxfnkGdbr6y1M2hgy4=
+
+Name: org/mule/tooling/apikit/common/scaffolder/FlowGenerator.class
+SHA1-Digest: bckqZQ3CdF7J7k4OP5FlkDiLAwY=
+
+Name: org/mule/tooling/apikit/common/launch/APIkitWithConsoleLaunchCon
+ figPart$PopulateConsoleOperation.class
+SHA1-Digest: aE/OHhlTkIPke3aKNaxHRENDEF8=
+
+Name: org/mule/tooling/apikit/common/navigation/MediatypeColumnLabelPr
+ ovider$1.class
+SHA1-Digest: 5EB+WWXy8WujaVaaIOmB0HNgo84=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterSee
+ ker$APIkitRouterFinder.class
+SHA1-Digest: vNWrwy/FxzOUEQsUBZAfMhgFdEs=
+
+Name: org/mule/tooling/apikit/common/wizard/IdleEventListenerDispatche
+ r$2.class
+SHA1-Digest: Sfl723qedIIxI9JM/fRZk/fNpZA=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper$1.class
+SHA1-Digest: UZYOX/I5vz9KtONFYYiuyr/c33g=
+
+Name: org/mule/tooling/apikit/common/action/RemoveMappingAction.class
+SHA1-Digest: eob3vO+bD2big4KVBLBsnTQtnKw=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitNavigationPopupC
+ ontentProvider.class
+SHA1-Digest: fKorQvKs46iWFHJgx+t8K7lHct8=
+
+Name: org/mule/tooling/apikit/common/navigation/ResourceColumnLabelPro
+ vider$1.class
+SHA1-Digest: CxVuHQdtBEXCof4Oc+6AOWH90Kw=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper$3.class
+SHA1-Digest: LKM0TjMdSFD1PbpEx0C1NUqNaOo=
+
+Name: icons/small/exception-mapping.png
+SHA1-Digest: rJVLmPU3Q4Gm8KokElpAkPMeV/A=
+
+Name: org/mule/tooling/apikit/common/navigation/MethodColumnLabelProvi
+ der$1.class
+SHA1-Digest: iqzcbSYC9iIqf/CYuYYGH5jk/RA=
+
+Name: org/mule/tooling/apikit/common/util/MappingManager$1.class
+SHA1-Digest: 8owKW1s/8g2Wh7BTpC2xC5/urok=
+
+Name: org/mule/tooling/apikit/common/widgets/MappingEditingSupport$1.c
+ lass
+SHA1-Digest: TvworltL+/C8HlbXCAE+oGRb5hU=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension.class
+SHA1-Digest: WBhELuC4Wup2GlLprtVJFaq6zuU=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver.class
+SHA1-Digest: Q9RaQlsxyAuHJlN5TVlWa24Jdyo=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitNavigationPopupD
+ ialog$2.class
+SHA1-Digest: FYT+iPdSFWIYc4O1kNWe05bpXro=
+
+Name: icons/large/apikit.png
+SHA1-Digest: 7rkHHWRx3NZss9B2UzktRYNfOzA=
+
+Name: org/mule/tooling/apikit/common/launch/APIkitWithConsoleLaunchCon
+ figPart$3.class
+SHA1-Digest: qeYqF1u3M2+Il/BdMJnJhTVD0lQ=
+
+Name: org/mule/tooling/apikit/common/util/CurrentClassloaderRunner.cla
+ ss
+SHA1-Digest: MucQhK3nDOETqvKMrHimXjYOf08=
+
+Name: org/mule/tooling/apikit/common/navigation/VisibleMuleTreeBuilder
+ Visitor.class
+SHA1-Digest: P8rgafdjUouDPyRIuWhVekiPcLY=
+
+Name: org/mule/tooling/apikit/common/handlers/ScaffolderHandler$1.clas
+ s
+SHA1-Digest: nUZeJMrfssge04mqMKY1a7WMQLk=
+
+Name: icons/small/api_console_endpoint.png
+SHA1-Digest: YrIO6Gd5WFDTCBex6PHyWM4xGx4=
+
+Name: org/mule/tooling/apikit/common/widgets/APIKitMappingCustomEditor
+ $MappingAccesor.class
+SHA1-Digest: 6GZQylah5y4pE7/CW7zhPgeNYXI=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver$2$1.class
+SHA1-Digest: e5VqgIhLKTC5+gGb7cXZODScUPE=
+
+Name: org/mule/tooling/apikit/common/util/APIKitProjectHelper$2.class
+SHA1-Digest: CRYEAWdqBizoM636BeRO/XTirk4=
+
+Name: org/mule/tooling/apikit/common/widgets/APIKitMappingCustomEditor
+ $2.class
+SHA1-Digest: XecjxnZDhkIkkNnIAnwXo9u748g=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitNavigationPopupD
+ ialog.class
+SHA1-Digest: ocRWLU8H+bc9aIASBIyVZ6WNetc=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterSee
+ ker.class
+SHA1-Digest: 7Pqfm83RS2OpJMF7AKSgBPxfDhs=
+
+Name: icons/small/apikit-menu-16x16.jpg
+SHA1-Digest: Ev+eFgphNcyDek6vhmxgJzmpytU=
+
+Name: org/mule/tooling/apikit/common/wizard/RAMLFolderProvider.class
+SHA1-Digest: x3vS/9BR3BK3UnLLFbilEq0zosg=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$11.class
+SHA1-Digest: /r/yEqq5BDzoJNTDScmvokIFYEM=
+
+Name: icons/small/flow-24x16.png
+SHA1-Digest: TNOfyopn+urczi701PIP4Vdiud4=
+
+Name: META-INF/maven/org.mule.tools/org.mule.tooling.apikit.common/pom
+ .xml
+SHA1-Digest: ND7349a3ooBVHmzL2149XWT9LEk=
+
+Name: org/mule/tooling/apikit/common/navigation/MethodColumnLabelProvi
+ der.class
+SHA1-Digest: 5KDioxZCMc1JL33ZCKAauatrNaY=
+
+Name: plugin.xml
+SHA1-Digest: JiCTdHUTai8gcPTq/O+Uf8B07wU=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$10.class
+SHA1-Digest: qNlP4Qb1AO5zAR06qcuKrOjpX1s=
+
+Name: org/mule/tooling/apikit/common/model/RamlCoords.class
+SHA1-Digest: G4eXxEvZ8Bywf1pN/7lf8HpWBmg=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver$2.class
+SHA1-Digest: moB7uOjsXMbgUitT/yrFXob1ySI=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver$1.class
+SHA1-Digest: x2fxqQ6r4Tw0LrqA0R8SKgacHDY=
+
+Name: org/mule/tooling/apikit/common/navigation/MediatypeColumnLabelPr
+ ovider.class
+SHA1-Digest: ozZyE4eBJrfI5Cmdt5XAPOBmdTQ=
+
+Name: org/mule/tooling/apikit/common/views/APIkitConsolesView$3.class
+SHA1-Digest: vHn7NtHS5G6hH91ZbrbIuhfDsAk=
+
+Name: org/mule/tooling/apikit/common/launch/ConsolesViewPopulator$1.cl
+ ass
+SHA1-Digest: ddx8hGYOJWyELPVEydCw9x+ns9U=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$5.class
+SHA1-Digest: q8UPiKV4Zu+/iOlCxUOSYSL41nY=
+
+Name: org/mule/tooling/apikit/common/views/APIkitConsolesView$1.class
+SHA1-Digest: M4Wfg2Z8p/Antr/LJFxnX2GP1gU=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver$AbstractMetaDataResolver.class
+SHA1-Digest: JjrP7OEgbUVI1yWDL/B7v0EekoE=
+
+Name: org/mule/tooling/apikit/common/views/APIkitConsolesView$2.class
+SHA1-Digest: 3If4CCL1RUJS8358BpBOGsczihE=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$13.class
+SHA1-Digest: Nvfiyi51FpaD7fUj5NOnc5g1MNw=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$9.class
+SHA1-Digest: ReL3LS0EF/adIo4fi8uuJlmlaSU=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitFlowFinder.class
+SHA1-Digest: EikVL8pxsqKl48TDvJmiIp2YYHQ=
+
+Name: org/mule/tooling/apikit/common/widgets/APIKitMappingCustomEditor
+ $1.class
+SHA1-Digest: mHpnNvX5oKodmuWdWn5CTmW9ZPo=
+
+Name: org/mule/tooling/apikit/common/util/APIKitProjectHelper.class
+SHA1-Digest: gNu+yLR9THaZVraPuK0P2cNAyhI=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$12.class
+SHA1-Digest: +IVyVH/YdDMWQA8vu1h7HfylXMc=
+
+Name: org/mule/tooling/apikit/common/scaffolder/ScaffolderContribution
+ .class
+SHA1-Digest: hK8foDVXQEQp07NxKY4STtmS0Sc=
+
+Name: org/mule/tooling/apikit/common/metadata/resolver/APIkitRouterInv
+ okerMetadataResolver$1$1.class
+SHA1-Digest: nvtk+8lziUWKxyQrNAin23WcbzU=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$RamlSourceSelectionListener.class
+SHA1-Digest: Lz/lkarcVvtkbRos1O9N/rb6kOk=
+
+Name: org/mule/tooling/apikit/common/widgets/FlowNameEditingSupport.cl
+ ass
+SHA1-Digest: BrvnDpHZWxDXzl8aRUGravRtrgw=
+
+Name: org/mule/tooling/apikit/common/util/IAPIkitConstants.class
+SHA1-Digest: ga7BK0hS5YOzsiKqDoq4H/ApF7c=
+
+Name: org/mule/tooling/apikit/common/navigation/FlowMappingReferenceRe
+ solver.class
+SHA1-Digest: 5bYJJNVjK5QOiPQUgJ95eicp0mc=
+
+Name: org/mule/tooling/apikit/common/scaffolder/ScaffolderContribution
+ Manager.class
+SHA1-Digest: nneiNb99CcZT/Lh2u1YbicwuZ5k=
+
+Name: org/mule/tooling/apikit/common/navigation/FlowMappingReference.c
+ lass
+SHA1-Digest: oBKnvUuJqPx4skSx4zrYoFFZhu0=
+
+Name: org/mule/tooling/apikit/common/navigation/MediatypeColumnLabelPr
+ ovider$1$1.class
+SHA1-Digest: EajxouTrVryyTdP9i9Wu2Fys99I=
+
+Name: org/mule/tooling/apikit/common/wizard/RAMLResourceProvider$FileC
+ hooserListener.class
+SHA1-Digest: 9juHFKyCy8kSR8vcKRd+rluI6BY=
+
+Name: org/mule/tooling/apikit/common/wizard/IdleEventListenerDispatche
+ r$1.class
+SHA1-Digest: ccOiVYmDe86pu3votp0Rfl3qLpM=
+
+Name: org/mule/tooling/apikit/common/widgets/ActionEditingSupport.clas
+ s
+SHA1-Digest: bJrAD60jUdQckCHcfmlP+dyZN7M=
+
+Name: org/mule/tooling/apikit/common/wizard/RAMLCompressedFileProvider
+ .class
+SHA1-Digest: fbfPrIkcBZLDe3zRbzK4grDwm9Q=
+
+Name: org/mule/tooling/apikit/common/navigation/MethodColumnLabelProvi
+ der$1$1.class
+SHA1-Digest: y87s1ki0+151WluNIHHyNYhyAPk=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitNavigationPopupD
+ ialog$1.class
+SHA1-Digest: t8CxiVLrqMTJj/xoPWxXVpOMvpI=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$4.class
+SHA1-Digest: 0dQQqRiTQ+19RJFU9FyN7nq/hOU=
+
+Name: org/mule/tooling/apikit/common/wizard/IdleEventListenerDispatche
+ r.class
+SHA1-Digest: kBmsoH/KacLy4RpMBixB8/LGV9M=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper.class
+SHA1-Digest: mgrawfVU1VSzU7oqUFB8lqd9Quw=
+
+Name: org/mule/tooling/apikit/common/widgets/MappingsLabelProvider.cla
+ ss
+SHA1-Digest: X8/jTPiRJsuskK/YTX4wwuMExhE=
+
+Name: org/mule/tooling/apikit/common/launch/APIkitWithConsoleLaunchCon
+ figPart.class
+SHA1-Digest: itxtaZ1qdyCtRrGYSqUAjSSbhDw=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$2.class
+SHA1-Digest: BziIskCzt9dpI840p51r+qENts4=
+
+Name: org/mule/tooling/apikit/common/navigation/ResourceColumnLabelPro
+ vider.class
+SHA1-Digest: GR/HqjsaFKqtqFnfYWdjPCaSIiY=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper$2.class
+SHA1-Digest: Qxk0uSY5dFqXpCO2NQ9GA8IKg9s=
+
+Name: icons/large/api_console.png
+SHA1-Digest: NHXlgWccaiukl3S5PbnYFp3OjIs=
+
+Name: org/mule/tooling/apikit/common/widgets/APIKitMappingCustomEditor
+ $3.class
+SHA1-Digest: 62642nbOPENCMDkPulkUh6MrICM=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper$4.class
+SHA1-Digest: jrODwnE2oMMswox+ICDpUBJgrDs=
+
+Name: org/mule/tooling/apikit/common/navigation/FlowMappingFilter.clas
+ s
+SHA1-Digest: HyYAiyLzo7JlBRRCiJICVdijcak=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$3.class
+SHA1-Digest: Y8hbZuERCKMbP3k9dulx3Nrf0l0=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$1.class
+SHA1-Digest: WjTimK2B3ABak2u35F8LKMKIeHI=
+
+Name: org/mule/tooling/apikit/common/handlers/ScaffolderHandler.class
+SHA1-Digest: QLAgP/LwwTYgHiHSHC6yQgbf0xQ=
+
+Name: org/mule/tooling/apikit/common/util/APIKitHelper$4$1.class
+SHA1-Digest: 8hTvEwD/DgJI4uBzH4qCB+cNTto=
+
+Name: org/mule/tooling/apikit/common/wizard/RAMLResourceProvider.class
+SHA1-Digest: lCR5bkZTnPlhmcZgbqWksVIoAd8=
+
+Name: org/mule/tooling/apikit/common/wizard/RAMLFileProvider.class
+SHA1-Digest: 0yAk2EacsoxrDiYIOJjeoQOg2Ig=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog.class
+SHA1-Digest: g/OUc4TmTcP0E1Vcrbn084+6d1o=
+
+Name: org/mule/tooling/apikit/common/action/AddMappingAction.class
+SHA1-Digest: LNfKecjgxtJwF++pNUDZMHjgKYE=
+
+Name: org/mule/tooling/apikit/common/launch/ConsolesViewPopulator.clas
+ s
+SHA1-Digest: ugh2FNao/5z/XURRO2/AdjKAWLs=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$1.class
+SHA1-Digest: oETnqK9A1Gzmhn+kLl0zLxL1sZk=
+
+Name: org/mule/tooling/apikit/common/util/MappingManager.class
+SHA1-Digest: 7sNf6QBnG5RZjA3YYoBdvuIDkVI=
+
+Name: org/mule/tooling/apikit/common/handlers/GenerateFlowsHandler$1.c
+ lass
+SHA1-Digest: GuRpVZKQti7wS8VLGpf+ITlj2Tc=
+
+Name: schema/scaffolder.exsd
+SHA1-Digest: kFvnksH1vEWnYpmC8JpJMVNfz8Y=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$6.class
+SHA1-Digest: grZ7GpFRJAYWodzy2UDD/VdLtiQ=
+
+Name: org/mule/tooling/apikit/common/launch/APIkitConfiguration.class
+SHA1-Digest: 3WwCvQEE52KIVRd9LpFwcVbJ3EA=
+
+Name: org/mule/tooling/apikit/common/widgets/APIKitMappingCustomEditor
+ .class
+SHA1-Digest: TzBl7cJURd3gPRJZk/aVbkHzJk0=
+
+Name: org/mule/tooling/apikit/common/util/MappingManager$2.class
+SHA1-Digest: whtogZkloZX3FPS96pMLoT+M+gw=
+
+Name: org/mule/tooling/apikit/common/scaffolder/IScaffolderHandler.cla
+ ss
+SHA1-Digest: 66STkcjO0X2PetX7p12vgYkEt3c=
+
+Name: icons/small/newAPIKitProject-16x16.png
+SHA1-Digest: +IGEAPaZjrJJiGYo7ymD1QCmIYk=
+
+Name: org/mule/tooling/apikit/common/wizard/ComposedRamlProvider.class
+SHA1-Digest: TMqY+9VJJSJkMmoKh4IV+HMqlJU=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$6.class
+SHA1-Digest: vYp/S9T6eQvfctih9O3Lh7U2Pqg=
+
+Name: org/mule/tooling/apikit/common/wizard/CreateAPIkitWizardPagePart
+ Extension$5.class
+SHA1-Digest: cPHdtON9gwtHHhr4P+A632dH9e0=
+
+Name: org/mule/tooling/apikit/common/handlers/GenerateFlowsHandler.cla
+ ss
+SHA1-Digest: QqfYdGO0j7imtJiCA1y2oWkNzHg=
+
+Name: org/mule/tooling/apikit/common/Activator.class
+SHA1-Digest: KO22Vtus/S1jeOPDnrZJrhkmbg4=
+
+Name: org/mule/tooling/apikit/common/navigation/ResourceColumnLabelPro
+ vider$1$1.class
+SHA1-Digest: CPRPsBGco0R84tIP+jkK/rpm1cw=
+
+Name: org/mule/tooling/apikit/common/util/APIKitProjectHelper$1.class
+SHA1-Digest: AOoDT+v6r0CnLLXVAld1pskL0As=
+
+Name: icons/small/api_console_view.png
+SHA1-Digest: 1Yy/RO3CSklH1bwjBfcKK1oCZnQ=
+
+Name: org/mule/tooling/apikit/common/dialog/AddMappingDialog$3.class
+SHA1-Digest: hZr8KkmzmgPrN/wdywNhxPx34hM=
+
+Name: org/mule/tooling/apikit/common/views/APIkitConsolesView.class
+SHA1-Digest: LiAGS2CPx6seda07dwSvZBdmJPI=
+
+Name: org/mule/tooling/apikit/common/navigation/APIkitNavigationPopupD
+ ialog$3.class
+SHA1-Digest: TAJ0soqL4HaaU5xrtGQ4Ow5rdoM=
+
+Name: org/mule/tooling/apikit/common/widgets/ResourceEditingSupport.cl
+ ass
+SHA1-Digest: I/0ium0fg/Yg9nq7lNrvmU6ah3E=
+
+Name: org/mule/tooling/apikit/common/launch/APIkitWithConsoleLaunchCon
+ figPart$2.class
+SHA1-Digest: frM9axPbkDHgqOxR3OzFBryGP0k=
+
+Name: org/mule/tooling/apikit/common/widgets/Mapping.class
+SHA1-Digest: ee2comzi5awoB/2BWOqvY08OSY4=
+

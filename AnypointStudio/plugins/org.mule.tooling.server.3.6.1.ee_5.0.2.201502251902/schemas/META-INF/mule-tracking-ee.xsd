@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    (c) 2003-2010 MuleSoft, Inc. This software is protected under international copyright
+    law. All use of this software is subject to MuleSoft's Master Subscription Agreement
+    (or other master license agreement) separately entered into in writing between you and
+    MuleSoft. If such an agreement is not in place, you may not use the software.
+
+-->
+
+<xsd:schema xmlns="http://www.mulesoft.org/schema/mule/ee/tracking"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+            xmlns:schemadoc="http://www.mulesoft.org/schema/mule/schemadoc"
+            targetNamespace="http://www.mulesoft.org/schema/mule/ee/tracking"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+                schemaLocation="http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd"/>
+     <xsd:import namespace = "http://www.mulesoft.org/schema/mule/schemadoc"
+                schemaLocation = "http://www.mulesoft.org/schema/mule/schemadoc/3.6/mule-schemadoc.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Mule enterprise offers message execution tracking capacities.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <schemadoc:short-name>Tracking</schemadoc:short-name>
+            <schemadoc:page-title>Tracking Module</schemadoc:page-title>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:element name="transaction" type="transactionType" substitutionGroup="mule:abstract-observer-message-processor" />
+
+    <xsd:complexType name="transactionType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractObserverMessageProcessorType">
+                <xsd:attribute name="id" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Optional execution id of generated event.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="custom-event" type="eventType" substitutionGroup="mule:abstract-observer-message-processor" />
+
+    <xsd:complexType name="eventType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractObserverMessageProcessorType">
+                <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="meta-data" type="constrainedKeyValueType">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Additional header name and value, added to the message.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="event-name" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Id of generated custom event.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="100" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+                <xsd:attribute name="inherits" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Optional execution id of generated event.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="constrainedKeyType">
+        <xsd:attribute name="key">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="30" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="constrainedKeyValueType">
+        <xsd:complexContent>
+            <xsd:extension base="constrainedKeyType">
+                <xsd:attribute name="value">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="custom-event-template" type="eventTemplateType" substitutionGroup="mule:abstract-extension" />
+
+    <xsd:complexType name="eventTemplateType">
+        <xsd:complexContent>
+            <xsd:extension base="mule:abstractExtensionType">
+                <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+                    <xsd:element name="meta-data" type="constrainedKeyValueType">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Additional header name and value, added to the message.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Id of generated custom event.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

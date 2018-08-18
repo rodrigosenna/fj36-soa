@@ -1,0 +1,36 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: ccSdhGHZuL66kBTfxzLru2W/+aHGW
+ lU8XkQelLaus6E=
+SHA-256-Digest-Manifest: mSR9atK9WgSysNzpRWsS9kKAdf2OHx0HVUi4Vg7VH74=
+Created-By: 1.7.0_71 (Oracle Corporation)
+
+Name: mule-module-mongo-3.6.1-sources.jar
+SHA-256-Digest: tP9uXU5snzbycucficH2Pak93XcRECdXn+auqrBnGTs=
+
+Name: editors.xml
+SHA-256-Digest: XzMgnBF93CYhS2u0gxS1ScON9zhLvcyDLgJYVsAAZYw=
+
+Name: org/mule/tooling/ui/contribution/MongoActivator.class
+SHA-256-Digest: W2L7be+eylFSOaA1q+ib7ndVpIcEgRIDdk4tIiE9p2c=
+
+Name: mule-module-mongo-3.6.1.jar
+SHA-256-Digest: GiR+NMQ7z63exwR1k2VZmMgZFtZvDURCIUzUPoXblXE=
+
+Name: icons/small/mongo-transformer-24x16.png
+SHA-256-Digest: O+6d7JMI/kxHb7Ka53AtNp8tiMzNiMPDte4BaaoyW0o=
+
+Name: plugin.xml
+SHA-256-Digest: 8Wp2kZAnvIANSYrS6ZvFrVOOvQ+0JLYTJApd6kpz8VU=
+
+Name: mule-module-mongo-3.6.1.zip
+SHA-256-Digest: KRFQOtFzL8WgHhDYpgND4DQrS10irTeNXG0uM7jPP8Y=
+
+Name: icons/large/mongo-connector-48x32.png
+SHA-256-Digest: xdHynho5tOwsMlQVUlwbF2ocYMAQEyCVWgTANM73070=
+
+Name: icons/large/mongo-transformer-48x32.png
+SHA-256-Digest: QhAR0pyzImmn60u4X0XrxQAkI0Eik35JIrgIUnUNMAA=
+
+Name: icons/small/mongo-connector-24x16.png
+SHA-256-Digest: Sp1Fq45MiXX0LT1qqpGOeM+O3uJOiNdr7H/PV9n80II=
+

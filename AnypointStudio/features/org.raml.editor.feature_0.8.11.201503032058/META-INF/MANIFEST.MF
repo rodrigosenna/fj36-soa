@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.6.0_31
+Built-By: j2ee-bamboo
+Created-By: Apache Maven
+Archiver-Version: Plexus Archiver
+
+Name: feature.xml
+SHA1-Digest: 2AWhcFWzAfxMeWuc9/lcnNdruzs=
+
+Name: META-INF/maven/org.raml/org.raml.editor.feature/pom.properties
+SHA1-Digest: SNBiwIgZXInG3ckVaO1iR5HfJIk=
+
+Name: META-INF/maven/org.raml/org.raml.editor.feature/pom.xml
+SHA1-Digest: 8tGFGT0LLPSSHNRmNiBDqa5L7K8=
+

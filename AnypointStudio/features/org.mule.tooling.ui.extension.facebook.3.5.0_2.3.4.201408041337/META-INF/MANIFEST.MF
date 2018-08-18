@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Created-By: 20.65-b04-462 (Apple Inc.)
+Archiver-Version: Plexus Archiver
+
+Name: feature.xml
+SHA1-Digest: S0PW8JXnrfr1m8DD9rFKNiKPp9Q=
+

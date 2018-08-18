@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<releaseNotesCollection>
+	<releaseNotes
+		releaseName="March 2015"
+		version="5.1.0"
+		url="http://www.mulesoft.org/documentation/display/current/Anypoint+Studio+March+2015+with+3.6.1+Runtime+Release+Notes">
+		<releaseNoteItem image="releasenotes/ds_background.png"><![CDATA[DataSense in background
+DataSense now retrieves metadata for your connectors in the background, enabling you to keep working without interruption.]]></releaseNoteItem>
+		<releaseNoteItem image="releasenotes/login.png"><![CDATA[Unified Login to Anypoint Platform
+Sign in once for both CloudHub and the Anypoint Exchange, save your login information and manage your accounts via Anypoint Studio preferences.]]></releaseNoteItem>
+		<releaseNoteItem><![CDATA[More cool stuff:
+• Choice router features an improved experience and now supports MEL auto-completion.
+• Support for deploying applications with version 2.0 of the Siebel connector.
+• Undo is now supported in script component editors.
+• Field labels now correctly render in the DataSense explorer.
+• Many more bug fixes and improvements. For a complete list, see the release notes.]]></releaseNoteItem>
+	</releaseNotes>
+</releaseNotesCollection>

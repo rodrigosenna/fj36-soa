@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/sfdc" prefix="sfdc">
+  <global-cloud-connector versions="[3.4.0,8.0.0]" caption="Salesforce" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" connectivityTesting="on" metaData="dynamic"></global-cloud-connector>
+  <nested caption="" description="" localId="connection-pooling-profile" abstract="true">
+    <label name="poolingProfileLabel" caption="Define connection pool configuration" description=""></label>
+    <integer defaultValue="5" min="0" step="0" name="maxActive" caption="Max active" description="Controls the maximum number of connections that can be borrowed from the pool at one time. When set to a negative value, there is no limit to the number of connections that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted." fillLine="true"></integer>
+    <integer defaultValue="5" min="0" step="0" name="maxIdle" caption="Max idle" description="Controls the maximum number of connections that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of connections that may be idle at one time." fillLine="true"></integer>
+    <enum defaultValue="INITIALISE_ONE" name="initialisationPolicy" caption="Initialisation policy" description="Determines how connections in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any connection into the pool on startup), INITIALISE_ONE (will load one initial connection into the pool on startup), or INITIALISE_ALL (will load all connections in the pool on startup)" alwaysFill="true">
+      <option value="INITIALISE_NONE"></option>
+      <option value="INITIALISE_ONE"></option>
+      <option value="INITIALISE_ALL"></option>
+    </enum>
+    <enum defaultValue="WHEN_EXHAUSTED_GROW" name="exhaustedAction" caption="Exhausted action" description="Specifies the behavior of the connection pool when the pool is exhausted. Possible values are: &quot;WHEN_EXHAUSTED_FAIL&quot;, which will throw a NoSuchElementException, &quot;WHEN_EXHAUSTED_WAIT&quot;, which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new connection and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely." alwaysFill="true">
+      <option value="WHEN_EXHAUSTED_WAIT"></option>
+      <option value="WHEN_EXHAUSTED_FAIL"></option>
+      <option value="WHEN_EXHAUSTED_GROW"></option>
+    </enum>
+    <integer defaultValue="5" min="0" step="0" name="maxWait" caption="Max wait" description="When exhausted action is Wait (or block) this is the amount of time in milliseconds that the pool will wait before failing. Setting a negative value will block indefinitely until an idle instance becomes available." fillLine="true"></integer>
+    <integer defaultValue="1800000" min="0" step="0" name="minEvictionMillis" caption="Min eviction (ms)" description="Determines the minimum amount of time a connection may sit idle in the pool before it is eligible for eviction. When non-positive, no connections will be evicted from the pool due to idle time alone." fillLine="true"></integer>
+    <integer defaultValue="-1" min="0" step="0" name="evictionCheckIntervalMillis" caption="Eviction check interval (ms)" description="Specifies the number of milliseconds between runs of the connection evictor. When non-positive, no connection evictor is executed." fillLine="true"></integer>
+  </nested>
+  <nested caption="" description="" localId="reconnectionStrategyElement" abstract="true">
+    <label name="connectionLabel" caption="Define how mule should attempt to handle a connection failure" description=""></label>
+    <radioBoolean name="noReconnection" caption="Do not use a Reconnection strategy" description="Disable reconection strategy" fillLine="true"></radioBoolean>
+    <radioBoolean name="standardReconnection" caption="Standard Reconnection" description="A reconnection strategy that allows the user to configure how many times a reconnection should be attempted and how long to wait between attempts." fillLine="true"></radioBoolean>
+    <integer defaultValue="2000" min="1" max="2147483647" step="1" name="reconnectionFrequency" caption="Frequency (ms)" description="How often (in ms) to reconnect" controlled="standardReconnection" indented="true"></integer>
+    <integer defaultValue="2" min="1" max="2147483647" step="1" name="reconnectionAttemps" caption="Reconnection Attempts" description="How many reconnection attempts to make" controlled="standardReconnection,!reconnectForever" indented="true"></integer>
+    <boolean name="reconnectForever" caption="Reconnect Forever" description="A reconnection strategy that retries an infinite number of times at the specified frequency." controlled="standardReconnection" indented="true"></boolean>
+    <radioBoolean name="customReconnection" caption="Custom Reconnection" description="A user-defined reconnection strategy." fillLine="true"></radioBoolean>
+    <classname name="class" caption="Class" description="A class that implements the RetryPolicyTemplate interface." controlled="customReconnection" indented="true"></classname>
+    <childElement allowMultiple="true" name="http://www.springframework.org/schema/beans/property" caption="Properties" description="Property elements." controlled="customReconnection"></childElement>
+  </nested>
+  <cloud-connector-message-source supportsInbound="true" supportsOutbound="false" versions="[3.4.0,8.0.0]" caption="Salesforce (Streaming)" description="The Salesforce Connector will allow to connect to the Salesforce application using regular username and password via
+the SOAP API. Almost every operation that can be done via the Salesforce's API can be done thru this connector. This
+connector will also work if your Salesforce objects are customized with additional fields or even you are working
+with custom objects.
+
+Integrating with Salesforce consists of web service calls utilizing XML request/response setup
+over an HTTPS connection. The technical details of this connection such as request headers,
+error handling, HTTPS connection, etc. are all abstracted from the user to make implementation
+quick and easy.
+." icon="icons/small/sfdc-endpoint-24x16.png" localId="endpoint" image="icons/large/sfdc-endpoint-48x32.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="sfdcConnectorGeneric" caption="Generic">
+        <modeSwitch alwaysCombo="true" name="Sfdc operations to execute" caption="Operation" description="Operation.">
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/subscribe-topic" modeLabel="Subscribe topic"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector-message-source>
+  <cloud-connector-message-source supportsInbound="true" supportsOutbound="false" inboundLocalName="subscribe-topic" caption="Subscribe Topic" description="Subscribe to a topic.
+." icon="icons/small/sfdc-endpoint-24x16.png" localId="subscribe-topic" image="icons/large/sfdc-endpoint-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="topic" caption="Topic" description="The name of the topic to subscribe to." required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector-message-source>
+  <global-cloud-connector versions="[3.4.0,8.0.0]" caption="Salesforce" description="Global Salesforce configuration information." icon="icons/small/sfdc-connector-24x16.png" localId="config" image="icons/large/sfdc-connector-48x32.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/sfdc/parentConfig" connectivityTesting="on" metaData="dynamic">
+    <attribute-category caption="General" description="Sfdc configuration properties.">
+      <group id="sfdcGenericProperties" caption="Generic">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="connection" caption="Connection">
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+      </group>
+      <group id="general" caption="General">
+        <useMetaData name="useMetaData" caption="useMetaData"></useMetaData>
+        <string name="timeObjectStore-ref" caption="Time Object Store Reference" description="A ObjectStore instance to use in." required="false" javaType="org.mule.api.store.ObjectStore&lt;? extends java.io.Serializable&gt;"></string>
+        <string name="assignmentRuleId" caption="Assignment Rule Id" description="The ID of a specific assignment rule to run for the Case or Lead. The assignment rule can be active or inactive. The ID can be retrieved by querying the AssignmentRule object. If specified, do not specify useDefaultRule. This element is ignored for accounts, because all territory assignment rules are applied.
+If the value is not in correct ID format (15-character or 18-character Salesforce ID), the call fails and a MALFORMED_ID exception is returned." required="false" javaType="java.lang.String"></string>
+        <string name="clientId" caption="Client Id" description="Client ID for partners." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="0" min="0" step="1" name="batchSobjectMaxDepth" caption="Batch Sobject Max Depth" description="Creating a batch will create SObjects using this value for the MAX_DEPTH check." required="false" javaType="java.lang.Integer"></integer>
+        <boolean name="allowFieldTruncationSupport" caption="Allow Field Truncation Support" description="If true, truncate field values that are too long, which is the behavior in API versions 14.0 and earlier.
+Default is false: no change in behavior. If a string or textarea value is too large, the operation fails and the fault code STRING_TOO_LONG is returned." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+        <boolean name="useDefaultRule" caption="Use Default Rule" description="If true for a Case or Lead, uses the default (active) assignment rule for a Case or Lead. If specified, do not specify an assignmentRuleId. If true for an Account, all territory assignment rules are applied, and if false, no territory assignment rules are applied." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Pooling Profile" description="Pooling profile options.">
+      <group id="poolingProfile" caption="Pooling Profile">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/sfdc/connection-pooling-profile" caption="" description=""></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Reconnection" description="Reconnection options.">
+      <group id="reconnectionStrategies" caption="Strategies">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/core/reconnectionStrategyElement" caption="" description="" valuePersistence="org.mule.tooling.ui.modules.core.widgets.meta.HTTPTransactionValuePersistence"></childElement>
+        <childElement allowSubTypes="true" allowedSubTypes="http://www.mulesoft.org/schema/mule/core/reconnect,http://www.mulesoft.org/schema/mule/core/reconnect-custom-strategy,http://www.mulesoft.org/schema/mule/core/reconnect-forever" name="http://www.mulesoft.org/schema/mule/core/abstractReconnectionStrategy" caption="" description="" visibleInDialog="false"></childElement>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <global-cloud-connector versions="[3.4.0,8.0.0]" caption="Salesforce (OAuth)" description="Global Salesforce (OAuth) configuration information." icon="icons/small/sfdc-connector-24x16.png" localId="config-with-oauth" image="icons/large/sfdc-connector-48x32.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/sfdc/parentConfig" connectivityTesting="disabled" metaData="static">
+    <attribute-category caption="General" description="Sfdc configuration properties.">
+      <group id="sfdcGenericProperties" caption="Generic">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <string name="consumerKey" caption="Consumer Key" description="Your application's client identifier (consumer key in Remote Access Detail)." required="true" javaType="java.lang.String"></string>
+        <string name="consumerSecret" caption="Consumer Secret" description="Your application's client secret (consumer secret in Remote Access Detail)." required="true" javaType="java.lang.String"></string>
+        <string name="timeObjectStore-ref" caption="Time Object Store Reference" description="A ObjectStore instance to use in." required="false" javaType="org.mule.api.store.ObjectStore&lt;? extends java.io.Serializable&gt;"></string>
+        <string name="assignmentRuleId" caption="Assignment Rule Id" description="The ID of a specific assignment rule to run for the Case or Lead. The assignment rule can be active or inactive. The ID can be retrieved by querying the AssignmentRule object. If specified, do not specify useDefaultRule. This element is ignored for accounts, because all territory assignment rules are applied.
+If the value is not in correct ID format (15-character or 18-character Salesforce ID), the call fails and a MALFORMED_ID exception is returned." required="false" javaType="java.lang.String"></string>
+        <string name="clientId" caption="Client Id" description="Client ID for partners." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="0" min="0" step="1" name="batchSobjectMaxDepth" caption="Batch Sobject Max Depth" description="Creating a batch will create SObjects using this value for the MAX_DEPTH check." required="false" javaType="java.lang.Integer"></integer>
+        <boolean name="allowFieldTruncationSupport" caption="Allow Field Truncation Support" description="If true, truncate field values that are too long, which is the behavior in API versions 14.0 and earlier.
+Default is false: no change in behavior. If a string or textarea value is too large, the operation fails and the fault code STRING_TOO_LONG is returned." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+        <boolean name="useDefaultRule" caption="Use Default Rule" description="If true for a Case or Lead, uses the default (active) assignment rule for a Case or Lead. If specified, do not specify an assignmentRuleId. If true for an Account, all territory assignment rules are applied, and if false, no territory assignment rules are applied." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Oauth" description="OAuth.">
+      <group id="oauthCallbackConfigGroup" caption="Oauth Callback Config">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/sfdc/oauth-callback-config" caption="" description=""></childElement>
+      </group>
+      <group id="oauthStoreConfigGroup" caption="Oauth Object Store Config">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/sfdc/oauth-store-config" caption="" description=""></childElement>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractsfdcconnectorgeneric" description="Interact with Sfdc." icon="icons/small/sfdc-connector-24x16.png" localId="abstractSfdcConnectorGeneric" image="icons/large/sfdc-connector-48x32.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractSfdcConnectorGeneric" caption="Generic">
+        <globalRef requiredType="$http://www.mulesoft.org/schema/mule/sfdc/config-with-oauth,http://www.mulesoft.org/schema/mule/sfdc/config" name="config-ref" caption="Config Reference" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.4.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.sfdc" caption="Salesforce" description="The Salesforce Connector will allow to connect to the Salesforce application using regular username and password via
+the SOAP API. Almost every operation that can be done via the Salesforce's API can be done thru this connector. This
+connector will also work if your Salesforce objects are customized with additional fields or even you are working
+with custom objects.
+
+Integrating with Salesforce consists of web service calls utilizing XML request/response setup
+over an HTTPS connection. The technical details of this connection such as request headers,
+error handling, HTTPS connection, etc. are all abstracted from the user to make implementation
+quick and easy.
+." icon="icons/small/sfdc-connector-24x16.png" localId="sfdc-connector" image="icons/large/sfdc-connector-48x32.png" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="sfdcConnectorGeneric" caption="Generic">
+        <modeSwitch alwaysCombo="true" name="Sfdc operations to execute" caption="Operation" description="Operation.">
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/authorize" modeLabel="Authorize"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/unauthorize" modeLabel="Unauthorize"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/abort-job" modeLabel="Abort job"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/batch-info" modeLabel="Batch info"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/batch-result" modeLabel="Batch result"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/batch-result-stream" modeLabel="Batch result stream"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/close-job" modeLabel="Close job"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/convert-lead" modeLabel="Convert lead"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create" modeLabel="Create"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-batch" modeLabel="Create batch"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-batch-for-query" modeLabel="Create batch for query"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-batch-stream" modeLabel="Create batch stream"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-bulk" modeLabel="Create bulk"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-job" modeLabel="Create job"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/create-single" modeLabel="Create single"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/delete" modeLabel="Delete"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/describe-global" modeLabel="Describe global"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/describe-sobject" modeLabel="Describe sObject"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/empty-recycle-bin" modeLabel="Empty recycle bin"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-deleted" modeLabel="Get deleted"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-deleted-range" modeLabel="Get deleted range"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-server-timestamp" modeLabel="Get server timestamp"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-updated" modeLabel="Get updated"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-updated-objects" modeLabel="Get updated objects"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-updated-range" modeLabel="Get updated range"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/get-user-info" modeLabel="Get user info"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/hard-delete-bulk" modeLabel="Hard delete bulk"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/paginated-query" modeLabel="Paginated query"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/publish-topic" modeLabel="Publish topic"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/query" modeLabel="Query"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/query-all" modeLabel="Query all"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/query-result-stream" modeLabel="Query result stream"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/query-single" modeLabel="Query single"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/reset-updated-objects-timestamp" modeLabel="Reset updated objects timestamp"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/retrieve" modeLabel="Retrieve"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/search" modeLabel="Search"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/set-password" modeLabel="Set password"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/update" modeLabel="Update"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/update-bulk" modeLabel="Update bulk"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/update-single" modeLabel="Update single"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/upsert" modeLabel="Upsert"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sfdc/upsert-bulk" modeLabel="Upsert bulk"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.JobInfo" caption="Abort Job" icon="icons/small/sfdc-connector-24x16.png" localId="abort-job" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="jobId" caption="Job Id" description="The Job ID identifying the Job to be aborted." required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Batch Info" icon="icons/small/sfdc-connector-24x16.png" localId="batch-info" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/batch-info" caption="Batch Info Reference" required="true" javaType="com.sforce.async.BatchInfo"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchResult" caption="Batch Result" icon="icons/small/sfdc-connector-24x16.png" localId="batch-result" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/batch-info" caption="Batch Info Reference" required="true" javaType="com.sforce.async.BatchInfo"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.io.InputStream" caption="Batch Result Stream" icon="icons/small/sfdc-connector-24x16.png" localId="batch-result-stream" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/batch-info" caption="Batch Info Reference" required="true" javaType="com.sforce.async.BatchInfo"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.JobInfo" caption="Close Job" icon="icons/small/sfdc-connector-24x16.png" localId="close-job" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="jobId" caption="Job Id" description="The Job ID identifying the Job to be closed." required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.LeadConvertResult" caption="Convert Lead" icon="icons/small/sfdc-connector-24x16.png" localId="convert-lead" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="accountId" caption="Account Id" description="ID of the Account into which the lead will be merged. Required only when updating an existing account, including person accounts. If no accountID is specified, then the API creates a new account. To create a new account, the client application must be logged in with sufficient access rights. To merge a lead into an existing account, the client application must be logged in with read/write access to the specified account. The account name and other existing data are not overwritten. For information on IDs, see ID Field Type." required="false" javaType="java.lang.String"></string>
+        <string name="contactId" caption="Contact Id" description="ID of the Contact into which the lead will be merged (this contact must be associated with the specified accountId, and an accountId must be specified). Required only when updating an existing contact.IMPORTANT if you are converting a lead into a person account, do not specify the contactId or an error will result. Specify only the accountId of the person account. If no contactID is specified, then the API creates a new contact that is implicitly associated with the Account. To create a new contact, the client application must be logged in with sufficient access rights. To merge a lead into an existing contact, the client application must be logged in with read/write access to the specified contact. The contact name and other existing data are not overwritten (unless overwriteLeadSource is set to true, in which case only the LeadSource field is overwritten). For information on IDs, see ID Field Type." required="false" javaType="java.lang.String"></string>
+        <string name="convertedStatus" caption="Converted Status" description="Valid LeadStatus value for a converted lead. Required. To obtain the list of possible values, the client application queries the LeadStatus object, as in: Select Id, MasterLabel from LeadStatus where IsConverted=true." required="true" javaType="java.lang.String"></string>
+        <string name="leadId" caption="Lead Id" description="ID of the Lead to convert. Required. For information on IDs, see ID Field Type." required="true" javaType="java.lang.String"></string>
+        <string name="opportunityName" caption="Opportunity Name" description="Name of the opportunity to create. If no name is specified, then this value defaults to the company name of the lead. The maximum length of this field is 80 characters. If doNotCreateOpportunity argument is true, then no Opportunity is created and this field must be left blank; otherwise, an error is returned." required="false" javaType="java.lang.String"></string>
+        <boolean defaultValue="false" name="doNotCreateOpportunity" caption="Do Not Create Opportunity" description="Specifies whether to create an Opportunity during lead conversion (false, the default) or not (true). Set this flag to true only if you do not want to create an opportunity from the lead. An opportunity is created by default." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+        <boolean defaultValue="false" name="overWriteLeadSource" caption="Over Write Lead Source" description="Specifies whether to overwrite the LeadSource field on the target Contact object with the contents of the LeadSource field in the source Lead object (true), or not (false, the default). To set this field to true, the client application must specify a contactId for the target contact." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+        <boolean defaultValue="false" name="sendEmailToOwner" caption="Send Email To Owner" description="Specifies whether to send a notification email to the owner specified in the ownerId (true) or not (false, the default)." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="convert-lead-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;com.sforce.soap.partner.SaveResult&gt;" caption="Create" icon="icons/small/sfdc-connector-24x16.png" localId="create" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to create." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="sObject Field Mappings" caption="sObject Field Mappings">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="create-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="An array of one or more sObjects objects." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="create-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Create Batch" icon="icons/small/sfdc-connector-24x16.png" localId="create-batch" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/job-info" caption="Job Info Reference" required="true" javaType="com.sforce.async.JobInfo"></childElement>
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="create-batch-objects" itemName="object" defaultValue="#[payload]" caption="Objects" description="A list of one or more sObjects objects. This parameter defaults to payload content." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Create Batch For Query" icon="icons/small/sfdc-connector-24x16.png" localId="create-batch-for-query" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/job-info" caption="Job Info Reference" required="true" javaType="com.sforce.async.JobInfo"></childElement>
+        <string defaultValue="#[payload]" name="query" caption="Query" description="The query to be executed." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Create Batch Stream" icon="icons/small/sfdc-connector-24x16.png" localId="create-batch-stream" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/job-info" caption="Job Info Reference" required="true" javaType="com.sforce.async.JobInfo"></childElement>
+        <string defaultValue="#[payload]" name="stream-ref" caption="Stream Reference" description="A stream containing the data. This parameter defaults to payload content." required="false" javaType="java.io.InputStream"></string>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Create Bulk" icon="icons/small/sfdc-connector-24x16.png" localId="create-bulk" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to create." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="sObject Field Mappings" caption="sObject Field Mappings">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="create-bulk-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="An array of one or more sObjects objects." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.JobInfo" caption="Create Job" icon="icons/small/sfdc-connector-24x16.png" localId="create-job" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="externalIdFieldName" caption="External Id Field Name" description="Contains the name of the field on this object with the external ID field attribute for custom objects or the idLookup field property for standard objects (only required for Upsert Operations)." required="false" javaType="java.lang.String"></string>
+        <type-chooser associatedConfig="config-ref" name="type" caption="Type" description="The type of Salesforce object that the job will process." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <enum allowsCustom="true" name="concurrencyMode" caption="Concurrency Mode" description="The concurrency mode of the job, either Parallel or Serial." supportsExpressions="true" required="false" javaType="com.sforce.async.ConcurrencyMode">
+          <option value="Parallel"></option>
+          <option value="Serial"></option>
+        </enum>
+        <enum allowsCustom="true" name="contentType" caption="Content Type" description="The Content Type for this Job results. When specifying a content type different from XML for a query type use  batchResultStream method to retrieve results." supportsExpressions="true" required="false" javaType="com.sforce.async.ContentType">
+          <option value="CSV"></option>
+          <option value="XML"></option>
+          <option value="ZIP_CSV"></option>
+          <option value="ZIP_XML"></option>
+        </enum>
+        <enum allowsCustom="true" name="operation" caption="Operation" description="The  that will be executed by the job." supportsExpressions="true" required="true" javaType="com.sforce.async.OperationEnum">
+          <option value="delete"></option>
+          <option value="hardDelete"></option>
+          <option value="insert"></option>
+          <option value="query"></option>
+          <option value="update"></option>
+          <option value="upsert"></option>
+        </enum>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.SaveResult" caption="Create Single" icon="icons/small/sfdc-connector-24x16.png" localId="create-single" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to create." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="sObject Field Mappings" caption="sObject Field Mappings">
+        <element-controller-map mapName="object" localName="create-single-object" itemName="object" defaultValue="#[payload]" caption="sObject" description="SObject to create." required="false" javaType="java.util.Map&lt;java.lang.String,java.lang.Object&gt;"></element-controller-map>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="create-single-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;com.sforce.soap.partner.DeleteResult&gt;" caption="Delete" icon="icons/small/sfdc-connector-24x16.png" localId="delete" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="ids to Delete" caption="Ids to Delete">
+        <element-controller-list listName="ids" localName="delete-ids" itemName="id" defaultValue="#[payload]" caption="Ids" description="Array of one or more IDs associated with the objects to delete." required="false" javaType="java.util.List&lt;java.lang.String&gt;"></element-controller-list>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="delete-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.DescribeGlobalResult" caption="Describe Global" icon="icons/small/sfdc-connector-24x16.png" localId="describe-global" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General."></attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.DescribeSObjectResult" caption="Describe Sobject" icon="icons/small/sfdc-connector-24x16.png" localId="describe-sobject" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object. The specified value must be a valid object for your organization. For a complete list of objects, see Standard Objects." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;com.sforce.soap.partner.EmptyRecycleBinResult&gt;" caption="Empty Recycle Bin" icon="icons/small/sfdc-connector-24x16.png" localId="empty-recycle-bin" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="ids to Delete" caption="Ids to Delete">
+        <element-controller-list listName="ids" localName="empty-recycle-bin-ids" itemName="id" caption="Ids" description="Array of one or more IDs associated with the records to delete from the recycle bin. Maximum number of records is 200." required="true" javaType="java.util.List&lt;java.lang.String&gt;"></element-controller-list>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="empty-recycle-bin-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.GetDeletedResult" caption="Get Deleted" icon="icons/small/sfdc-connector-24x16.png" localId="get-deleted" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The specified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <integer min="0" step="1" name="duration" caption="Duration" description="The amount of time in minutes before now for which to return records from." required="true" javaType="int"></integer>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="get-deleted-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.GetDeletedResult" caption="Get Deleted Range" icon="icons/small/sfdc-connector-24x16.png" localId="get-deleted-range" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The specified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <string name="startTime" caption="Start Time Reference" description="Starting date/time (Coordinated Universal Time (UTC)not local timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value ' (for example, 12:30:15 is interpreted as 12:30:00 UTC)." required="true" javaType="java.util.Calendar"></string>
+        <string name="endTime" caption="End Time Reference" description="Ending date/time (Coordinated Universal Time (UTC)not local timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:35:15 is interpreted as 12:35:00 UTC). If not specific, the current server time will be used." required="false" javaType="java.util.Calendar"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="get-deleted-range-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.Calendar" caption="Get Server Timestamp" icon="icons/small/sfdc-connector-24x16.png" localId="get-server-timestamp" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General."></attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.GetUpdatedResult" caption="Get Updated" icon="icons/small/sfdc-connector-24x16.png" localId="get-updated" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The specified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <integer min="0" step="1" name="duration" caption="Duration" description="The amount of time in minutes before now for which to return records from." required="true" javaType="int"></integer>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="get-updated-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;" caption="Get Updated Objects" icon="icons/small/sfdc-connector-24x16.png" localId="get-updated-objects" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The specified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <integer min="0" step="1" name="initialTimeWindow" caption="Initial Time Window" description="Time window (in minutes) used to calculate the start time (in time range) the first time this operation is called. E.g: if initialTimeWindow equals 2, the start time will be the current time (now) minus 2 minutes, then the range to retrieve the updated object will be (now - 2 minutes; now). After first call the start time will be calculated from the object store getting the last time this operation was exec." required="true" javaType="int"></integer>
+      </group>
+      <group id="fields" caption="Fields">
+        <element-controller-list listName="fields" localName="get-updated-objects-fields" itemName="field" defaultValue="#[payload]" caption="Fields" description="The fields to retrieve for the updated objects." required="false" javaType="java.util.List&lt;java.lang.String&gt;"></element-controller-list>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="get-updated-objects-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.GetUpdatedResult" caption="Get Updated Range" icon="icons/small/sfdc-connector-24x16.png" localId="get-updated-range" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The specified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <string name="startTime" caption="Start Time Reference" description="Starting date/time (Coordinated Universal Time (UTC)not local timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value ' (for example, 12:30:15 is interpreted as 12:30:00 UTC)." required="true" javaType="java.util.Calendar"></string>
+        <string name="endTime" caption="End Time Reference" description="Ending date/time (Coordinated Universal Time (UTC)not local timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:35:15 is interpreted as 12:35:00 UTC). If it is not provided, the current server time will be used." required="false" javaType="java.util.Calendar"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="get-updated-range-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.GetUserInfoResult" caption="Get User Info" icon="icons/small/sfdc-connector-24x16.png" localId="get-user-info" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General."></attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Hard Delete Bulk" icon="icons/small/sfdc-connector-24x16.png" localId="hard-delete-bulk" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to update." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="salesforce sObjects list" caption="Salesforce sObjects list">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="hard-delete-bulk-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="An array of one or more sObjects objects." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="org.mule.modules.salesforce.QueryResultObject" caption="Paginated Query" icon="icons/small/sfdc-connector-24x16.png" localId="paginated-query" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="query" caption="Query">
+        <string name="query" caption="Query" description="Query string that specifies the object to query, the fields to return, and any conditions for including a specific object in the query. For more information, see Salesforce Object Query Language (SOQL)." required="false" javaType="java.lang.String"></string>
+      </group>
+      <group id="general" caption="General">
+        <string name="queryResultObject-ref" caption="Query Result Object Reference" description="QueryResultObject returned by a previous call to this operation. If this is set the other parameter will be ignored." required="false" javaType="org.mule.modules.salesforce.QueryResultObject"></string>
+        <boolean defaultValue="false" name="withDeletedRecords" caption="With Deleted Records" description="Flag that specifies whether or not to retrieve records that have been deleted." supportsExpressions="true" required="false" javaType="java.lang.Boolean"></boolean>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="paginated-query-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" caption="Publish Topic" icon="icons/small/sfdc-connector-24x16.png" localId="publish-topic" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <string name="topicName" caption="Topic Name" description="Descriptive name of the push topic, such as MyNewCases or TeamUpdatedContacts. The maximum length is 25 characters. This value identifies the channel." required="true" javaType="java.lang.String"></string>
+        <string name="query" caption="Query" description="The SOQL query statement that determines which records' changes trigger events to be sent to the channel. Maximum length: 1200 characters." required="true" javaType="java.lang.String"></string>
+        <string name="description" caption="Description" description="Description of what kinds of records are returned by the query. Limit: 400 characters." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;" caption="Query" icon="icons/small/sfdc-connector-24x16.png" localId="query" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="query" caption="Query">
+        <string name="query" caption="Query" description="Query string that specifies the object to query, the fields to return, and any conditions for including a specific object in the query. For more information, see Salesforce Object Query Language (SOQL)." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="query-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;" caption="Query All" icon="icons/small/sfdc-connector-24x16.png" localId="query-all" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="query" caption="Query">
+        <string name="query" caption="Query" description="Query string that specifies the object to query, the fields to return, and any conditions for including a specific object in the query. For more information, see Salesforce Object Query Language (SOQL)." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="query-all-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.io.InputStream" caption="Query Result Stream" icon="icons/small/sfdc-connector-24x16.png" localId="query-result-stream" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/sfdc/batch-info" caption="Batch Info Reference" required="true" javaType="com.sforce.async.BatchInfo"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.Map&lt;java.lang.String,java.lang.Object&gt;" caption="Query Single" icon="icons/small/sfdc-connector-24x16.png" localId="query-single" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="query" caption="Query">
+        <string name="query" caption="Query" description="Query string that specifies the object to query, the fields to return, and any conditions for including a specific object in the query. For more information, see Salesforce Object Query Language (SOQL)." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="query-single-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" caption="Reset Updated Objects Timestamp" icon="icons/small/sfdc-connector-24x16.png" localId="reset-updated-objects-timestamp" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="The object type for which the timestamp should be reset." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;" caption="Retrieve" icon="icons/small/sfdc-connector-24x16.png" localId="retrieve" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Object type. The sp ecified value must be a valid object for your organization." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="ids to Retrieve" caption="Ids to Retrieve">
+        <element-controller-list listName="ids" localName="retrieve-ids" itemName="id" caption="Ids" description="The ids of the objects to retrieve." required="true" javaType="java.util.List&lt;java.lang.String&gt;"></element-controller-list>
+      </group>
+      <group id="fields to Retrieve" caption="Fields to Retrieve">
+        <element-controller-list listName="fields" localName="retrieve-fields" itemName="field" caption="Fields" description="The fields to return for the matching objects." required="true" javaType="java.util.List&lt;java.lang.String&gt;"></element-controller-list>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="retrieve-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;" caption="Search" icon="icons/small/sfdc-connector-24x16.png" localId="search" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="query" caption="Query">
+        <string name="query" caption="Query" description="Query string that specifies the object to query, the fields to return, and any conditions for including a specific object in the query. For more information, see Salesforce Object Search Language (SOSL)." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="search-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" caption="Set Password" icon="icons/small/sfdc-connector-24x16.png" localId="set-password" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <string name="userId" caption="User ID" description="The user to set the password for." required="true" javaType="java.lang.String"></string>
+        <string name="newPassword" caption="Password" description="The new password for the user." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="set-password-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;com.sforce.soap.partner.SaveResult&gt;" caption="Update" icon="icons/small/sfdc-connector-24x16.png" localId="update" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to update." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="salesforce sObjects list" caption="Salesforce sObjects list">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="update-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="An array of one or more sObjects objects." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="update-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Update Bulk" icon="icons/small/sfdc-connector-24x16.png" localId="update-bulk" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to update." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="salesforce sObjects list" caption="Salesforce sObjects list">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="update-bulk-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="An array of one or more sObjects objects." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.soap.partner.SaveResult" caption="Update Single" icon="icons/small/sfdc-connector-24x16.png" localId="update-single" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="Type of object to update." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="salesforce Object" caption="Salesforce Object">
+        <element-controller-map mapName="object" localName="update-single-object" itemName="object" defaultValue="#[payload]" caption="sObject" description="The object to be updated." required="false" javaType="java.util.Map&lt;java.lang.String,java.lang.Object&gt;"></element-controller-map>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="update-single-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;com.sforce.soap.partner.UpsertResult&gt;" caption="Upsert" icon="icons/small/sfdc-connector-24x16.png" localId="upsert" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <string name="externalIdFieldName" caption="External Id Field Name" description="Contains the name of the field on this object with the external ID field attribute for custom objects or the idLookup field property for standard objects." required="true" javaType="java.lang.String"></string>
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="The type of the given objects. The list of objects to upsert must be homogeneous." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+      </group>
+      <group id="salesforce sObjects list" caption="Salesforce sObjects list">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="upsert-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="The objects to upsert." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+      <group id="salesforce SOAP Headers" caption="Salesforce SOAP Headers">
+        <element-controller-map mapName="headers" localName="upsert-headers" itemName="header" caption="Headers" description="Salesforce Headers More Info." required="false" javaType="java.util.Map&lt;org.mule.modules.salesforce.api.SalesforceHeader,java.lang.Object&gt;"></element-controller-map>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.sforce.async.BatchInfo" caption="Upsert Bulk" icon="icons/small/sfdc-connector-24x16.png" localId="upsert-bulk" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="information" caption="Information">
+        <type-chooser associatedConfig="config-ref" name="type" caption="sObject Type" description="The type of the given objects. The list of objects to upsert must be homogeneous." supportsExpressions="true" required="true" javaType="java.lang.String"></type-chooser>
+        <string name="externalIdFieldName" caption="External Id Field Name" description="Contains the name of the field on this object with the external ID field attribute for custom objects or the idLookup field property for standard objects." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="salesforce sObjects list" caption="Salesforce sObjects list">
+        <element-controller-listOfMap listName="objects" innerName="inner-object" localName="upsert-bulk-objects" itemName="object" defaultValue="#[payload]" caption="sObjects" description="The objects to upsert." required="false" javaType="java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.Object&gt;&gt;"></element-controller-listOfMap>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Connection" description="Connection.">
+      <group id="connection" caption="Connection">
+        <label caption="Use these fields to override the credentials defined in the Salesforce connector."></label>
+        <label caption=""></label>
+        <string name="username" caption="Username" description="Username used to initialize the session." required="false" javaType="java.lang.String"></string>
+        <password name="password" caption="Password" description="Password used to authenticate the user." required="false" javaType="java.lang.String"></password>
+        <string name="securityToken" caption="Security Token" description="User's security token." required="false" javaType="java.lang.String"></string>
+        <string defaultValue="https://login.salesforce.com/services/Soap/u/31.0" name="url" caption="Url" description="Salesforce endpoint URL." required="false" javaType="java.lang.String"></string>
+        <string name="proxyHost" caption="Proxy Host" description="Hostname of the proxy." required="false" javaType="java.lang.String"></string>
+        <integer defaultValue="80" min="0" step="1" name="proxyPort" caption="Proxy Port" description="Port of the proxy." required="false" javaType="int"></integer>
+        <string name="proxyUsername" caption="Proxy Username" description="Username used to authenticate against the proxy." required="false" javaType="java.lang.String"></string>
+        <password name="proxyPassword" caption="Proxy Password" description="Password used to authenticate against the proxy." required="false" javaType="java.lang.String"></password>
+        <string name="sessionId" caption="Session Id" description="This value could be used for specifing an active Salesforce session. Please take into account you must specify all the connection parameters anyway since they will be used in case of needing a reconnection." required="false" javaType="java.lang.String"></string>
+        <string name="serviceEndpoint" caption="Service Endpoint" description="Specifies the service endpoint. This value will only be used in case of using sessionId configuration property. Otherwise the service endpoint will be retrieved from the login results." required="false" javaType="java.lang.String"></string>
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector caption="Authorize" icon="icons/small/sfdc-connector-24x16.png" localId="authorize" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="state" caption="State" description="Any value that you wish to be sent with the callback." required="false"></string>
+        <string name="accessTokenUrl" caption="Access Token Url" description="The URL defined by the Service Provider to obtain an access token." required="false"></string>
+        <string name="authorizationUrl" caption="Authorization Url" description="The URL defined by the Service Provider where the resource owner will be redirected to grant authorization to the connector." required="false"></string>
+      </group>
+      <group id="additionalAuthorizationParameters" caption="Additional Authorization Parameters">
+        <enum allowsCustom="true" name="display" caption="Display" description="Display." supportsExpressions="true" required="true" javaType="org.mule.modules.salesforce.SalesforceOAuthDisplay">
+          <option value="PAGE"></option>
+          <option value="POPUP"></option>
+          <option value="TOUCH"></option>
+        </enum>
+        <enum allowsCustom="true" name="immediate" caption="Immediate" description="Immediate." supportsExpressions="true" required="false" javaType="org.mule.modules.salesforce.SalesforceOAuthImmediate">
+          <option value="FALSE"></option>
+          <option value="TRUE"></option>
+        </enum>
+        <enum allowsCustom="true" name="prompt" caption="Prompt" description="Prompt." supportsExpressions="true" required="false" javaType="org.mule.modules.salesforce.SalesforceOAuthPrompt">
+          <option value="CONSENT"></option>
+          <option value="LOGIN"></option>
+        </enum>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector caption="Unauthorize" icon="icons/small/sfdc-connector-24x16.png" localId="unauthorize" image="icons/large/sfdc-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sfdc/abstractSfdcConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="accessTokenId" caption="Access Token Id" description="The id of the access token that will be used to authenticate the call." required="false"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <nested xmlname="batch-info" caption="" description="" localId="batch-info" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Batch Info Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <string name="id" caption="Id" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="jobId" caption="Job Id" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <enum allowsCustom="true" name="state" caption="State" description="" supportsExpressions="true" required="false" controlled="complex" javaType="com.sforce.async.BatchStateEnum">
+      <option value="Completed"></option>
+      <option value="Failed"></option>
+      <option value="InProgress"></option>
+      <option value="NotProcessed"></option>
+      <option value="Queued"></option>
+    </enum>
+    <string name="stateMessage" caption="State Message" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="createdDate" caption="Created Date Reference" description="" required="false" controlled="complex" javaType="java.util.Calendar"></string>
+    <string name="systemModstamp" caption="System Modstamp Reference" description="" required="false" controlled="complex" javaType="java.util.Calendar"></string>
+    <integer min="0" step="1" name="numberRecordsProcessed" caption="Number Records Processed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberRecordsFailed" caption="Number Records Failed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="totalProcessingTime" caption="Total Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+    <integer min="0" step="1" name="apiActiveProcessingTime" caption="Api Active Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+    <integer min="0" step="1" name="apexProcessingTime" caption="Apex Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+  </nested>
+  <nested xmlname="job-info" caption="" description="" localId="job-info" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Job Info Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <string name="id" caption="Id" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <enum allowsCustom="true" name="operation" caption="Operation" description="" supportsExpressions="true" required="false" controlled="complex" javaType="com.sforce.async.OperationEnum">
+      <option value="delete"></option>
+      <option value="hardDelete"></option>
+      <option value="insert"></option>
+      <option value="query"></option>
+      <option value="update"></option>
+      <option value="upsert"></option>
+    </enum>
+    <string name="object" caption="Object" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="createdById" caption="Created By Id" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="createdDate" caption="Created Date Reference" description="" required="false" controlled="complex" javaType="java.util.Calendar"></string>
+    <string name="systemModstamp" caption="System Modstamp Reference" description="" required="false" controlled="complex" javaType="java.util.Calendar"></string>
+    <enum allowsCustom="true" name="state" caption="State" description="" supportsExpressions="true" required="false" controlled="complex" javaType="com.sforce.async.JobStateEnum">
+      <option value="Aborted"></option>
+      <option value="Closed"></option>
+      <option value="Failed"></option>
+      <option value="Open"></option>
+    </enum>
+    <string name="externalIdFieldName" caption="External Id Field Name" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <enum allowsCustom="true" name="concurrencyMode" caption="Concurrency Mode" description="" supportsExpressions="true" required="false" controlled="complex" javaType="com.sforce.async.ConcurrencyMode">
+      <option value="Parallel"></option>
+      <option value="Serial"></option>
+    </enum>
+    <boolean name="fastPathEnabled" caption="Fast Path Enabled" description="" supportsExpressions="true" required="false" controlled="complex" javaType="boolean"></boolean>
+    <integer min="0" step="1" name="numberBatchesQueued" caption="Number Batches Queued" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberBatchesInProgress" caption="Number Batches In Progress" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberBatchesCompleted" caption="Number Batches Completed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberBatchesFailed" caption="Number Batches Failed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberBatchesTotal" caption="Number Batches Total" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberRecordsProcessed" caption="Number Records Processed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="numberRetries" caption="Number Retries" description="" required="false" controlled="complex" javaType="int"></integer>
+    <enum allowsCustom="true" name="contentType" caption="Content Type" description="" supportsExpressions="true" required="false" controlled="complex" javaType="com.sforce.async.ContentType">
+      <option value="CSV"></option>
+      <option value="XML"></option>
+      <option value="ZIP_CSV"></option>
+      <option value="ZIP_XML"></option>
+    </enum>
+    <string name="apiVersion" caption="Api Version" description="" required="false" controlled="complex" javaType="double"></string>
+    <string name="assignmentRuleId" caption="Assignment Rule Id" description="" required="false" controlled="complex" javaType="java.lang.String"></string>
+    <integer min="0" step="1" name="numberRecordsFailed" caption="Number Records Failed" description="" required="false" controlled="complex" javaType="int"></integer>
+    <integer min="0" step="1" name="totalProcessingTime" caption="Total Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+    <integer min="0" step="1" name="apiActiveProcessingTime" caption="Api Active Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+    <integer min="0" step="1" name="apexProcessingTime" caption="Apex Processing Time" description="" required="false" controlled="complex" javaType="long"></integer>
+  </nested>
+  <nested caption="" description="" localId="oauth-callback-config" abstract="true">
+    <string name="domain" caption="Domain" description="The domain name to use when setting up the callback endpoint."></string>
+    <string name="localPort" caption="Local Port" description="The local port to use when setting up the callback endpoint."></string>
+    <string name="remotePort" caption="Remote Port" description="The remote port is the port used to build the external callback URL."></string>
+    <string name="path" caption="Path" description="The path to use when setting up the callback endpoint."></string>
+    <boolean defaultValue="false" name="async" caption="Async" description="Async." fillLine="true"></boolean>
+  </nested>
+  <nested caption="" description="Configuration element for storage of access tokens" localId="oauth-store-config" abstract="true">
+    <string name="objectStore-ref" caption="Object Store Reference" description="Object store reference."></string>
+  </nested>
+</namespace>

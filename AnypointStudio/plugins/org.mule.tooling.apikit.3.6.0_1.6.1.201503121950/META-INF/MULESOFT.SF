@@ -1,0 +1,208 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: yulHr1CrJ0uqmWNmx5YH94wuCY0=
+Created-By: 1.6.0_31 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: 4sVHeHnRYQGN+siqIqYCkB0akN0=
+
+Name: lib/juniversalchardet.jar
+SHA1-Digest: JXFiG4kc3WzEJdbt/C7z0G5rF+Q=
+
+Name: icons/large/sub-flow-48x32.png
+SHA1-Digest: EH2nFMFyEKFb6vL8BXZb55FDfzY=
+
+Name: lib/commons-beanutils.jar
+SHA1-Digest: SNj2pybcR/UBI68v6b8sKJWjD/E=
+
+Name: lib/jdom2.jar
+SHA1-Digest: Rn3MqKDnQVtnbLidyGjF9xHUIhw=
+
+Name: lib/commons-io.jar
+SHA1-Digest: gear/KNbEBXwpf1mnS1K01nLCPk=
+
+Name: lib/jackson-annotations.jar
+SHA1-Digest: CFN4/i5PEGIYojkblBsA/hhrrGo=
+
+Name: icons/small/apikit16x16.png
+SHA1-Digest: Jvuvtyd2iZZGrQ768Ovy61dqExM=
+
+Name: icons/small/exception-strategy.png
+SHA1-Digest: 0Wh3uw8yu1RziJRsatSs1czAWdQ=
+
+Name: lib/jackson-databind.jar
+SHA1-Digest: 43rOdsIEmsH6NowyN7eAt6rTo3Y=
+
+Name: icons/small/scaffolder.png
+SHA1-Digest: IFUMS0HqZ9oHXBDRSCYeVDWYgGc=
+
+Name: lib/jackson-coreutils.jar
+SHA1-Digest: uVsDFQJdquMcYwbIAv6D4uaVR4c=
+
+Name: icons/small/CatchExceptionStrategy-24x16-1.png
+SHA1-Digest: mUuzZnXcPWgp+zwm+Ewt43XVT1w=
+
+Name: lib/activation.jar
+SHA1-Digest: A55FvhBIiCk9AXMAeLbbMtCe7PM=
+
+Name: lib/jsr305.jar
+SHA1-Digest: vN+fXhCCekcTVmBQo1mvq8tC2r4=
+
+Name: lib/snakeyaml.jar
+SHA1-Digest: XD7cAl+krCijQIJuoVXxFfKRS2c=
+
+Name: lib/rhino.jar
+SHA1-Digest: 2Cc/bVs+V30bcQQDFD8XZp6pbsQ=
+
+Name: mule-apikit.xsd
+SHA1-Digest: h4d1b2C4SZVOIthnXcjtb/H9jK0=
+
+Name: lib/jopt-simple.jar
+SHA1-Digest: rH3YOBnQBQUC3yrv+K5nDo9bn9Q=
+
+Name: lib/slf4j-api.jar
+SHA1-Digest: KkxkudEHOYXMqpXT5Wn1SxGlw1M=
+
+Name: lib/xml-apis.jar
+SHA1-Digest: HfY/O+iUpIaQIuzCWKC3UoKU2/o=
+
+Name: resources/api.raml
+SHA1-Digest: 4Y+6DRijlCzc4ThzTmn44b8x1uw=
+
+Name: mule-module-apikit-plugin-1.6.1.zip
+SHA1-Digest: f36rXx331grhDpuyJMRDAo5lRs4=
+
+Name: META-INF/maven/org.mule.tools/org.mule.tooling.apikit.3.6.0/pom.
+ xml
+SHA1-Digest: 7PTTyIug5HYvD1D612ZXCoUmMhk=
+
+Name: lib/msg-simple.jar
+SHA1-Digest: oYAa/bjcHgNVFTZlIp6mpqM6u2c=
+
+Name: lib/commons-validator.jar
+SHA1-Digest: aF06VWG+OZST2UhYnRWLPJchsyg=
+
+Name: META-INF/maven/org.mule.tools/org.mule.tooling.apikit.3.6.0/pom.
+ properties
+SHA1-Digest: tkVgq6y33qgoPABkfsQVmQ5MDzs=
+
+Name: lib/slf4j-log4j12.jar
+SHA1-Digest: c0fsJnE8orRUrrh5FeLCjAsSb9g=
+
+Name: resources/muleConfiguration.xml
+SHA1-Digest: 2hCBnmqEfJrVdj8/0ls3zAtvzP4=
+
+Name: lib/commons-logging.jar
+SHA1-Digest: zRgdtJajDLYeUNNDTCpuXi0Y8lU=
+
+Name: lib/commons-digester.jar
+SHA1-Digest: wskzTzfCPesB1etrtDVrA+1iZv4=
+
+Name: icons/small/exception-mapping.png
+SHA1-Digest: Mhy6OfvIZk/YLwvaIDcItGJzafE=
+
+Name: lib/plexus-build-api.jar
+SHA1-Digest: 68wBSUgF+OQ7OT8wnN6emEqfcec=
+
+Name: lib/jackson-module-jsonSchema.jar
+SHA1-Digest: ricgeWhb7WZch0vA7HooeIpghys=
+
+Name: lib/commons-collections.jar
+SHA1-Digest: oI9/k+yFkX2fm4jyiMbMBJqeLFI=
+
+Name: org/mule/tooling/apikit/Activator.class
+SHA1-Digest: YJbxyFLP2uhFNRoxmtVVM4stxH8=
+
+Name: lib/libphonenumber.jar
+SHA1-Digest: UBprwkVVKO63RhqUzjs1nbVuDDU=
+
+Name: apikit.xml
+SHA1-Digest: pZaZjUs3pKV8OusvrDaAnRt9jQA=
+
+Name: lib/joda-time.jar
+SHA1-Digest: bH54tc20vrwBhmMId9LNwxc8ERA=
+
+Name: lib/guava.jar
+SHA1-Digest: Xjn7WeVQjEa7Ikx2gBF7+M6X6RQ=
+
+Name: org/mule/tooling/apikit/handlers/ScaffolderHandler.class
+SHA1-Digest: x7nN+Q8UiSqAxuHS0OxDdSvLrdw=
+
+Name: icons/large/api_console.png
+SHA1-Digest: 9xfyDbuN8PdKTbsHKIJ50OtIXfY=
+
+Name: org/mule/tooling/apikit/handlers/ScaffolderHandler$1.class
+SHA1-Digest: ht3ak8CWJ+tHYuRqbHoQ/3N/1U8=
+
+Name: icons/large/apikit.png
+SHA1-Digest: z+VTSL0K6c3VlBPPyHwLXbIvb5k=
+
+Name: api.raml
+SHA1-Digest: gOF2Ev2Fv3l7b0TvrDWyvdO+XcE=
+
+Name: lib/raml-parser.jar
+SHA1-Digest: BR8lfNE9KMf5z3cNJK0EAs7Yo3g=
+
+Name: lib/plexus-utils.jar
+SHA1-Digest: DqhZp2nP2fGHvM8cVpJi9Dto8c8=
+
+Name: lib/commons-lang.jar
+SHA1-Digest: MT0YZ3zuC9+zLv9xlQdFBONXvIM=
+
+Name: lib/apikit-maven-plugin.jar
+SHA1-Digest: 5D4PEAXnrMI06chGpOGQWwybU7M=
+
+Name: lib/jackson-core.jar
+SHA1-Digest: YGqOyPHaFJpuowJDOBoHt7y6QFs=
+
+Name: icons/small/api_console_endpoint.png
+SHA1-Digest: BSphG+WdBSWuMmtMktFBmUIiOXg=
+
+Name: lib/btf.jar
+SHA1-Digest: 4ajx6pruUHeyumpcaxYDGEb6/3w=
+
+Name: muleConfiguration.xml
+SHA1-Digest: C/ayc+P0+Qzp0QiC1vtWa6DBblw=
+
+Name: lib/maven-plugin-api.jar
+SHA1-Digest: YW6G3fPZC7fBG/Sb8mmS1cVyZn4=
+
+Name: lib/log4j.jar
+SHA1-Digest: MtBz/NBFbYjgsWe3znxckq0lOOk=
+
+Name: api.properties
+SHA1-Digest: xrP9IiqIVDPofsWk8SYNmgjKYOI=
+
+Name: icons/small/newAPIKitProject-16x16.png
+SHA1-Digest: cCUr/7jVnhBimPWv4t95xmHXkXs=
+
+Name: lib/jaxen.jar
+SHA1-Digest: 2ERcph34Nz4hv4L45i1WsW9UQFg=
+
+Name: resources/api.properties
+SHA1-Digest: /olsUlZZ+IH9BQvRZ21Uil7fBSk=
+
+Name: icons/small/apikit-menu-16x16.jpg
+SHA1-Digest: DG9J5EDJqKG8RAFQ3Yy9q1Toth8=
+
+Name: lib/uri-template.jar
+SHA1-Digest: hTanyFEeWk7gXqgxxF3wLFelWzE=
+
+Name: icons/small/api_console_view.png
+SHA1-Digest: TVMuhhe/X/1vZaEhVAYPKFrfIi8=
+
+Name: icons/small/flow-24x16.png
+SHA1-Digest: c9XKjY+re/NX59Tf4kHgaACl850=
+
+Name: mule-module-apikit-1.6.1.jar
+SHA1-Digest: FUEiKvA76VpoDuzrudTyLbobhLo=
+
+Name: lib/json-schema-core.jar
+SHA1-Digest: xMcu71XogS7SjsFGbQn4tNIr+OM=
+
+Name: lib/json-schema-validator.jar
+SHA1-Digest: uEs6qPuirh/2fukHN3DCjRlHEOI=
+
+Name: plugin.xml
+SHA1-Digest: 07fKvDWv4jdpt3Id9qGFjdHlV5E=
+
+Name: lib/mailapi.jar
+SHA1-Digest: 3+A8Rr3JOtEUcwJZGjaSV/qnBkU=
+
