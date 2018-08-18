@@ -40,7 +40,10 @@ public class TestePolling {
 								Message message = exchange.getIn();
 								message.setBody(livros);
 							}
-						});
+						})
+						.log("${body}")
+						.to("mock:livros");
+						
 
 			}
 		});
