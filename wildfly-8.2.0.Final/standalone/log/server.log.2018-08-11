@@ -1,0 +1,1439 @@
+2018-08-11 10:01:54,634 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 10:01:55,431 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 10:01:55,553 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 10:01:55,564 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 10:01:55,569 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 10:02:00,609 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 10:02:00,634 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 10:02:00,686 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.3.0.Final
+2018-08-11 10:02:00,699 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 10:02:00,789 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 10:02:00,789 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 4.0.6.Final
+2018-08-11 10:02:00,806 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 10:02:00,820 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 48) JBAS015537: Activating WebServices Extension
+2018-08-11 10:02:00,821 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 45) JBAS013171: Activating Security Subsystem
+2018-08-11 10:02:00,832 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 10:02:00,834 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 46) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 10:02:00,835 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) JBAS011800: Activating Naming Subsystem
+2018-08-11 10:02:00,927 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-1) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 10:02:00,942 INFO  [org.jboss.as.security] (MSC service thread 1-1) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 10:02:01,073 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:02:01,073 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 47) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:02:01,537 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 47) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 10:02:01,668 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017525: Started server default-server.
+2018-08-11 10:02:01,752 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017531: Host default-host starting
+2018-08-11 10:02:01,954 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 10:02:01,957 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 10:02:02,418 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Starting Naming Service
+2018-08-11 10:02:02,419 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 10:02:02,860 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 10:02:03,062 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 10:02:03,066 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 10:02:03,534 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 10:02:04,471 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 10:02:04,716 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 10:02:04,846 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-1) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 10:02:05,221 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 10:02:05,224 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 10:02:05,979 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 10:02:06,129 INFO  [org.jboss.weld.Version] (MSC service thread 1-4) WELD-000900: 2.2.6 (Final)
+2018-08-11 10:02:06,364 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-4) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 10:02:06,879 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-4) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 10:02:08,034 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-4) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 10:02:08,228 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-4) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 10:02:08,257 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 10:02:08,257 INFO  [org.jboss.as.webservices] (MSC service thread 1-1) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 10:02:10,179 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-2) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 10:02:10,266 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 10:02:10,374 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 28) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 10:02:10,478 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 10:02:10,479 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 10:02:10,479 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 16720ms - Started 300 of 353 services (92 services are lazy, passive or on-demand)
+2018-08-11 10:06:51,740 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 10:06:51,796 INFO  [org.jboss.as.webservices] (MSC service thread 1-7) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 10:06:51,802 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017532: Host default-host stopping
+2018-08-11 10:06:51,808 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 10:06:51,810 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 10:06:51,821 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 10:06:51,991 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 10:06:51,994 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 10:06:51,995 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 10:06:52,004 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 306ms
+2018-08-11 10:06:52,014 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 272ms
+2018-08-11 10:06:59,614 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 10:06:59,910 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 10:06:59,993 INFO  [org.jboss.as] (MSC service thread 1-5) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 10:07:00,000 DEBUG [org.jboss.as.config] (MSC service thread 1-5) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 10:07:00,001 DEBUG [org.jboss.as.config] (MSC service thread 1-5) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 10:07:01,637 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 10:07:01,661 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 10:07:01,689 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.3.0.Final
+2018-08-11 10:07:01,701 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 10:07:01,796 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 4.0.6.Final
+2018-08-11 10:07:01,845 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 10:07:01,850 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 10:07:01,850 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 10:07:01,849 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 10:07:01,918 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 10:07:01,922 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 10:07:01,931 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 10:07:01,934 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 10:07:01,941 INFO  [org.jboss.as.security] (MSC service thread 1-5) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 10:07:01,980 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 10:07:02,060 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-6) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 10:07:02,066 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 10:07:02,089 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:07:02,091 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:07:02,109 INFO  [org.jboss.as.naming] (MSC service thread 1-5) JBAS011802: Starting Naming Service
+2018-08-11 10:07:02,110 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 10:07:02,659 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 10:07:02,725 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017525: Started server default-server.
+2018-08-11 10:07:02,773 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017531: Host default-host starting
+2018-08-11 10:07:02,962 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 10:07:03,278 INFO  [org.jboss.as.jacorb] (MSC service thread 1-4) JBAS016330: CORBA ORB Service started
+2018-08-11 10:07:03,283 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 10:07:03,306 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 10:07:03,473 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 10:07:03,640 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 10:07:03,650 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 10:07:03,746 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 10:07:03,770 INFO  [org.jboss.as.jacorb] (MSC service thread 1-3) JBAS016328: CORBA Naming Service started
+2018-08-11 10:07:03,986 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 10:07:04,143 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 10:07:04,200 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 10:07:04,242 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 10:07:04,413 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 10:07:04,413 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 10:07:04,447 INFO  [org.jboss.ws.common.management] (MSC service thread 1-5) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 10:07:04,535 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 10:07:04,711 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-2) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 10:07:04,808 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 10:07:04,808 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 10:07:04,899 INFO  [org.jboss.messaging] (MSC service thread 1-5) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 10:07:04,900 INFO  [org.jboss.messaging] (MSC service thread 1-4) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 10:07:05,239 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 10:07:05,590 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 2.2.6 (Final)
+2018-08-11 10:07:05,673 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-5) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 10:07:05,686 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 10:07:05,686 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 10:07:05,696 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 10:07:05,852 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 10:07:05,893 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 10:07:05,895 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 10:07:05,902 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 59) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 10:07:05,921 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 10:07:05,922 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 10:07:05,979 INFO  [org.hornetq.ra] (MSC service thread 1-1) HornetQ resource adaptor started
+2018-08-11 10:07:05,981 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-1) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 10:07:05,983 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-7) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 10:07:05,984 INFO  [org.jboss.as.messaging] (MSC service thread 1-7) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 10:07:06,071 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-5) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 10:07:06,824 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-5) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 10:07:06,966 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-5) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 10:07:07,001 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 10:07:07,001 INFO  [org.jboss.as.webservices] (MSC service thread 1-7) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 10:07:08,482 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-8) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 10:07:08,530 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 10:07:08,588 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 10:07:08,746 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 10:07:08,747 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 10:07:08,747 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 9788ms - Started 337 of 389 services (103 services are lazy, passive or on-demand)
+2018-08-11 10:08:38,035 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 60) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 10:08:38,052 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 10:39:50,075 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 10:39:50,075 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 62) JBAS011605: Unbound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 10:39:50,116 INFO  [org.jboss.as.webservices] (MSC service thread 1-7) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 10:39:50,120 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017532: Host default-host stopping
+2018-08-11 10:39:50,140 INFO  [org.jboss.as.messaging] (MSC service thread 1-6) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 10:39:50,143 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 10:39:50,144 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 10:39:50,147 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-6) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 10:39:50,155 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 10:39:50,216 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 64) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 10:39:50,316 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 291ms
+2018-08-11 10:39:50,426 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 64) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 10:39:50,434 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 10:39:50,439 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 10:39:50,446 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 10:39:50,452 INFO  [org.jboss.as] (MSC service thread 1-8) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 421ms
+2018-08-11 10:56:44,271 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 10:56:44,544 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 10:56:44,642 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 10:56:44,650 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 10:56:44,651 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 10:56:46,570 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 10:56:46,624 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 10:56:46,670 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.3.0.Final
+2018-08-11 10:56:46,696 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 10:56:46,735 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 10:56:46,745 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 10:56:46,806 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 10:56:46,814 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 10:56:46,827 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 10:56:46,875 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 10:56:46,877 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 10:56:46,891 INFO  [org.jboss.as.security] (MSC service thread 1-2) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 10:56:46,895 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 10:56:46,918 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 10:56:46,977 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 10:56:46,978 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:56:46,979 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 10:56:46,982 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 10:56:47,112 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 4.0.6.Final
+2018-08-11 10:56:47,171 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Starting Naming Service
+2018-08-11 10:56:47,172 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 10:56:47,581 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 10:56:47,600 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017525: Started server default-server.
+2018-08-11 10:56:47,731 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017531: Host default-host starting
+2018-08-11 10:56:47,822 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 10:56:47,991 INFO  [org.jboss.as.jacorb] (MSC service thread 1-8) JBAS016330: CORBA ORB Service started
+2018-08-11 10:56:48,317 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 10:56:48,375 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 10:56:48,620 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 10:56:48,640 INFO  [org.jboss.as.jacorb] (MSC service thread 1-8) JBAS016328: CORBA Naming Service started
+2018-08-11 10:56:48,731 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 10:56:48,734 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 10:56:48,826 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 10:56:49,054 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 10:56:49,194 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 10:56:49,202 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 10:56:49,206 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 10:56:49,410 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 10:56:49,439 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 10:56:49,439 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 10:56:49,646 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 10:56:49,823 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 10:56:49,963 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 10:56:49,965 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 10:56:50,706 INFO  [org.jboss.messaging] (MSC service thread 1-8) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 10:56:50,707 INFO  [org.jboss.messaging] (MSC service thread 1-4) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 10:56:50,781 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 10:56:50,834 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900: 2.2.6 (Final)
+2018-08-11 10:56:50,837 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 10:56:50,837 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 10:56:50,845 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 10:56:50,862 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 10:56:50,884 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 10:56:50,891 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 10:56:50,949 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 10:56:50,952 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 60) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 10:56:50,953 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 10:56:50,954 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 10:56:50,985 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-1) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 10:56:51,038 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 10:56:51,211 INFO  [org.hornetq.ra] (MSC service thread 1-4) HornetQ resource adaptor started
+2018-08-11 10:56:51,211 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-4) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 10:56:51,214 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 10:56:51,219 INFO  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 10:56:51,411 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-1) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 10:56:52,394 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-1) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 10:56:52,543 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-1) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 10:56:52,590 INFO  [org.jboss.as.webservices] (MSC service thread 1-8) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 10:56:52,591 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 10:56:54,827 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-3) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 10:56:54,907 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 10:56:55,027 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 10:56:55,178 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 10:56:55,179 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 10:56:55,179 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 11289ms - Started 338 of 390 services (104 services are lazy, passive or on-demand)
+2018-08-11 11:01:48,229 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 64) JBAS011605: Unbound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 11:01:48,237 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 11:01:48,273 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017532: Host default-host stopping
+2018-08-11 11:01:48,273 INFO  [org.jboss.as.webservices] (MSC service thread 1-2) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:01:48,279 INFO  [org.jboss.as.messaging] (MSC service thread 1-5) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:01:48,279 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:01:48,280 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 11:01:48,281 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-8) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:01:48,285 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 11:01:48,363 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 63) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 11:01:48,418 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 236ms
+2018-08-11 11:01:48,587 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 63) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 11:01:48,588 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 11:01:48,589 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 11:01:48,590 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 11:01:48,605 INFO  [org.jboss.as] (MSC service thread 1-8) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 422ms
+2018-08-11 11:03:54,324 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 11:03:54,564 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 11:03:54,671 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 11:03:54,681 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 11:03:54,682 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 11:03:56,533 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 11:03:56,571 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 11:03:56,622 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.3.0.Final
+2018-08-11 11:03:56,644 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 11:03:56,705 INFO  [org.jboss.remoting] (MSC service thread 1-4) JBoss Remoting version 4.0.6.Final
+2018-08-11 11:03:56,781 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 11:03:56,788 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 11:03:56,794 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 11:03:56,820 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 11:03:56,844 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 11:03:56,887 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 11:03:56,890 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 11:03:56,913 INFO  [org.jboss.as.security] (MSC service thread 1-5) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 11:03:56,949 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 11:03:56,952 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 11:03:56,967 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 11:03:57,006 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 11:03:57,079 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:03:57,079 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:03:57,180 INFO  [org.jboss.as.naming] (MSC service thread 1-7) JBAS011802: Starting Naming Service
+2018-08-11 11:03:57,186 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 11:03:57,641 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 11:03:57,711 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017525: Started server default-server.
+2018-08-11 11:03:57,741 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017531: Host default-host starting
+2018-08-11 11:03:57,949 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 11:03:58,102 INFO  [org.jboss.as.jacorb] (MSC service thread 1-4) JBAS016330: CORBA ORB Service started
+2018-08-11 11:03:58,206 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:03:58,340 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 11:03:58,354 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 11:03:58,362 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 11:03:58,378 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 11:03:58,489 INFO  [org.jboss.as.jacorb] (MSC service thread 1-7) JBAS016328: CORBA Naming Service started
+2018-08-11 11:03:58,506 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 11:03:58,649 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 11:03:58,694 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 11:03:58,718 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 11:03:58,722 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 11:03:58,905 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 11:03:58,906 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 11:03:59,238 INFO  [org.jboss.ws.common.management] (MSC service thread 1-2) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 11:03:59,412 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 11:03:59,547 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 11:03:59,682 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-3) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 11:03:59,689 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-3) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 11:03:59,771 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 11:03:59,772 INFO  [org.jboss.messaging] (MSC service thread 1-6) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 11:04:00,569 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 11:04:00,569 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 11:04:00,605 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 11:04:00,628 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 11:04:00,631 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 59) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 11:04:00,643 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 11:04:00,643 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 60) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 11:04:00,644 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 11:04:00,646 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 11:04:00,648 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 11:04:00,684 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 11:04:00,732 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900: 2.2.6 (Final)
+2018-08-11 11:04:00,734 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-8) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 11:04:00,814 INFO  [org.hornetq.ra] (MSC service thread 1-8) HornetQ resource adaptor started
+2018-08-11 11:04:00,815 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-8) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 11:04:00,818 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-8) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:04:00,818 INFO  [org.jboss.as.messaging] (MSC service thread 1-8) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:04:00,834 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-1) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 11:04:01,135 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-1) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 11:04:01,801 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-1) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 11:04:01,926 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-1) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 11:04:01,961 INFO  [org.jboss.as.webservices] (MSC service thread 1-2) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:04:01,965 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 11:04:03,332 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-6) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 11:04:03,389 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 11:04:03,442 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 11:04:03,565 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 11:04:03,566 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 11:04:03,566 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 9567ms - Started 338 of 390 services (104 services are lazy, passive or on-demand)
+2018-08-11 11:05:31,100 INFO  [org.jboss.as.naming] (default task-15) JBAS011806: Channel end notification received, closing channel Channel ID 0cbdda9e (inbound) of Remoting connection 0caa186e to /127.0.0.1:38400
+2018-08-11 11:07:55,821 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 11:07:55,859 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 62) JBAS011605: Unbound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 11:07:55,916 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017532: Host default-host stopping
+2018-08-11 11:07:55,916 INFO  [org.jboss.as.webservices] (MSC service thread 1-8) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:07:55,942 INFO  [org.jboss.as.messaging] (MSC service thread 1-5) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:07:55,945 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:07:55,947 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-8) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:07:55,953 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 11:07:55,966 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 11:07:55,967 INFO  [org.jboss.as.naming] (default task-16) JBAS011806: Channel end notification received, closing channel Channel ID 1b9dd26a (inbound) of Remoting connection 566e68e1 to /127.0.0.1:51657
+2018-08-11 11:07:56,001 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 67) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 11:07:56,121 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 305ms
+2018-08-11 11:07:56,257 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 67) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 11:07:56,263 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 11:07:56,267 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 11:07:56,272 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 11:07:56,281 INFO  [org.jboss.as] (MSC service thread 1-7) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 439ms
+2018-08-11 11:08:00,683 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 11:08:00,956 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 11:08:01,060 INFO  [org.jboss.as] (MSC service thread 1-8) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 11:08:01,069 DEBUG [org.jboss.as.config] (MSC service thread 1-8) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 11:08:01,071 DEBUG [org.jboss.as.config] (MSC service thread 1-8) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 11:08:02,793 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 11:08:02,857 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 11:08:02,897 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.3.0.Final
+2018-08-11 11:08:02,921 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 11:08:02,988 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 11:08:03,097 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 11:08:03,099 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 11:08:03,104 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 11:08:03,142 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 11:08:03,009 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 11:08:03,126 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 11:08:03,145 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 11:08:03,177 INFO  [org.jboss.as.security] (MSC service thread 1-2) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 11:08:03,203 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-5) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 11:08:03,286 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 11:08:03,334 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 11:08:03,360 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:08:03,364 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:08:03,395 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 11:08:03,399 INFO  [org.jboss.as.naming] (MSC service thread 1-6) JBAS011802: Starting Naming Service
+2018-08-11 11:08:03,423 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 4.0.6.Final
+2018-08-11 11:08:03,705 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 11:08:03,734 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017525: Started server default-server.
+2018-08-11 11:08:03,742 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017531: Host default-host starting
+2018-08-11 11:08:03,951 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 11:08:04,023 INFO  [org.jboss.as.jacorb] (MSC service thread 1-4) JBAS016330: CORBA ORB Service started
+2018-08-11 11:08:04,251 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 11:08:04,279 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 11:08:04,408 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:08:04,416 INFO  [org.jboss.as.jacorb] (MSC service thread 1-2) JBAS016328: CORBA Naming Service started
+2018-08-11 11:08:04,469 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 11:08:04,485 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 11:08:04,567 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 11:08:04,665 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 11:08:04,767 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 11:08:04,774 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 11:08:04,779 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 11:08:04,953 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 11:08:04,953 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 11:08:05,363 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 11:08:05,377 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 11:08:05,531 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-5) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 11:08:05,686 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-5) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 11:08:05,691 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-5) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 11:08:06,059 INFO  [org.jboss.messaging] (MSC service thread 1-3) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 11:08:06,060 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 11:08:06,687 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 11:08:06,701 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 11:08:06,702 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 11:08:06,712 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 11:08:06,725 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 11:08:06,758 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 2.2.6 (Final)
+2018-08-11 11:08:06,783 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 11:08:06,785 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 11:08:06,785 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 11:08:06,787 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 11:08:06,788 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 57) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 11:08:06,789 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 11:08:06,847 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 11:08:06,851 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-5) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 11:08:06,966 INFO  [org.hornetq.ra] (MSC service thread 1-3) HornetQ resource adaptor started
+2018-08-11 11:08:06,967 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-3) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 11:08:06,969 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:08:06,970 INFO  [org.jboss.as.messaging] (MSC service thread 1-1) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:08:07,169 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-5) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 11:08:07,991 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-5) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 11:08:08,146 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-5) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 11:08:08,201 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 11:08:08,201 INFO  [org.jboss.as.webservices] (MSC service thread 1-2) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:08:09,824 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-8) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 11:08:09,887 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 11:08:09,945 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 11:08:10,068 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 11:08:10,068 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 11:08:10,069 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 9777ms - Started 338 of 390 services (104 services are lazy, passive or on-demand)
+2018-08-11 11:09:27,979 INFO  [org.jboss.as.naming] (default task-8) JBAS011806: Channel end notification received, closing channel Channel ID 4de609c8 (inbound) of Remoting connection 617a3416 to /127.0.0.1:56704
+2018-08-11 11:30:15,402 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 61) HQ221003: trying to deploy queue jms.topic.TOPICO.LIVRARIA
+2018-08-11 11:30:15,442 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 61) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/TOPICO.LIVRARIA
+2018-08-11 11:34:40,228 INFO  [org.jboss.as.naming] (default task-34) JBAS011806: Channel end notification received, closing channel Channel ID 5909b7c8 (inbound) of Remoting connection 53440b4f to /127.0.0.1:52035
+2018-08-11 11:35:53,951 INFO  [org.jboss.as.naming] (default task-42) JBAS011806: Channel end notification received, closing channel Channel ID 03dc4d4a (inbound) of Remoting connection 0402fa46 to /127.0.0.1:48219
+2018-08-11 11:36:37,992 INFO  [org.jboss.as.naming] (default task-56) JBAS011806: Channel end notification received, closing channel Channel ID 65683ad7 (inbound) of Remoting connection 5504e819 to /127.0.0.1:55638
+2018-08-11 11:37:13,893 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 11:37:13,917 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 63) JBAS011605: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 11:37:13,949 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) JBAS017532: Host default-host stopping
+2018-08-11 11:37:13,949 INFO  [org.jboss.as.webservices] (MSC service thread 1-5) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:37:13,971 INFO  [org.jboss.as.messaging] (MSC service thread 1-7) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:37:13,971 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:37:13,972 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:37:13,978 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 11:37:13,978 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 11:37:13,993 INFO  [org.jboss.as.naming] (default task-1) JBAS011806: Channel end notification received, closing channel Channel ID 235e7f73 (inbound) of Remoting connection 7f2026d6 to /127.0.0.1:36790
+2018-08-11 11:37:13,994 INFO  [org.jboss.as.naming] (default task-1) JBAS011806: Channel end notification received, closing channel Channel ID 013c7bfd (inbound) of Remoting connection 7d7857bc to /127.0.0.1:38880
+2018-08-11 11:37:13,996 INFO  [org.jboss.as.naming] (default task-2) JBAS011806: Channel end notification received, closing channel Channel ID 1811b1b6 (inbound) of Remoting connection 22e7ead5 to /127.0.0.1:50119
+2018-08-11 11:37:13,997 INFO  [org.jboss.as.naming] (default task-3) JBAS011806: Channel end notification received, closing channel Channel ID 161cf28e (inbound) of Remoting connection 536ac814 to /127.0.0.1:36802
+2018-08-11 11:37:14,030 INFO  [org.jboss.as.naming] (default task-5) JBAS011806: Channel end notification received, closing channel Channel ID 765c07d0 (inbound) of Remoting connection 49c86f4e to /127.0.0.1:39869
+2018-08-11 11:37:14,185 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 71) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 11:37:14,392 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 540ms
+2018-08-11 11:37:14,543 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 71) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 11:37:14,547 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 11:37:14,550 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 11:37:14,551 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 11:37:14,581 INFO  [org.jboss.as] (MSC service thread 1-5) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 709ms
+2018-08-11 11:37:19,057 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 11:37:19,362 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 11:37:19,471 INFO  [org.jboss.as] (MSC service thread 1-5) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 11:37:19,478 DEBUG [org.jboss.as.config] (MSC service thread 1-5) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 11:37:19,480 DEBUG [org.jboss.as.config] (MSC service thread 1-5) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 11:37:21,264 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 11:37:21,329 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 11:37:21,376 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.0.Final
+2018-08-11 11:37:21,409 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 11:37:21,519 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 11:37:21,522 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.6.Final
+2018-08-11 11:37:21,525 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 11:37:21,534 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 11:37:21,538 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 11:37:21,645 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 11:37:21,674 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 11:37:21,678 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 11:37:21,695 INFO  [org.jboss.as.security] (MSC service thread 1-2) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 11:37:21,700 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 11:37:21,746 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-4) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 11:37:21,755 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 11:37:21,771 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 11:37:21,824 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:37:21,853 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 11:37:21,866 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Starting Naming Service
+2018-08-11 11:37:22,061 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 11:37:22,221 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 11:37:22,243 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017525: Started server default-server.
+2018-08-11 11:37:22,272 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017531: Host default-host starting
+2018-08-11 11:37:22,459 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 11:37:22,613 INFO  [org.jboss.as.jacorb] (MSC service thread 1-8) JBAS016330: CORBA ORB Service started
+2018-08-11 11:37:22,797 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 11:37:22,820 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 11:37:22,849 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 11:37:22,852 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 11:37:22,877 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 11:37:22,969 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 11:37:22,985 INFO  [org.jboss.as.jacorb] (MSC service thread 1-5) JBAS016328: CORBA Naming Service started
+2018-08-11 11:37:23,132 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 11:37:23,279 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 11:37:23,307 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 11:37:23,338 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 11:37:23,493 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 11:37:23,494 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 11:37:23,826 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 11:37:23,816 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 11:37:23,970 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 11:37:24,094 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 11:37:24,099 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 11:37:24,645 INFO  [org.jboss.messaging] (MSC service thread 1-6) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 11:37:24,646 INFO  [org.jboss.messaging] (MSC service thread 1-3) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 11:37:24,799 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 11:37:24,864 INFO  [org.jboss.weld.Version] (MSC service thread 1-7) WELD-000900: 2.2.6 (Final)
+2018-08-11 11:37:25,006 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-7) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 11:37:25,329 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 11:37:25,329 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 11:37:25,342 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221003: trying to deploy queue jms.topic.TOPICO.LIVRARIA
+2018-08-11 11:37:25,354 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/TOPICO.LIVRARIA
+2018-08-11 11:37:25,376 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 11:37:25,400 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 11:37:25,465 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 11:37:25,466 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 60) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 11:37:25,467 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 11:37:25,468 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 61) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 11:37:25,468 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 57) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 11:37:25,469 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 11:37:25,523 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-7) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 11:37:25,544 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 11:37:25,641 INFO  [org.hornetq.ra] (MSC service thread 1-5) HornetQ resource adaptor started
+2018-08-11 11:37:25,642 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-5) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 11:37:25,643 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 11:37:25,644 INFO  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 11:37:26,307 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-7) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 11:37:26,445 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-7) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 11:37:26,482 INFO  [org.jboss.as.webservices] (MSC service thread 1-7) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 11:37:26,484 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 11:37:27,886 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-7) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 11:37:27,936 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 11:37:28,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 11:37:28,132 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 11:37:28,133 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 11:37:28,133 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 9444ms - Started 339 of 391 services (105 services are lazy, passive or on-demand)
+2018-08-11 11:39:16,812 INFO  [org.jboss.as.naming] (default task-21) JBAS011806: Channel end notification received, closing channel Channel ID 635f089f (inbound) of Remoting connection 79b388a2 to /127.0.0.1:37031
+2018-08-11 11:39:41,816 INFO  [org.jboss.as.naming] (default task-28) JBAS011806: Channel end notification received, closing channel Channel ID 7c1abe59 (inbound) of Remoting connection 5aff088f to /127.0.0.1:36014
+2018-08-11 12:09:40,169 INFO  [org.jboss.as.naming] (default task-42) JBAS011806: Channel end notification received, closing channel Channel ID 51c594e0 (inbound) of Remoting connection 770d0ac9 to /127.0.0.1:35512
+2018-08-11 14:04:22,420 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 14:04:22,425 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 62) JBAS011605: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 14:04:22,461 INFO  [org.jboss.as.webservices] (MSC service thread 1-7) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 14:04:22,461 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017532: Host default-host stopping
+2018-08-11 14:04:22,479 INFO  [org.jboss.as.naming] (default task-50) JBAS011806: Channel end notification received, closing channel Channel ID 2fbe6427 (inbound) of Remoting connection 6fcf6151 to /127.0.0.1:55539
+2018-08-11 14:04:22,480 INFO  [org.jboss.as.messaging] (MSC service thread 1-6) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 14:04:22,482 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 14:04:22,487 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 14:04:22,489 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 14:04:22,480 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 14:04:22,522 INFO  [org.jboss.as.naming] (default task-52) JBAS011806: Channel end notification received, closing channel Channel ID 32c5d7ff (inbound) of Remoting connection 274f9a9b to /127.0.0.1:56948
+2018-08-11 14:04:22,525 INFO  [org.jboss.as.naming] (default task-54) JBAS011806: Channel end notification received, closing channel Channel ID 41c0f925 (inbound) of Remoting connection 6674a2b8 to /127.0.0.1:46951
+2018-08-11 14:04:22,534 INFO  [org.jboss.as.naming] (default task-56) JBAS011806: Channel end notification received, closing channel Channel ID 0211b5d0 (inbound) of Remoting connection 2c0e1dc8 to /127.0.0.1:57361
+2018-08-11 14:04:22,593 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 67) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 14:04:22,718 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 331ms
+2018-08-11 14:04:22,979 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 67) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 14:04:22,980 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 14:04:22,982 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 14:04:22,983 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 14:04:23,014 INFO  [org.jboss.as] (MSC service thread 1-2) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 618ms
+2018-08-11 14:04:24,056 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2018-08-11 14:04:24,533 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2018-08-11 14:04:24,699 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.2.0.Final "Tweek" starting
+2018-08-11 14:04:24,711 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/soa7727/workspace/wildfly-8.2.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_181-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_181
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.181-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = /home/soa7727/workspace/wildfly-8.2.0.Final
+	jboss.host.name = caelum141-11
+	jboss.modules.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = caelum141-11
+	jboss.qualified.host.name = caelum141-11
+	jboss.server.base.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	jboss.server.config.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log
+	jboss.server.name = caelum141-11
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties
+	module.path = /home/soa7727/workspace/wildfly-8.2.0.Final/modules
+	org.jboss.boot.log.file = /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-131-generic
+	path.separator = :
+	program.name = JBossTools: WildFly  8.x
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp /home/soa7727/workspace/wildfly-8.2.0.Final/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = US
+	user.country.format = BR
+	user.dir = /home/soa7727/workspace/wildfly-8.2.0.Final/bin
+	user.home = /home/soa7727
+	user.language = en
+	user.language.format = pt
+	user.name = soa7727
+	user.timezone = America/Sao_Paulo
+2018-08-11 14:04:24,726 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Dprogram.name=JBossTools: WildFly  8.x -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/log/boot.log -Dlogging.configuration=file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/configuration/logging.properties -Djboss.home.dir=/home/soa7727/workspace/wildfly-8.2.0.Final -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+2018-08-11 14:04:27,628 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found fj36-webservice.war in deployment directory. To trigger deployment create a file called fj36-webservice.war.dodeploy
+2018-08-11 14:04:27,695 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2018-08-11 14:04:27,779 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.0.Final
+2018-08-11 14:04:27,817 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.0.Final
+2018-08-11 14:04:27,942 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.6.Final
+2018-08-11 14:04:28,023 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2018-08-11 14:04:28,027 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2018-08-11 14:04:28,049 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-08-11 14:04:28,134 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2018-08-11 14:04:28,156 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2018-08-11 14:04:28,196 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2018-08-11 14:04:28,241 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2018-08-11 14:04:28,335 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2018-08-11 14:04:28,477 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 14:04:28,479 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.1.0.Final starting
+2018-08-11 14:04:28,521 INFO  [org.jboss.as.security] (MSC service thread 1-8) JBAS013170: Current PicketBox version=4.0.21.Final
+2018-08-11 14:04:28,517 INFO  [org.jboss.as.naming] (MSC service thread 1-5) JBAS011802: Starting Naming Service
+2018-08-11 14:04:28,550 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-08-11 14:04:28,574 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2018-08-11 14:04:28,681 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+2018-08-11 14:04:28,703 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010417: Started Driver service with driver-name = h2
+2018-08-11 14:04:29,468 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/soa7727/workspace/wildfly-8.2.0.Final/welcome-content
+2018-08-11 14:04:29,613 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017525: Started server default-server.
+2018-08-11 14:04:29,652 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017531: Host default-host starting
+2018-08-11 14:04:29,828 INFO  [org.jboss.as.jacorb] (MSC service thread 1-4) JBAS016330: CORBA ORB Service started
+2018-08-11 14:04:29,922 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017519: Undertow HTTP listener default listening on localhost/127.0.0.1:8080
+2018-08-11 14:04:30,092 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) JBAS015012: Started FileSystemDeploymentService for directory /home/soa7727/workspace/wildfly-8.2.0.Final/standalone/deployments
+2018-08-11 14:04:30,128 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015876: Starting deployment of "fj36-webservice.war" (runtime-name: "fj36-webservice.war")
+2018-08-11 14:04:30,369 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/messagingpaging)
+2018-08-11 14:04:30,405 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
+2018-08-11 14:04:30,571 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221012: Using AIO Journal
+2018-08-11 14:04:30,576 INFO  [org.jboss.as.jacorb] (MSC service thread 1-7) JBAS016328: CORBA Naming Service started
+2018-08-11 14:04:30,727 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 14:04:30,785 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2018-08-11 14:04:30,961 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
+2018-08-11 14:04:30,989 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
+2018-08-11 14:04:30,995 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
+2018-08-11 14:04:31,234 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
+2018-08-11 14:04:31,235 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
+2018-08-11 14:04:31,649 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016002: Processing weld deployment fj36-webservice.war
+2018-08-11 14:04:31,950 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+2018-08-11 14:04:32,024 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 5.1.3.Final
+2018-08-11 14:04:32,350 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named EstoqueWS in deployment unit deployment "fj36-webservice.war" are as follows:
+
+
+2018-08-11 14:04:32,366 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-7) JNDI bindings for session bean named PagamentoResource in deployment unit deployment "fj36-webservice.war" are as follows:
+
+	java:global/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:app/fj36-webservice/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:module/PagamentoResource!br.com.caelum.payfast.rest.PagamentoResource
+	java:global/fj36-webservice/PagamentoResource
+	java:app/fj36-webservice/PagamentoResource
+	java:module/PagamentoResource
+
+2018-08-11 14:04:32,668 INFO  [org.jboss.messaging] (MSC service thread 1-3) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2018-08-11 14:04:32,668 INFO  [org.jboss.messaging] (MSC service thread 1-4) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2018-08-11 14:04:33,860 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016005: Starting Services for CDI deployment: fj36-webservice.war
+2018-08-11 14:04:33,969 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
+2018-08-11 14:04:33,969 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] 
+2018-08-11 14:04:34,021 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 2.2.6 (Final)
+2018-08-11 14:04:34,048 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2018-08-11 14:04:34,103 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.FILA.GERADOR
+2018-08-11 14:04:34,124 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/FILA.GERADOR
+2018-08-11 14:04:34,126 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 61) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 14:04:34,127 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 59) HQ221003: trying to deploy queue jms.topic.TOPICO.LIVRARIA
+2018-08-11 14:04:34,134 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/TOPICO.LIVRARIA
+2018-08-11 14:04:34,135 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 60) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
+2018-08-11 14:04:34,136 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
+2018-08-11 14:04:34,137 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 57) HQ221003: trying to deploy queue jms.queue.DLQ
+2018-08-11 14:04:34,138 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
+2018-08-11 14:04:34,232 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-5) JBWS024061: Adding service endpoint metadata: id=EstoqueWS
+ address=http://localhost:8080/fj36-webservice/EstoqueWS
+ implementor=br.com.caelum.estoque.ws.EstoqueWS
+ serviceName={http://caelum.com.br/estoquews/v1}EstoqueWSService
+ portName={http://caelum.com.br/estoquews/v1}EstoqueWSPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2018-08-11 14:04:34,287 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) JBAS010406: Registered connection factory java:/JmsXA
+2018-08-11 14:04:34,527 INFO  [org.hornetq.ra] (MSC service thread 1-3) HornetQ resource adaptor started
+2018-08-11 14:04:34,529 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-3) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2018-08-11 14:04:34,531 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 14:04:34,531 INFO  [org.jboss.as.messaging] (MSC service thread 1-4) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 14:04:34,907 INFO  [org.apache.cxf.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-5) Creating Service {http://caelum.com.br/estoquews/v1}EstoqueWSService from class br.com.caelum.estoque.ws.EstoqueWS
+2018-08-11 14:04:36,395 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-5) Setting the server's publish address to be http://localhost:8080/fj36-webservice/EstoqueWS
+2018-08-11 14:04:36,685 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-5) JBWS024074: WSDL published to: file:/home/soa7727/workspace/wildfly-8.2.0.Final/standalone/data/wsdl/fj36-webservice.war/EstoqueWSService.wsdl
+2018-08-11 14:04:36,801 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016008: Starting weld service for deployment fj36-webservice.war
+2018-08-11 14:04:36,801 INFO  [org.jboss.as.webservices] (MSC service thread 1-4) JBAS015539: Starting service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 14:04:39,787 INFO  [org.jboss.resteasy.spi.ResteasyDeployment] (MSC service thread 1-1) Deploying javax.ws.rs.core.Application: class br.com.caelum.payfast.rest.PagamentoService
+2018-08-11 14:04:39,881 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /fj36-webservice
+2018-08-11 14:04:40,033 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 31) JBAS018559: Deployed "fj36-webservice.war" (runtime-name : "fj36-webservice.war")
+2018-08-11 14:04:40,333 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2018-08-11 14:04:40,333 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2018-08-11 14:04:40,334 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 16823ms - Started 339 of 391 services (105 services are lazy, passive or on-demand)
+2018-08-11 14:04:44,389 INFO  [org.jboss.as.naming] (default task-8) JBAS011806: Channel end notification received, closing channel Channel ID 07a0d5fa (inbound) of Remoting connection 40e8a8c5 to /127.0.0.1:35224
+2018-08-11 14:04:44,500 INFO  [org.jboss.as.naming] (default task-15) JBAS011806: Channel end notification received, closing channel Channel ID 3b016c72 (inbound) of Remoting connection 5f6f896c to /127.0.0.1:45912
+2018-08-11 14:06:27,392 INFO  [stdout] (default task-19) Pagamento	confirmado:	Pagamento [id=2, status=CONFIRMADO, valor=29.90, links=[Link [rel=self, uri=/pagamentos/2, method=GET]]]
+2018-08-11 16:50:54,804 INFO  [org.jboss.as.naming] (default task-28) JBAS011806: Channel end notification received, closing channel Channel ID 1a9017be (inbound) of Remoting connection 6e392e17 to /127.0.0.1:38227
+2018-08-11 16:50:54,850 INFO  [org.jboss.as.naming] (default task-35) JBAS011806: Channel end notification received, closing channel Channel ID 2458304a (inbound) of Remoting connection 1cbd6042 to /127.0.0.1:47850
+2018-08-11 17:01:12,456 INFO  [org.jboss.as.naming] (default task-41) JBAS011806: Channel end notification received, closing channel Channel ID 0fc79b4f (inbound) of Remoting connection 133d5a29 to /127.0.0.1:43779
+2018-08-11 17:01:12,526 INFO  [org.jboss.as.naming] (default task-49) JBAS011806: Channel end notification received, closing channel Channel ID 05ca7cff (inbound) of Remoting connection 423608be to /127.0.0.1:58892
+2018-08-11 17:24:15,530 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 64) JBAS011605: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2018-08-11 17:24:15,531 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017535: Unregistered web context: /fj36-webservice
+2018-08-11 17:24:17,215 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017532: Host default-host stopping
+2018-08-11 17:24:17,216 INFO  [org.jboss.as.webservices] (MSC service thread 1-6) JBAS015540: Stopping service jboss.ws.endpoint."fj36-webservice.war".EstoqueWS
+2018-08-11 17:24:17,237 INFO  [org.jboss.as.messaging] (MSC service thread 1-8) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2018-08-11 17:24:17,238 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-08-11 17:24:17,239 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016009: Stopping weld service for deployment fj36-webservice.war
+2018-08-11 17:24:17,241 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2018-08-11 17:24:17,247 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) JBAS010418: Stopped Driver service with driver-name = h2
+2018-08-11 17:24:17,284 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 64) HQ151003: HornetQ resource adaptor stopped
+2018-08-11 17:24:17,400 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015877: Stopped deployment fj36-webservice.war (runtime-name: fj36-webservice.war) in 1903ms
+2018-08-11 17:24:18,252 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 66) HQ221002: HornetQ Server version 2.4.5.FINAL (Wild Hornet, 124) [70e3a6fe-9d67-11e8-9942-ed7b9d3cd229] stopped
+2018-08-11 17:24:18,269 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017521: Undertow HTTP listener default suspending
+2018-08-11 17:24:18,287 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
+2018-08-11 17:24:18,299 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017506: Undertow 1.1.0.Final stopping
+2018-08-11 17:24:18,579 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015950: WildFly 8.2.0.Final "Tweek" stopped in 3061ms
